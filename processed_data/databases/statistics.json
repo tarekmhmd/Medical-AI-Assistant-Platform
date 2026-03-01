@@ -1,0 +1,26 @@
+{
+  "created": "2026-03-01T16:35:06.954451",
+  "total_qa_pairs": 50655,
+  "formats": {
+    "huggingface": {
+      "train": 45589,
+      "validation": 2532,
+      "test": 2534
+    },
+    "openai": {
+      "train": 45589,
+      "validation": 2532,
+      "test": 2534
+    },
+    "conversational": {
+      "train": 45589,
+      "validation": 2532,
+      "test": 2534
+    },
+    "instruction": {
+      "train": 45589,
+      "validation": 2532,
+      "test": 2534
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "created_folders": [
+        "data/train/skin",
+        "data/val/skin",
+        "data/test/skin",
+        "data/train/sound",
+        "data/val/sound",
+        "data/test/sound",
+        "data/train/lab",
+        "data/val/lab",
+        "data/test/lab",
+        "models",
+        "logs",
+        "checkpoints",
+        "notebooks"
+    ],
+    "existing_folders": [],
+    "created_files": [
+        "models\\skin_analyzer.py",
+        "models\\sound_analyzer.py",
+        "models\\lab_analyzer.py",
+        "models\\chatbot.py"
+    ],
+    "skipped_files": [],
+    "master_training_script": "train_all.py"
+}

@@ -1,0 +1,177 @@
+{
+  "diseases": [
+    {
+      "name": "Common Cold",
+      "symptoms": [
+        "fever",
+        "cough",
+        "runny nose",
+        "sore throat",
+        "sneezing",
+        "congestion"
+      ],
+      "medications": [
+        "Acetaminophen 500mg",
+        "Ibuprofen 400mg",
+        "Decongestant",
+        "Vitamin C"
+      ],
+      "severity": "mild",
+      "duration": "7-10 days"
+    },
+    {
+      "name": "Influenza (Flu)",
+      "symptoms": [
+        "high fever",
+        "severe headache",
+        "muscle pain",
+        "fatigue",
+        "cough",
+        "sore throat"
+      ],
+      "medications": [
+        "Oseltamivir (Tamiflu)",
+        "Acetaminophen",
+        "Rest",
+        "Fluids"
+      ],
+      "severity": "moderate",
+      "duration": "1-2 weeks"
+    },
+    {
+      "name": "Pneumonia",
+      "symptoms": [
+        "high fever",
+        "chest pain",
+        "shortness of breath",
+        "cough with phlegm",
+        "fatigue"
+      ],
+      "medications": [
+        "Antibiotics (Amoxicillin)",
+        "Fever reducers",
+        "Oxygen therapy",
+        "Rest"
+      ],
+      "severity": "severe",
+      "duration": "2-3 weeks"
+    },
+    {
+      "name": "Asthma",
+      "symptoms": [
+        "shortness of breath",
+        "wheezing",
+        "chest tightness",
+        "cough"
+      ],
+      "medications": [
+        "Albuterol inhaler",
+        "Corticosteroids",
+        "Long-acting bronchodilators"
+      ],
+      "severity": "moderate",
+      "duration": "chronic"
+    },
+    {
+      "name": "Bronchitis",
+      "symptoms": [
+        "persistent cough",
+        "mucus production",
+        "fatigue",
+        "chest discomfort"
+      ],
+      "medications": [
+        "Cough suppressants",
+        "Expectorants",
+        "Bronchodilators",
+        "Rest"
+      ],
+      "severity": "moderate",
+      "duration": "2-3 weeks"
+    },
+    {
+      "name": "Gastroenteritis",
+      "symptoms": [
+        "nausea",
+        "vomiting",
+        "diarrhea",
+        "stomach pain",
+        "fever"
+      ],
+      "medications": [
+        "Oral rehydration solution",
+        "Anti-emetics",
+        "Probiotics"
+      ],
+      "severity": "moderate",
+      "duration": "3-7 days"
+    },
+    {
+      "name": "Migraine",
+      "symptoms": [
+        "severe headache",
+        "nausea",
+        "sensitivity to light",
+        "visual disturbances"
+      ],
+      "medications": [
+        "Sumatriptan",
+        "Ibuprofen",
+        "Acetaminophen",
+        "Rest in dark room"
+      ],
+      "severity": "moderate",
+      "duration": "4-72 hours"
+    },
+    {
+      "name": "Hypertension",
+      "symptoms": [
+        "headache",
+        "dizziness",
+        "chest pain",
+        "shortness of breath"
+      ],
+      "medications": [
+        "ACE inhibitors",
+        "Beta blockers",
+        "Diuretics",
+        "Calcium channel blockers"
+      ],
+      "severity": "moderate",
+      "duration": "chronic"
+    },
+    {
+      "name": "Type 2 Diabetes",
+      "symptoms": [
+        "increased thirst",
+        "frequent urination",
+        "fatigue",
+        "blurred vision"
+      ],
+      "medications": [
+        "Metformin",
+        "Insulin",
+        "Sulfonylureas",
+        "DPP-4 inhibitors"
+      ],
+      "severity": "moderate",
+      "duration": "chronic"
+    },
+    {
+      "name": "Urinary Tract Infection",
+      "symptoms": [
+        "burning urination",
+        "frequent urination",
+        "lower abdominal pain",
+        "cloudy urine"
+      ],
+      "medications": [
+        "Antibiotics (Trimethoprim)",
+        "Pain relievers",
+        "Increased fluids"
+      ],
+      "severity": "mild",
+      "duration": "3-7 days"
+    }
+  ]
+}

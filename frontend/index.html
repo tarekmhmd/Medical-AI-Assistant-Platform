@@ -3,167 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical AI Assistant - Secure Login</title>
-    <meta name="description" content="Login to your Medical AI Assistant account for AI-powered health analysis">
+    <title>Medical AI Assistant - Login</title>
     <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Preload fonts for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="login-page">
     <div class="login-container">
-        <div class="login-card" role="main" aria-label="Authentication form">
-            
-            <!-- Logo Section -->
+        <div class="login-card">
             <div class="logo">
-                <h1>🏥 Medical AI Assistant</h1>
-                <p>Your Personal AI-Powered Health Companion</p>
+                <h1><i class="fas fa-heartbeat"></i> Medical AI Assistant</h1>
+                <p><i class="fas fa-user-md"></i> Your Personal Health Companion</p>
             </div>
 
-            <!-- Tabs for Login/Register -->
-            <div class="tabs" role="tablist" aria-label="Authentication method">
-                <button class="tab-btn active" id="tab-login" role="tab" aria-selected="true" aria-controls="login-form" onclick="showTab('login')">
-                    Login
-                </button>
-                <button class="tab-btn" id="tab-register" role="tab" aria-selected="false" aria-controls="register-form" onclick="showTab('register')">
-                    Create Account
-                </button>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('login')">Login</button>
+                <button class="tab-btn" onclick="showTab('register')">Register</button>
             </div>
 
             <!-- Login Form -->
-            <form id="loginForm" class="auth-form active" role="tabpanel" aria-labelledby="tab-login">
+            <form id="loginForm" class="auth-form active">
                 <h2>Welcome Back</h2>
                 
                 <div class="form-group">
-                    <label for="loginEmail">Email Address</label>
-                    <input type="email" id="loginEmail" required 
-                           placeholder="doctor@example.com"
-                           autocomplete="email"
-                           aria-required="true">
+                    <label for="loginEmail"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="loginEmail" required placeholder="Enter your email">
                 </div>
 
                 <div class="form-group">
-                    <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" required 
-                           placeholder="Enter your password"
-                           autocomplete="current-password"
-                           aria-required="true">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
                 </div>
 
                 <button type="submit" class="btn btn-primary">
-                    <span>🔐</span> Secure Login
+                    <i class="fas fa-sign-in-alt"></i> Login
                 </button>
 
-                <div class="divider">OR</div>
-
-                <button type="button" class="btn btn-google" onclick="loginWithGoogle()">
-                    <span>🔐</span> Continue with Google
-                </button>
             </form>
 
             <!-- Register Form -->
-            <form id="registerForm" class="auth-form" role="tabpanel" aria-labelledby="tab-register">
-                <h2>Create Your Account</h2>
+            <form id="registerForm" class="auth-form">
+                <h2>Create Account</h2>
                 
                 <div class="form-group">
-                    <label for="registerName">Full Name</label>
-                    <input type="text" id="registerName" required 
-                           placeholder="Dr. John Smith"
-                           autocomplete="name"
-                           aria-required="true">
+                    <label for="registerName"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="registerName" required placeholder="Enter your name">
                 </div>
 
                 <div class="form-group">
-                    <label for="registerEmail">Email Address</label>
-                    <input type="email" id="registerEmail" required 
-                           placeholder="doctor@example.com"
-                           autocomplete="email"
-                           aria-required="true">
+                    <label for="registerEmail"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="registerEmail" required placeholder="Enter your email">
                 </div>
 
                 <div class="form-group">
-                    <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" required 
-                           placeholder="Create a strong password"
-                           autocomplete="new-password"
-                           aria-required="true"
-                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                           title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 characters">
+                    <label for="registerPassword"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="registerPassword" required placeholder="Create a password">
                 </div>
 
                 <div class="form-group">
-                    <label for="registerAge">Age</label>
-                    <input type="number" id="registerAge" 
-                           placeholder="Enter your age"
-                           min="1" max="150"
-                           aria-required="false">
+                    <label for="registerAge"><i class="fas fa-calendar-alt"></i> Age</label>
+                    <input type="number" id="registerAge" placeholder="Enter your age">
                 </div>
 
                 <div class="form-group">
-                    <label for="registerAddress">Address</label>
-                    <input type="text" id="registerAddress" 
-                           placeholder="Enter your address"
-                           autocomplete="address"
-                           aria-required="false">
+                    <label for="registerAddress"><i class="fas fa-map-marker-alt"></i> Address</label>
+                    <input type="text" id="registerAddress" placeholder="Enter your address">
                 </div>
 
                 <button type="submit" class="btn btn-primary">
-                    <span>📝</span> Register Now
+                    <i class="fas fa-user-plus"></i> Register
                 </button>
             </form>
 
-            <!-- Message Container -->
-            <div id="message" class="message" role="alert" aria-live="polite"></div>
+            <div id="message" class="message"></div>
         </div>
     </div>
 
     <script src="js/app.js"></script>
     <script>
-        // Tab switching with accessibility
         function showTab(tab) {
             const loginForm = document.getElementById('loginForm');
             const registerForm = document.getElementById('registerForm');
-            const loginTab = document.getElementById('tab-login');
-            const registerTab = document.getElementById('tab-register');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(t => t.classList.remove('active'));
 
             if (tab === 'login') {
-                // Update forms
                 loginForm.classList.add('active');
                 registerForm.classList.remove('active');
-                
-                // Update tabs
-                loginTab.classList.add('active');
-                loginTab.setAttribute('aria-selected', 'true');
-                registerTab.classList.remove('active');
-                registerTab.setAttribute('aria-selected', 'false');
+                tabs[0].classList.add('active');
             } else {
-                // Update forms
                 registerForm.classList.add('active');
                 loginForm.classList.remove('active');
-                
-                // Update tabs
-                registerTab.classList.add('active');
-                registerTab.setAttribute('aria-selected', 'true');
-                loginTab.classList.remove('active');
-                loginTab.setAttribute('aria-selected', 'false');
+                tabs[1].classList.add('active');
             }
         }
 
-        // Login form submission
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
-            const messageDiv = document.getElementById('message');
-
-            // Show loading state
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="spinner" style="width:20px;height:20px;margin:0;"></span> Logging in...';
-            submitBtn.disabled = true;
 
             try {
                 const response = await fetch('http://localhost:5000/api/login', {
@@ -177,31 +116,16 @@
                 if (response.ok) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
-                    
-                    messageDiv.textContent = 'Login successful! Redirecting...';
-                    messageDiv.className = 'message success';
-                    messageDiv.style.display = 'block';
-                    
+                    showMessage('Login successful! Redirecting...', 'success');
                     setTimeout(() => window.location.href = 'dashboard.html', 1500);
                 } else {
-                    messageDiv.textContent = data.error || 'Login failed';
-                    messageDiv.className = 'message error';
-                    messageDiv.style.display = 'block';
-                    
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
+                    showMessage(data.error || 'Login failed', 'error');
                 }
             } catch (error) {
-                messageDiv.textContent = 'Connection error. Please try again.';
-                messageDiv.className = 'message error';
-                messageDiv.style.display = 'block';
-                
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+                showMessage('Connection error. Please try again.', 'error');
             }
         });
 
-        // Register form submission
         document.getElementById('registerForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -210,13 +134,6 @@
             const password = document.getElementById('registerPassword').value;
             const age = document.getElementById('registerAge').value;
             const address = document.getElementById('registerAddress').value;
-            const messageDiv = document.getElementById('message');
-
-            // Show loading state
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="spinner" style="width:20px;height:20px;margin:0;"></span> Creating account...';
-            submitBtn.disabled = true;
 
             try {
                 const response = await fetch('http://localhost:5000/api/register', {
@@ -228,28 +145,25 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    messageDiv.textContent = 'Registration successful! Please login.';
-                    messageDiv.className = 'message success';
-                    messageDiv.style.display = 'block';
-                    
+                    showMessage('Registration successful! Please login.', 'success');
                     setTimeout(() => showTab('login'), 1500);
                 } else {
-                    messageDiv.textContent = data.error || 'Registration failed';
-                    messageDiv.className = 'message error';
-                    messageDiv.style.display = 'block';
+                    showMessage(data.error || 'Registration failed', 'error');
                 }
             } catch (error) {
-                messageDiv.textContent = 'Connection error. Please try again.';
-                messageDiv.className = 'message error';
-                messageDiv.style.display = 'block';
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+                showMessage('Connection error. Please try again.', 'error');
             }
         });
 
-        function loginWithGoogle() {
-            showNotification('Google OAuth integration coming soon!', 'info');
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
         }
     </script>
 </body>

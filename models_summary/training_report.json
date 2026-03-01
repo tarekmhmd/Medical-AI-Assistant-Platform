@@ -1,0 +1,6 @@
+{
+    "skin_model_path": "D:\\project 2\\checkpoints\\skin_model.pth",
+    "sound_model_path": "D:\\project 2\\checkpoints\\sound_model.pth",
+    "lab_model_path": "D:\\project 2\\checkpoints\\lab_model.pth",
+    "chatbot_model_path": "D:\\project 2\\checkpoints\\chatbot_model.pth"
+}

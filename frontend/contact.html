@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Medical AI Assistant</title>
-    <meta name="description" content="Get in touch with our team for support, questions, or partnerships">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Leaflet for maps (optional but nice) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>🏥 Medical AI</h2>
             </div>
@@ -29,525 +23,58 @@
                     <li class="nav-item"><a href="sound-analysis.html" class="nav-link"><span>🎤</span> Sound Analysis</a></li>
                     <li class="nav-item"><a href="health-records.html" class="nav-link"><span>📋</span> Health Records</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link"><span>ℹ️</span> About Us</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page"><span>📧</span> Contact</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active"><span>📧</span> Contact</a></li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="logout()"><span>🚪</span> Logout</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Main Content -->
-        <main class="main-content" role="main">
-            <header class="header">
+        <main class="main-content">
+            <div class="header">
                 <h1>📧 Contact Us</h1>
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span id="userName">User</span>
-                </div>
-            </header>
-
-            <!-- Contact Hero -->
-            <div class="contact-hero">
-                <div class="hero-content">
-                    <h1>We're Here to Help</h1>
-                    <p>Have questions about our AI medical assistant? Need support with your account? Our team is ready to assist you.</p>
-                </div>
             </div>
 
-            <!-- Quick Contact Cards -->
-            <div class="contact-cards-grid">
-                <div class="contact-card" onclick="showNotification('Email support copied to clipboard')">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email Support</h3>
-                    <p class="contact-detail">support@medicalai.com</p>
-                    <p class="contact-response">Response time: &lt; 24 hours</p>
-                    <button class="btn-copy" onclick="copyToClipboard('support@medicalai.com')">Copy Email</button>
-                </div>
-                
-                <div class="contact-card" onclick="showNotification('Phone number copied to clipboard')">
-                    <div class="contact-icon">📞</div>
-                    <h3>Phone Support</h3>
-                    <p class="contact-detail">+1 (555) 123-4567</p>
-                    <p class="contact-response">Mon-Fri, 9AM-6PM EST</p>
-                    <button class="btn-copy" onclick="copyToClipboard('+15551234567')">Copy Number</button>
-                </div>
-                
-                <div class="contact-card" onclick="showNotification('Live chat opening...')">
-                    <div class="contact-icon">💬</div>
-                    <h3>Live Chat</h3>
-                    <p class="contact-detail">Chat with our support team</p>
-                    <p class="contact-response">Average wait: &lt; 2 minutes</p>
-                    <button class="btn-copy" onclick="startLiveChat()">Start Chat</button>
-                </div>
-                
-                <div class="contact-card" onclick="showNotification('Knowledge base opening...')">
-                    <div class="contact-icon">📚</div>
-                    <h3>Knowledge Base</h3>
-                    <p class="contact-detail">help.medicalai.com</p>
-                    <p class="contact-response">24/7 self-service</p>
-                    <button class="btn-copy" onclick="openKnowledgeBase()">Browse Articles</button>
-                </div>
-            </div>
-
-            <!-- Main Contact Form & Info -->
-            <div class="contact-main-grid">
-                <!-- Contact Form -->
-                <div class="card contact-form-card">
-                    <div class="card-header">
-                        <h2 class="card-title">📝 Send Us a Message</h2>
-                        <p class="card-subtitle">We'll get back to you within 24 hours</p>
-                    </div>
-
-                    <form id="contactForm" class="contact-form">
-                        <!-- Name Field -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">
-                                    First Name
-                                    <span class="required-badge">Required</span>
-                                </label>
-                                <input type="text" id="firstName" required 
-                                       placeholder="John"
-                                       autocomplete="given-name">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="lastName">
-                                    Last Name
-                                    <span class="required-badge">Required</span>
-                                </label>
-                                <input type="text" id="lastName" required 
-                                       placeholder="Doe"
-                                       autocomplete="family-name">
-                            </div>
-                        </div>
-
-                        <!-- Email Field -->
-                        <div class="form-group">
-                            <label for="contactEmail">
-                                Email Address
-                                <span class="required-badge">Required</span>
-                            </label>
-                            <input type="email" id="contactEmail" required 
-                                   placeholder="john.doe@example.com"
-                                   autocomplete="email">
-                        </div>
-
-                        <!-- Phone Field -->
-                        <div class="form-group">
-                            <label for="contactPhone">
-                                Phone Number
-                                <span class="optional-badge">Optional</span>
-                            </label>
-                            <input type="tel" id="contactPhone" 
-                                   placeholder="+1 (555) 123-4567"
-                                   autocomplete="tel">
-                        </div>
-
-                        <!-- Subject Field -->
-                        <div class="form-group">
-                            <label for="contactSubject">
-                                Subject
-                                <span class="required-badge">Required</span>
-                            </label>
-                            <select id="contactSubject" required>
-                                <option value="">Select a subject</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="support">Technical Support</option>
-                                <option value="billing">Billing Question</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                                <option value="feedback">Feedback & Suggestions</option>
-                                <option value="medical">Medical Question</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <!-- Priority Field -->
-                        <div class="form-group">
-                            <label for="contactPriority">Priority Level</label>
-                            <div class="priority-options">
-                                <label class="priority-option">
-                                    <input type="radio" name="priority" value="low" checked>
-                                    <span class="priority-label low">🟢 Low</span>
-                                </label>
-                                <label class="priority-option">
-                                    <input type="radio" name="priority" value="medium">
-                                    <span class="priority-label medium">🟡 Medium</span>
-                                </label>
-                                <label class="priority-option">
-                                    <input type="radio" name="priority" value="high">
-                                    <span class="priority-label high">🔴 High</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Message Field -->
-                        <div class="form-group">
-                            <label for="contactMessage">
-                                Message
-                                <span class="required-badge">Required</span>
-                            </label>
-                            <textarea id="contactMessage" rows="6" required 
-                                      placeholder="Please describe your question or concern in detail..."></textarea>
-                        </div>
-
-                        <!-- Attachment -->
-                        <div class="form-group">
-                            <label for="attachment">Attach File (Optional)</label>
-                            <div class="file-attachment">
-                                <input type="file" id="attachment" accept="image/*,.pdf,.doc,.docx">
-                                <span class="file-hint">Max size: 10MB (Images, PDF, DOC)</span>
-                            </div>
-                        </div>
-
-                        <!-- Consent Checkbox -->
-                        <div class="form-group consent-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="consent" required>
-                                <span>I agree to the <a href="#" onclick="showPrivacyPolicy()">Privacy Policy</a> and consent to being contacted regarding my inquiry.</span>
-                            </label>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary" id="submitContactBtn">
-                            <span>📤</span> Send Message
-                        </button>
-                    </form>
-
-                    <!-- Live Chat Alternative -->
-                    <div class="chat-alternative">
-                        <div class="divider">OR</div>
-                        <button class="btn btn-secondary" onclick="startLiveChat()">
-                            <span>💬</span> Chat with Us Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Contact Information Sidebar -->
-                <div class="contact-info-sidebar">
-                    <!-- Office Locations -->
-                    <div class="card info-card">
-                        <h3>📍 Our Offices</h3>
-                        
-                        <div class="office-locations">
-                            <div class="office-item">
-                                <div class="office-icon">🏢</div>
-                                <div class="office-details">
-                                    <h4>Headquarters</h4>
-                                    <p>123 Health Street<br>Medical City, MC 12345<br>United States</p>
-                                    <button class="btn-map" onclick="openMap('headquarters')">View on Map</button>
-                                </div>
-                            </div>
-                            
-                            <div class="office-item">
-                                <div class="office-icon">🏥</div>
-                                <div class="office-details">
-                                    <h4>European Office</h4>
-                                    <p>45 Innovation Avenue<br>London, EC1A 1BB<br>United Kingdom</p>
-                                    <button class="btn-map" onclick="openMap('europe')">View on Map</button>
-                                </div>
-                            </div>
-                            
-                            <div class="office-item">
-                                <div class="office-icon">🏛️</div>
-                                <div class="office-details">
-                                    <h4>Asia Pacific</h4>
-                                    <p>88 Tech Park Boulevard<br>Singapore, 018906</p>
-                                    <button class="btn-map" onclick="openMap('asia')">View on Map</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Business Hours -->
-                    <div class="card info-card">
-                        <h3>⏰ Business Hours</h3>
-                        
-                        <div class="hours-list">
-                            <div class="hours-item">
-                                <span class="day">Monday - Friday</span>
-                                <span class="time">9:00 AM - 8:00 PM EST</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Saturday</span>
-                                <span class="time">10:00 AM - 4:00 PM EST</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Sunday</span>
-                                <span class="time">Closed</span>
-                            </div>
-                            <div class="hours-item holiday">
-                                <span class="day">Holidays</span>
-                                <span class="time">Limited Support</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Media -->
-                    <div class="card info-card">
-                        <h3>🌐 Connect With Us</h3>
-                        
-                        <div class="social-links">
-                            <a href="#" class="social-link large" onclick="showNotification('Opening Twitter')">
-                                <span class="social-icon">🐦</span>
-                                <span class="social-name">Twitter</span>
-                                <span class="social-handle">@MedicalAI</span>
-                            </a>
-                            
-                            <a href="#" class="social-link large" onclick="showNotification('Opening LinkedIn')">
-                                <span class="social-icon">💼</span>
-                                <span class="social-name">LinkedIn</span>
-                                <span class="social-handle">/company/medical-ai</span>
-                            </a>
-                            
-                            <a href="#" class="social-link large" onclick="showNotification('Opening GitHub')">
-                                <span class="social-icon">🐙</span>
-                                <span class="social-name">GitHub</span>
-                                <span class="social-handle">/medical-ai</span>
-                            </a>
-                            
-                            <a href="#" class="social-link large" onclick="showNotification('Opening Facebook')">
-                                <span class="social-icon">📘</span>
-                                <span class="social-name">Facebook</span>
-                                <span class="social-handle">/MedicalAI</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Emergency Contact -->
-                    <div class="card emergency-card">
-                        <div class="emergency-icon">🚨</div>
-                        <div class="emergency-content">
-                            <h3>Medical Emergency?</h3>
-                            <p>If you're experiencing a medical emergency, please call emergency services immediately.</p>
-                            <button class="btn-emergency" onclick="callEmergency()">
-                                <span>📞</span> Call 911
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ Preview -->
             <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">❓ Quick Answers</h2>
-                    <a href="#" onclick="showAllFAQ()">View All FAQs →</a>
-                </div>
-                
-                <div class="faq-preview">
-                    <div class="faq-item compact" onclick="toggleFAQ(this)">
-                        <div class="faq-question">
-                            <span>How accurate is the AI analysis?</span>
-                            <span class="faq-icon">▼</span>
-                        </div>
-                        <div class="faq-answer hidden">
-                            Our AI models achieve 85-96% accuracy depending on the analysis type, validated against medical professional diagnoses.
-                        </div>
+                <h2>Get in Touch</h2>
+                <p style="color: #7f8c8d; margin-bottom: 30px;">
+                    Have questions or feedback? We'd love to hear from you!
+                </p>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" required>
                     </div>
-                    
-                    <div class="faq-item compact" onclick="toggleFAQ(this)">
-                        <div class="faq-question">
-                            <span>Is my data secure?</span>
-                            <span class="faq-icon">▼</span>
-                        </div>
-                        <div class="faq-answer hidden">
-                            Yes. We are HIPAA and GDPR compliant. All data is encrypted end-to-end and never shared without consent.
-                        </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6" required></textarea>
                     </div>
-                    
-                    <div class="faq-item compact" onclick="toggleFAQ(this)">
-                        <div class="faq-question">
-                            <span>Can I delete my account?</span>
-                            <span class="faq-icon">▼</span>
-                        </div>
-                        <div class="faq-answer hidden">
-                            Yes. Contact our support team or go to Profile Settings → Delete Account. Data removal takes 30 days.
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item compact" onclick="toggleFAQ(this)">
-                        <div class="faq-question">
-                            <span>Do you offer refunds?</span>
-                            <span class="faq-icon">▼</span>
-                        </div>
-                        <div class="faq-answer hidden">
-                            Yes. We offer a 30-day money-back guarantee for all paid plans. Contact billing for assistance.
-                        </div>
-                    </div>
-                </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
 
-            <!-- Map Section -->
-            <div class="card map-card">
-                <div class="card-header">
-                    <h2 class="card-title">🗺️ Find Us</h2>
-                    <div class="map-controls">
-                        <button class="map-btn" onclick="changeMapLocation('headquarters')">🇺🇸 HQ</button>
-                        <button class="map-btn" onclick="changeMapLocation('europe')">🇬🇧 Europe</button>
-                        <button class="map-btn" onclick="changeMapLocation('asia')">🇸🇬 Asia</button>
-                    </div>
-                </div>
-                <div id="map" class="map-container">
-                    <!-- Map will be initialized here -->
+            <div class="card">
+                <h2>Contact Information</h2>
+                <div style="line-height: 2.5;">
+                    <p>📧 Email: support@medicalai.com</p>
+                    <p>📞 Phone: +1 (555) 123-4567</p>
+                    <p>📍 Address: 123 Health Street, Medical City, MC 12345</p>
                 </div>
             </div>
-
-            <!-- Newsletter Signup -->
-            <div class="card newsletter-card">
-                <div class="newsletter-content">
-                    <div class="newsletter-icon">📬</div>
-                    <div class="newsletter-text">
-                        <h3>Stay Updated</h3>
-                        <p>Get the latest news about AI medical advances and feature updates</p>
-                    </div>
-                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
         </main>
     </div>
 
     <script src="js/app.js"></script>
     <script>
-        // Check authentication
         checkAuth();
 
-        // Load user info
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        document.getElementById('userName').textContent = user.name || 'User';
-        document.getElementById('userAvatar').textContent = (user.name || 'U')[0].toUpperCase();
-
-        // Initialize map
-        let map;
-        let currentMarker;
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initMap();
-        });
-
-        function initMap() {
-            // Default to headquarters
-            const hqLocation = [40.7128, -74.0060]; // NYC coordinates
-            
-            map = L.map('map').setView(hqLocation, 13);
-            
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            
-            // Add marker for headquarters
-            currentMarker = L.marker(hqLocation).addTo(map)
-                .bindPopup('Medical AI Headquarters<br>123 Health Street, NYC')
-                .openPopup();
-        }
-
-        function changeMapLocation(location) {
-            const locations = {
-                'headquarters': { coords: [40.7128, -74.0060], name: 'Headquarters', address: '123 Health Street, NYC' },
-                'europe': { coords: [51.5074, -0.1278], name: 'European Office', address: '45 Innovation Avenue, London' },
-                'asia': { coords: [1.3521, 103.8198], name: 'Asia Pacific', address: '88 Tech Park Boulevard, Singapore' }
-            };
-            
-            const loc = locations[location];
-            if (!loc) return;
-            
-            map.setView(loc.coords, 13);
-            
-            if (currentMarker) {
-                map.removeLayer(currentMarker);
-            }
-            
-            currentMarker = L.marker(loc.coords).addTo(map)
-                .bindPopup(`${loc.name}<br>${loc.address}`)
-                .openPopup();
-        }
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Show loading state
-            const submitBtn = document.getElementById('submitContactBtn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="spinner" style="width:20px;height:20px;"></span> Sending...';
-            submitBtn.disabled = true;
-
-            // Collect form data
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('contactEmail').value,
-                phone: document.getElementById('contactPhone').value,
-                subject: document.getElementById('contactSubject').value,
-                priority: document.querySelector('input[name="priority"]:checked').value,
-                message: document.getElementById('contactMessage').value,
-                timestamp: new Date().toISOString()
-            };
-
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Message sent successfully! We\'ll respond within 24 hours.', 'success');
-                
-                // Reset form
-                e.target.reset();
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            showNotification('Message sent successfully! We will get back to you soon.', 'success');
+            e.target.reset();
         });
-
-        // Utility functions
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                showNotification('Copied to clipboard!', 'success');
-            });
-        }
-
-        function startLiveChat() {
-            showNotification('Live chat feature coming soon! Please email us.', 'info');
-        }
-
-        function openKnowledgeBase() {
-            window.open('https://help.medicalai.com', '_blank');
-        }
-
-        function openMap(location) {
-            changeMapLocation(location);
-            document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function showPrivacyPolicy() {
-            showNotification('Privacy policy would open here', 'info');
-        }
-
-        function callEmergency() {
-            if (confirm('Are you sure you want to call emergency services?')) {
-                window.location.href = 'tel:911';
-            }
-        }
-
-        function toggleFAQ(element) {
-            const answer = element.querySelector('.faq-answer');
-            const icon = element.querySelector('.faq-icon');
-            
-            answer.classList.toggle('hidden');
-            icon.textContent = answer.classList.contains('hidden') ? '▼' : '▲';
-        }
-
-        function showAllFAQ() {
-            showNotification('Opening FAQ page...', 'info');
-        }
-
-        function subscribeNewsletter(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-            showNotification(`Thanks! ${email} has been subscribed to our newsletter.`, 'success');
-            event.target.reset();
-        }
 
         function logout() {
             localStorage.clear();

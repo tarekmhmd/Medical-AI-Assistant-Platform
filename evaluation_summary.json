@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-03-01T17:48:46.218407",
+  "device": "cuda",
+  "results": {
+    "skin": {
+      "segmentation_metrics": {
+        "iou": 0.843649263381958,
+        "dice": 0.9139242720603943
+      },
+      "classification_metrics": {
+        "accuracy": 0.0
+      },
+      "test_samples": 100,
+      "status": "\u2705 Evaluated"
+    },
+    "sound": {
+      "segmentation_metrics": {
+        "attention_quality": 1.0
+      },
+      "classification_metrics": {
+        "accuracy": 1.0,
+        "top3_accuracy": 1.0
+      },
+      "test_samples": 200,
+      "status": "\u2705 Evaluated"
+    },
+    "lab": {
+      "segmentation_metrics": {
+        "importance_quality": 0.7374999970197678
+      },
+      "classification_metrics": {
+        "accuracy": 0.7374999970197678,
+        "roc_auc": 0.8347016359244621
+      },
+      "test_samples": 116,
+      "status": "\u2705 Evaluated"
+    },
+    "chatbot": {
+      "segmentation_metrics": {
+        "attention_quality": 1.0
+      },
+      "classification_metrics": {
+        "accuracy": 1.0,
+        "top3_accuracy": 1.0
+      },
+      "test_samples": 500,
+      "num_classes": 1,
+      "status": "\u2705 Evaluated"
+    }
+  }
+}

@@ -4,101 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Medical AI Assistant</title>
-    <meta name="description" content="Your personal health analytics dashboard">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Chart.js for health overview -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar (will be enhanced by JS) -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <!-- Sidebar -->
+        <aside class="sidebar">
             <div class="sidebar-header">
-                <h2>🏥 Medical AI</h2>
+                <h2><i class="fas fa-heartbeat"></i> Medical AI</h2>
             </div>
             <nav>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="dashboard.html" class="nav-link active" aria-current="page"><span>📊</span> Dashboard</a></li>
-                    <li class="nav-item"><a href="profile.html" class="nav-link"><span>👤</span> Profile</a></li>
-                    <li class="nav-item"><a href="skin-analysis.html" class="nav-link"><span>🔬</span> Skin Analysis</a></li>
-                    <li class="nav-item"><a href="lab-analysis.html" class="nav-link"><span>🧪</span> Lab Results</a></li>
-                    <li class="nav-item"><a href="chatbot.html" class="nav-link"><span>💬</span> AI Chatbot</a></li>
-                    <li class="nav-item"><a href="sound-analysis.html" class="nav-link"><span>🎤</span> Sound Analysis</a></li>
-                    <li class="nav-item"><a href="health-records.html" class="nav-link"><span>📋</span> Health Records</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link"><span>ℹ️</span> About Us</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"><span>📧</span> Contact</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" onclick="logout()"><span>🚪</span> Logout</a></li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <i class="fas fa-chart-line"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-link">
+                            <i class="fas fa-user-circle"></i> Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="skin-analysis.html" class="nav-link">
+                            <i class="fas fa-microscope"></i> Skin Analysis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lab-analysis.html" class="nav-link">
+                            <i class="fas fa-flask"></i> Lab Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="chatbot.html" class="nav-link">
+                            <i class="fas fa-robot"></i> AI Chatbot
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sound-analysis.html" class="nav-link">
+                            <i class="fas fa-microphone-alt"></i> Sound Analysis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-records.html" class="nav-link">
+                            <i class="fas fa-file-medical"></i> Health Records
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content" role="main">
-            <!-- Header with User Info -->
-            <header class="header">
+        <main class="main-content">
+            <div class="header">
                 <h1>Dashboard</h1>
                 <div class="user-info">
-                    <div class="user-avatar" id="userAvatar" aria-hidden="true">U</div>
+                    <div class="user-avatar" id="userAvatar">U</div>
                     <span id="userName">User</span>
                 </div>
-            </header>
+            </div>
 
             <!-- Stats Grid -->
-            <section aria-labelledby="stats-heading">
-                <h2 id="stats-heading" class="visually-hidden">Health Statistics</h2>
-                <div class="stats-grid">
-                    <div class="stat-card" role="article">
-                        <h3 id="totalAnalyses">0</h3>
-                        <p>Total Analyses</p>
-                    </div>
-                    <div class="stat-card" role="article" style="background: linear-gradient(135deg, #50C878, #3da35d);">
-                        <h3 id="skinAnalyses">0</h3>
-                        <p>Skin Analyses</p>
-                    </div>
-                    <div class="stat-card" role="article" style="background: linear-gradient(135deg, #F39C12, #d68910);">
-                        <h3 id="labAnalyses">0</h3>
-                        <p>Lab Analyses</p>
-                    </div>
-                    <div class="stat-card" role="article" style="background: linear-gradient(135deg, #E74C3C, #c0392b);">
-                        <h3 id="soundAnalyses">0</h3>
-                        <p>Sound Analyses</p>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-chart-bar" style="font-size: 2.5rem; opacity: 0.3; position: absolute; right: 20px; top: 20px;"></i>
+                    <h3 id="totalAnalyses">0</h3>
+                    <p><i class="fas fa-clipboard-check"></i> Total Analyses</p>
                 </div>
-            </section>
+                <div class="stat-card">
+                    <i class="fas fa-microscope" style="font-size: 2.5rem; opacity: 0.3; position: absolute; right: 20px; top: 20px;"></i>
+                    <h3 id="skinAnalyses">0</h3>
+                    <p><i class="fas fa-hand-sparkles"></i> Skin Analyses</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-flask" style="font-size: 2.5rem; opacity: 0.3; position: absolute; right: 20px; top: 20px;"></i>
+                    <h3 id="labAnalyses">0</h3>
+                    <p><i class="fas fa-vial"></i> Lab Analyses</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-microphone-alt" style="font-size: 2.5rem; opacity: 0.3; position: absolute; right: 20px; top: 20px;"></i>
+                    <h3 id="soundAnalyses">0</h3>
+                    <p><i class="fas fa-volume-up"></i> Sound Analyses</p>
+                </div>
+            </div>
 
             <!-- Quick Actions -->
-            <section class="card" aria-labelledby="quick-actions-heading">
-                <header class="card-header">
-                    <h2 id="quick-actions-heading" class="card-title">Quick Actions</h2>
-                </header>
-                <div class="stats-grid" role="group" aria-label="Available health analyses">
-                    <a href="skin-analysis.html" class="btn btn-primary" role="button">🔬 Analyze Skin</a>
-                    <a href="lab-analysis.html" class="btn btn-primary" role="button">🧪 Analyze Lab Results</a>
-                    <a href="chatbot.html" class="btn btn-primary" role="button">💬 Chat with AI</a>
-                    <a href="sound-analysis.html" class="btn btn-primary" role="button">🎤 Analyze Sound</a>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-bolt"></i> Quick Actions</h2>
                 </div>
-            </section>
+                <div class="stats-grid">
+                    <a href="skin-analysis.html" class="btn btn-primary"><i class="fas fa-microscope"></i> Analyze Skin</a>
+                    <a href="lab-analysis.html" class="btn btn-primary"><i class="fas fa-flask"></i> Analyze Lab Results</a>
+                    <a href="chatbot.html" class="btn btn-primary"><i class="fas fa-robot"></i> Chat with AI</a>
+                    <a href="sound-analysis.html" class="btn btn-primary"><i class="fas fa-microphone-alt"></i> Analyze Sound</a>
+                </div>
+            </div>
 
             <!-- Recent Records -->
-            <section class="card" aria-labelledby="recent-records-heading">
-                <header class="card-header">
-                    <h2 id="recent-records-heading" class="card-title">Recent Health Records</h2>
-                    <a href="health-records.html" aria-label="View all health records">View All →</a>
-                </header>
-                <div id="recentRecords" role="feed" aria-busy="true">
-                    <p style="text-align: center; color: var(--gray-600);">Loading your recent records...</p>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-history"></i> Recent Health Records</h2>
+                    <a href="health-records.html" style="color: var(--primary-color);"><i class="fas fa-arrow-right"></i> View All</a>
                 </div>
-            </section>
+                <div id="recentRecords">
+                    <p style="text-align: center; color: #7f8c8d;"><i class="fas fa-spinner fa-spin"></i> Loading...</p>
+                </div>
+            </div>
 
             <!-- Health Chart -->
-            <section class="card" aria-labelledby="chart-heading">
-                <header class="card-header">
-                    <h2 id="chart-heading" class="card-title">Health Overview</h2>
-                </header>
-                <canvas id="healthChart" width="400" height="200" role="img" aria-label="Health analysis chart"></canvas>
-            </section>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-chart-area"></i> Health Overview</h2>
+                </div>
+                <canvas id="healthChart" width="400" height="200"></canvas>
+            </div>
         </main>
     </div>
 
@@ -128,107 +164,40 @@
                 if (response.ok) {
                     const data = await response.json();
                     
-                    // Update stats with animation
-                    animateNumber('totalAnalyses', data.total_analyses);
-                    animateNumber('skinAnalyses', data.skin_analyses);
-                    animateNumber('labAnalyses', data.lab_analyses);
-                    animateNumber('soundAnalyses', data.sound_analyses);
+                    // Update stats
+                    document.getElementById('totalAnalyses').textContent = data.total_analyses;
+                    document.getElementById('skinAnalyses').textContent = data.skin_analyses;
+                    document.getElementById('labAnalyses').textContent = data.lab_analyses;
+                    document.getElementById('soundAnalyses').textContent = data.sound_analyses;
 
                     // Display recent records
                     displayRecentRecords(data.recent_records);
-                    
-                    // Initialize chart
-                    initHealthChart(data.chart_data);
                 }
             } catch (error) {
                 console.error('Error loading dashboard data:', error);
-                document.getElementById('recentRecords').innerHTML = `
-                    <div class="message error" role="alert">
-                        Failed to load records. Please refresh the page.
-                    </div>
-                `;
             }
-        }
-
-        // Animate numbers counting up
-        function animateNumber(elementId, finalNumber) {
-            const element = document.getElementById(elementId);
-            const startNumber = parseInt(element.textContent) || 0;
-            const duration = 1000;
-            const steps = 60;
-            const increment = (finalNumber - startNumber) / steps;
-            let currentStep = 0;
-
-            const interval = setInterval(() => {
-                currentStep++;
-                const currentNumber = Math.round(startNumber + (increment * currentStep));
-                element.textContent = currentNumber;
-
-                if (currentStep >= steps) {
-                    element.textContent = finalNumber;
-                    clearInterval(interval);
-                }
-            }, duration / steps);
         }
 
         function displayRecentRecords(records) {
             const container = document.getElementById('recentRecords');
             
             if (!records || records.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: var(--gray-600);">No records yet. Start by analyzing your health!</p>';
+                container.innerHTML = '<p style="text-align: center; color: #7f8c8d;">No records yet. Start by analyzing your health!</p>';
                 return;
             }
 
             container.innerHTML = records.map(record => `
-                <div class="result-item" role="article">
+                <div class="result-item">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <div class="result-label">${record.record_type.toUpperCase()} Analysis</div>
                             <div class="result-value">${record.diagnosis}</div>
-                            <small style="color: var(--gray-500);">${formatDate(record.created_at)}</small>
+                            <small style="color: #95a5a6;">${new Date(record.created_at).toLocaleDateString()}</small>
                         </div>
-                        <span class="severity-badge severity-${record.severity}" role="status">${record.severity}</span>
+                        <span class="severity-badge severity-${record.severity}">${record.severity}</span>
                     </div>
                 </div>
             `).join('');
-        }
-
-        function initHealthChart(chartData) {
-            const ctx = document.getElementById('healthChart').getContext('2d');
-            
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: chartData?.labels || ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    datasets: [{
-                        label: 'Health Score',
-                        data: chartData?.values || [65, 70, 68, 72, 75, 73, 78],
-                        borderColor: '#2A5C9A',
-                        backgroundColor: 'rgba(42, 92, 154, 0.1)',
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100
-                        }
-                    },
-                    animation: {
-                        duration: 1000,
-                        easing: 'easeInOutQuart'
-                    }
-                }
-            });
         }
 
         function logout() {

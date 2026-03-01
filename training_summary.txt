@@ -1,0 +1,197 @@
+================================================================================
+MEDICAL ASSISTANT PLATFORM - MODEL TRAINING SUMMARY
+================================================================================
+Generated: 2026-03-01 17:48:11
+Device Used: cuda
+
+================================================================================
+1. SKIN LESION SEGMENTATION MODEL
+================================================================================
+
+Model Type: Full U-Net
+Model Path: D:\project 2\checkpoints\skin_model_full.pth
+File Size: 91086.15 KB
+Total Parameters: 7,763,041
+
+Architecture Details:
+----------------------------------------
+  encoder1.0.weight: 864
+  encoder1.1.weight: 32
+  encoder1.1.bias: 32
+  encoder1.3.weight: 9,216
+  encoder1.4.weight: 32
+  encoder1.4.bias: 32
+  encoder2.0.weight: 18,432
+  encoder2.1.weight: 64
+  encoder2.1.bias: 64
+  encoder2.3.weight: 36,864
+  encoder2.4.weight: 64
+  encoder2.4.bias: 64
+  encoder3.0.weight: 73,728
+  encoder3.1.weight: 128
+  encoder3.1.bias: 128
+  encoder3.3.weight: 147,456
+  encoder3.4.weight: 128
+  encoder3.4.bias: 128
+  encoder4.0.weight: 294,912
+  encoder4.1.weight: 256
+  encoder4.1.bias: 256
+  encoder4.3.weight: 589,824
+  encoder4.4.weight: 256
+  encoder4.4.bias: 256
+  bottleneck.0.weight: 1,179,648
+  bottleneck.1.weight: 512
+  bottleneck.1.bias: 512
+  bottleneck.3.weight: 2,359,296
+  bottleneck.4.weight: 512
+  bottleneck.4.bias: 512
+  upconv4.weight: 524,288
+  upconv4.bias: 256
+  decoder4.0.weight: 1,179,648
+  decoder4.1.weight: 256
+  decoder4.1.bias: 256
+  decoder4.3.weight: 589,824
+  decoder4.4.weight: 256
+  decoder4.4.bias: 256
+  upconv3.weight: 131,072
+  upconv3.bias: 128
+  decoder3.0.weight: 294,912
+  decoder3.1.weight: 128
+  decoder3.1.bias: 128
+  decoder3.3.weight: 147,456
+  decoder3.4.weight: 128
+  decoder3.4.bias: 128
+  upconv2.weight: 32,768
+  upconv2.bias: 64
+  decoder2.0.weight: 73,728
+  decoder2.1.weight: 64
+  decoder2.1.bias: 64
+  decoder2.3.weight: 36,864
+  decoder2.4.weight: 64
+  decoder2.4.bias: 64
+  upconv1.weight: 8,192
+  upconv1.bias: 32
+  decoder1.0.weight: 18,432
+  decoder1.1.weight: 32
+  decoder1.1.bias: 32
+  decoder1.3.weight: 9,216
+  decoder1.4.weight: 32
+  decoder1.4.bias: 32
+  conv_final.weight: 32
+  conv_final.bias: 1
+
+Dataset Information:
+----------------------------------------
+  Test Samples: 379
+  Input Shape: [batch, 3, 256, 256]
+  Output Shape: [batch, 1, 256, 256]
+
+Test Metrics:
+----------------------------------------
+  Loss: 0.2865
+  IoU:  0.6486
+  Dice: 0.7452
+
+================================================================================
+2. RESPIRATORY SOUND CLASSIFICATION MODEL
+================================================================================
+
+Model Type: RespiratorySoundCNN
+Model Path: D:\project 2\checkpoints\sound_model.pth
+File Size: 29.24 MB
+Total Parameters: 2,552,386
+
+Architecture Details:
+----------------------------------------
+  Conv Layers: 4 (with BatchNorm)
+  FC Layers: 3 (512 -> 128 -> 2)
+  Input: Mel-Spectrogram [batch, 1, 64, 128]
+  Output: [batch, 2] (Healthy/Unhealthy)
+
+Dataset Information:
+----------------------------------------
+  Test Samples: 92
+
+Test Metrics:
+----------------------------------------
+  Loss: 0.0000
+  Accuracy: 100.00%
+
+================================================================================
+3. LAB DATA CLASSIFICATION MODEL
+================================================================================
+
+Model Type: LabMLP
+Model Path: D:\project 2\checkpoints\lab_model.pth
+File Size: 161.09 KB
+Total Parameters: 12,002
+
+Architecture Details:
+----------------------------------------
+  Hidden Layers: 3 (128 -> 64 -> 32)
+  Input: [batch, 8] (Lab features)
+  Output: [batch, 2] (Diabetes classification)
+
+Dataset Information:
+----------------------------------------
+  Test Samples: 117
+  Features: Pregnancies, Glucose, BP, SkinThickness, Insulin, BMI, DPF, Age
+
+Test Metrics:
+----------------------------------------
+  Loss: 0.4279
+  Accuracy: 76.92%
+
+================================================================================
+4. MEDICAL CHATBOT MODEL
+================================================================================
+
+Model Type: MedicalChatbot (LSTM + Attention)
+Model Path: D:\project 2\checkpoints\chatbot_model.pth
+File Size: 8274.22 KB
+Total Parameters: 703,371
+
+Architecture Details:
+----------------------------------------
+  Embedding: 72 vocab -> 128 dim
+  LSTM: 2 layers, bidirectional, 256 hidden
+  Attention: Self-attention mechanism
+  FC: 256 -> 128 -> 10 classes
+
+Dataset Information:
+----------------------------------------
+  Test Samples: 10
+  Vocabulary Size: 72
+
+Disease Classes:
+----------------------------------------
+  0: Common Cold
+  1: Influenza (Flu)
+  2: Pneumonia
+  3: Asthma
+  4: Bronchitis
+  5: Gastroenteritis
+  6: Migraine
+  7: Hypertension
+  8: Type 2 Diabetes
+  9: Urinary Tract Infection
+
+Test Metrics:
+----------------------------------------
+  Loss: 1.9638
+  Accuracy: 100.00%
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+
+Model           Type                           Parameters    Test Acc/IoU
+----------------------------------------------------------------------
+Skin            Full U-Net                      7,763,041          0.6486
+Sound           RespiratorySoundCNN             2,552,386         100.00%
+Lab             LabMLP                             12,002          76.92%
+Chatbot         LSTM+Attention                    703,371         100.00%
+
+================================================================================
+END OF REPORT
+================================================================================

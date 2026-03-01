@@ -26,33 +26,34 @@ class LabAnalyzer:
         self.load_model()
     
     def _setup_tesseract_path(self):
-        """Setup Tesseract path - check project folder first"""
-        # Check if Tesseract is in project folder
+        """Setup Tesseract path - check multiple locations"""
+        # Check project root first (tesseract.exe in project folder)
+        project_root_tesseract = os.path.join(os.getcwd(), 'tesseract.exe')
+        
+        # Check project tesseract folder
         project_tesseract = os.path.join(os.getcwd(), 'tesseract', 'tesseract.exe')
         
-        if os.path.exists(project_tesseract):
-            pytesseract.pytesseract.tesseract_cmd = project_tesseract
-            print(f"✓ Using Tesseract from project folder: {project_tesseract}")
-        else:
-            # Check common installation paths
-            common_paths = [
-                r'C:\Program Files\Tesseract-OCR\tesseract.exe',
-                r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe',
-                r'C:\Tesseract-OCR\tesseract.exe'
-            ]
-            
-            tesseract_found = False
-            for path in common_paths:
-                if os.path.exists(path):
-                    pytesseract.pytesseract.tesseract_cmd = path
-                    print(f"✓ Using Tesseract from: {path}")
-                    tesseract_found = True
-                    break
-            
-            if not tesseract_found:
-                print("⚠️ Tesseract not found!")
-                print("   Run: download_tesseract_portable.bat")
-                print("   Or install system-wide from: https://github.com/UB-Mannheim/tesseract/wiki")
+        # Common installation paths
+        common_paths = [
+            project_root_tesseract,
+            project_tesseract,
+            r'C:\Program Files\Tesseract-OCR\tesseract.exe',
+            r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe',
+            r'C:\Tesseract-OCR\tesseract.exe'
+        ]
+        
+        tesseract_found = False
+        for path in common_paths:
+            if os.path.exists(path):
+                pytesseract.pytesseract.tesseract_cmd = path
+                print(f"✓ Using Tesseract from: {path}")
+                tesseract_found = True
+                break
+        
+        if not tesseract_found:
+            print("⚠️ Tesseract not found!")
+            print("   Run: download_tesseract_portable.bat")
+            print("   Or install system-wide from: https://github.com/UB-Mannheim/tesseract/wiki")
     
     def _load_lab_database(self):
         """Load lab test database from JSON file"""

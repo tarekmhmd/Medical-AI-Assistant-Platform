@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot - Medical AI Assistant</title>
-    <meta name="description" content="Chat with our AI medical assistant for symptom analysis and health advice">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Marked.js for Markdown parsing (optional but recommended for better formatting) -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.0.0/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>🏥 Medical AI</h2>
             </div>
@@ -24,7 +19,7 @@
                     <li class="nav-item"><a href="profile.html" class="nav-link"><span>👤</span> Profile</a></li>
                     <li class="nav-item"><a href="skin-analysis.html" class="nav-link"><span>🔬</span> Skin Analysis</a></li>
                     <li class="nav-item"><a href="lab-analysis.html" class="nav-link"><span>🧪</span> Lab Results</a></li>
-                    <li class="nav-item"><a href="chatbot.html" class="nav-link active" aria-current="page"><span>💬</span> AI Chatbot</a></li>
+                    <li class="nav-item"><a href="chatbot.html" class="nav-link active"><span>💬</span> AI Chatbot</a></li>
                     <li class="nav-item"><a href="sound-analysis.html" class="nav-link"><span>🎤</span> Sound Analysis</a></li>
                     <li class="nav-item"><a href="health-records.html" class="nav-link"><span>📋</span> Health Records</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link"><span>ℹ️</span> About Us</a></li>
@@ -34,89 +29,35 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
-        <main class="main-content" role="main">
-            <header class="header">
-                <h1>💬 AI Medical Chatbot</h1>
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span id="userName">User</span>
-                </div>
-            </header>
+        <main class="main-content">
+            <div class="header">
+                <h1>💬 Medical AI Chatbot</h1>
+            </div>
 
-            <!-- Chat Container -->
-            <div class="card" style="padding: 0; overflow: hidden;">
-                <div class="chat-container" role="region" aria-label="Chat conversation">
-                    
-                    <!-- Chat Messages Area -->
-                    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions">
-                        <!-- Welcome Message -->
-                        <div class="message-bubble message-bot" role="article">
-                            <p>Hello! I'm your medical AI assistant. I can help you with:</p>
-                            <ul style="margin-top: var(--space-xs); margin-bottom: var(--space-xs); padding-left: var(--space-lg);">
-                                <li>Symptom analysis and preliminary diagnosis</li>
-                                <li>Medication information and side effects</li>
-                                <li>General health questions and concerns</li>
-                                <li>When to seek professional medical care</li>
-                            </ul>
-                            <p style="margin-top: var(--space-xs);"><strong>⚠️ Important:</strong> I'm not a replacement for professional medical care. Always consult a doctor for serious concerns.</p>
+            <div class="card">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message-bubble message-bot">
+                            Hello! I'm your medical AI assistant. Describe your symptoms, and I'll provide medical advice. Remember, I'm not a replacement for professional medical care.
                         </div>
                     </div>
 
-                    <!-- Chat Input Area -->
-                    <div class="chat-input-area" role="form" aria-label="Message input">
-                        <input type="text" class="chat-input" id="chatInput" 
-                               placeholder="Type your symptoms or question..." 
-                               aria-label="Type your message"
-                               onkeypress="handleKeyPress(event)">
-                        <button class="btn-send" onclick="sendMessage()" aria-label="Send message">
-                            <span>Send</span>
-                            <span style="font-size: 1.2rem;">📤</span>
-                        </button>
+                    <div class="chat-input-area">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Describe your symptoms..." onkeypress="handleKeyPress(event)">
+                        <button class="btn-send" onclick="sendMessage()">Send</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Example Questions -->
-            <section class="card" aria-labelledby="examples-heading">
-                <header class="card-header">
-                    <h2 id="examples-heading" class="card-title">💡 Example Questions</h2>
-                </header>
-                <div class="example-questions" role="group" aria-label="Example questions to ask">
-                    <button class="btn btn-secondary" onclick="askQuestion('I have a fever (38.5°C) and severe headache for 2 days')">
-                        🤒 Fever & Headache
-                    </button>
-                    <button class="btn btn-secondary" onclick="askQuestion('I experience chest pain when breathing deeply')">
-                        ❤️ Chest Pain
-                    </button>
-                    <button class="btn btn-secondary" onclick="askQuestion('Persistent cough with green mucus for a week')">
-                        🌬️ Persistent Cough
-                    </button>
-                    <button class="btn btn-secondary" onclick="askQuestion('Sudden dizziness and nausea after eating')">
-                        🌀 Dizziness & Nausea
-                    </button>
-                    <button class="btn btn-secondary" onclick="askQuestion('Skin rash with itching and redness')">
-                        🔴 Skin Rash
-                    </button>
-                    <button class="btn btn-secondary" onclick="askQuestion('I think I have diabetes symptoms')">
-                        💉 Diabetes Symptoms
-                    </button>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">💡 Example Questions</h2>
                 </div>
-            </section>
-
-            <!-- Medical Disclaimer -->
-            <div class="card" style="background: rgba(231, 76, 60, 0.1); border-color: var(--danger);">
-                <div style="display: flex; align-items: center; gap: var(--space-sm);">
-                    <span style="font-size: 2rem;">⚠️</span>
-                    <div>
-                        <strong style="color: var(--danger);">Medical Disclaimer:</strong>
-                        <p style="color: var(--gray-700); margin-top: var(--space-xs);">
-                            This AI assistant provides information for educational purposes only. 
-                            It is not a substitute for professional medical advice, diagnosis, or treatment. 
-                            Always seek the advice of your physician or other qualified health provider with any 
-                            questions you may have regarding a medical condition.
-                        </p>
-                    </div>
+                <div style="display: grid; gap: 10px;">
+                    <button class="btn btn-primary" onclick="askQuestion('I have a fever and headache')">I have a fever and headache</button>
+                    <button class="btn btn-primary" onclick="askQuestion('I have chest pain')">I have chest pain</button>
+                    <button class="btn btn-primary" onclick="askQuestion('I have a persistent cough')">I have a persistent cough</button>
+                    <button class="btn btn-primary" onclick="askQuestion('I feel dizzy and nauseous')">I feel dizzy and nauseous</button>
                 </div>
             </div>
         </main>
@@ -124,212 +65,79 @@
 
     <script src="js/app.js"></script>
     <script>
-        // Check authentication
         checkAuth();
 
-        // Load user info
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        document.getElementById('userName').textContent = user.name || 'User';
-        document.getElementById('userAvatar').textContent = (user.name || 'U')[0].toUpperCase();
-
-        // Configure marked.js for markdown parsing (if available)
-        if (typeof marked !== 'undefined') {
-            marked.setOptions({
-                breaks: true,
-                gfm: true,
-                headerIds: false,
-                mangle: false
-            });
-        }
-
-        // Handle Enter key press
         function handleKeyPress(event) {
-            if (event.key === 'Enter' && !event.shiftKey) {
-                event.preventDefault();
+            if (event.key === 'Enter') {
                 sendMessage();
             }
         }
 
-        // Ask example question
         function askQuestion(question) {
             document.getElementById('chatInput').value = question;
             sendMessage();
         }
 
-        // Send message function
         async function sendMessage() {
             const input = document.getElementById('chatInput');
             const message = input.value.trim();
             
-            if (!message) {
-                showNotification('Please enter a message', 'info');
-                return;
-            }
+            if (!message) return;
             
-            // Add user message to chat (using our enhanced function from app.js)
-            addChatMessage(message, 'user');
+            // Add user message to chat
+            addMessage(message, 'user');
             input.value = '';
             
             // Show typing indicator
-            const typingIndicator = showTypingIndicator();
+            const typingId = addTypingIndicator();
             
             try {
-                // Call API (preserved exactly)
                 const response = await apiCall('/chatbot', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message })
                 });
                 
-                // Remove typing indicator
-                hideTypingIndicator();
-                
-                // Format and add bot response
-                if (response.response) {
-                    // Format the response nicely
-                    const formattedResponse = formatBotResponse(response.response);
-                    addChatMessage(formattedResponse, 'bot');
-                } else {
-                    addChatMessage('I apologize, but I encountered an error processing your request. Please try again.', 'bot');
-                }
-                
-                // Show success notification (optional)
-                // showNotification('Response received', 'success');
-                
+                removeTypingIndicator(typingId);
+                addMessage(response.response, 'bot');
             } catch (error) {
-                // Remove typing indicator
-                hideTypingIndicator();
-                
-                // Show error message
-                addChatMessage('Sorry, I encountered an error. Please check your connection and try again.', 'bot');
-                showNotification('Failed to get response from server', 'error');
+                removeTypingIndicator(typingId);
+                addMessage('Sorry, I encountered an error. Please try again.', 'bot');
+                showNotification('Failed to get response', 'error');
             }
         }
 
-        /**
-         * Format bot response to be well-organized
-         * This solves the "كلام مش منظم" problem
-         */
-        function formatBotResponse(text) {
-            if (!text) return '';
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message-bubble message-${sender}`;
+            messageDiv.textContent = text;
+            messageDiv.style.whiteSpace = 'pre-wrap';
             
-            // If marked is available, use it for markdown parsing
-            if (typeof marked !== 'undefined') {
-                return marked.parse(text);
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const messagesContainer = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message-bubble message-bot';
+            typingDiv.id = 'typing-' + Date.now();
+            typingDiv.textContent = 'Typing...';
+            
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            return typingDiv.id;
+        }
+
+        function removeTypingIndicator(id) {
+            const typingDiv = document.getElementById(id);
+            if (typingDiv) {
+                typingDiv.remove();
             }
-            
-            // Manual formatting if marked is not available
-            let formatted = text;
-            
-            // Format lists (lines starting with - or *)
-            formatted = formatted.replace(/^[-*]\s+(.+)$/gm, '• $1');
-            
-            // Format numbered lists
-            formatted = formatted.replace(/^(\d+)\.\s+(.+)$/gm, '<li>$2</li>');
-            
-            // Wrap numbered lists in <ol>
-            if (formatted.includes('<li>')) {
-                formatted = formatted.replace(/(<li>.*<\/li>\n?)+/g, (match) => {
-                    return `<ol style="margin: var(--space-xs) 0 var(--space-xs) var(--space-lg);">${match}</ol>`;
-                });
-            }
-            
-            // Format paragraphs
-            formatted = formatted.split('\n\n').map(para => {
-                if (para.trim() && !para.includes('<ol>') && !para.includes('•')) {
-                    return `<p>${para.trim()}</p>`;
-                }
-                return para;
-            }).join('');
-            
-            // Format bold text
-            formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-            
-            // Format italic text
-            formatted = formatted.replace(/\*(.+?)\*/g, '<em>$1</em>');
-            
-            return formatted;
         }
 
-        /**
-         * Enhanced addChatMessage function (if app.js version is not loaded)
-         * This ensures messages are organized properly
-         */
-        if (typeof window.addChatMessage !== 'function') {
-            window.addChatMessage = function(text, sender) {
-                const messagesContainer = document.getElementById('chatMessages');
-                if (!messagesContainer) return null;
-                
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `message-bubble message-${sender}`;
-                messageDiv.setAttribute('role', 'article');
-                
-                // Check if text contains HTML (for formatted responses)
-                if (text.includes('<p>') || text.includes('<ul>') || text.includes('<ol>')) {
-                    messageDiv.innerHTML = text;
-                } else {
-                    // Simple text with paragraphs
-                    messageDiv.innerHTML = text.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('');
-                }
-                
-                messagesContainer.appendChild(messageDiv);
-                
-                // Scroll to bottom smoothly
-                messagesContainer.scrollTo({
-                    top: messagesContainer.scrollHeight,
-                    behavior: 'smooth'
-                });
-                
-                return messageDiv;
-            };
-        }
-
-        /**
-         * Enhanced showTypingIndicator function
-         */
-        if (typeof window.showTypingIndicator !== 'function') {
-            window.showTypingIndicator = function() {
-                const messagesContainer = document.getElementById('chatMessages');
-                if (!messagesContainer) return null;
-                
-                // Remove existing indicator
-                const existing = document.getElementById('typing-indicator');
-                if (existing) existing.remove();
-                
-                const indicator = document.createElement('div');
-                indicator.className = 'typing-indicator';
-                indicator.id = 'typing-indicator';
-                indicator.setAttribute('aria-label', 'AI is typing');
-                
-                for (let i = 0; i < 3; i++) {
-                    const dot = document.createElement('span');
-                    indicator.appendChild(dot);
-                }
-                
-                messagesContainer.appendChild(indicator);
-                messagesContainer.scrollTo({
-                    top: messagesContainer.scrollHeight,
-                    behavior: 'smooth'
-                });
-                
-                return indicator;
-            };
-        }
-
-        /**
-         * Enhanced hideTypingIndicator function
-         */
-        if (typeof window.hideTypingIndicator !== 'function') {
-            window.hideTypingIndicator = function() {
-                const indicator = document.getElementById('typing-indicator');
-                if (indicator) {
-                    indicator.style.animation = 'fadeOut 0.3s ease-out';
-                    setTimeout(() => indicator.remove(), 300);
-                }
-            };
-        }
-
-        // Logout function
         function logout() {
             localStorage.clear();
             window.location.href = 'index.html';

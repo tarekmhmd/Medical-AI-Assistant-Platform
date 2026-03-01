@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile - Medical AI Assistant</title>
-    <meta name="description" content="Manage your medical profile and personal information">
+    <title>Profile - Medical AI Assistant</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>🏥 Medical AI</h2>
             </div>
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a></li>
-                    <li class="nav-item"><a href="profile.html" class="nav-link active" aria-current="page"><span>👤</span> Profile</a></li>
+                    <li class="nav-item"><a href="profile.html" class="nav-link active"><span>👤</span> Profile</a></li>
                     <li class="nav-item"><a href="skin-analysis.html" class="nav-link"><span>🔬</span> Skin Analysis</a></li>
                     <li class="nav-item"><a href="lab-analysis.html" class="nav-link"><span>🧪</span> Lab Results</a></li>
                     <li class="nav-item"><a href="chatbot.html" class="nav-link"><span>💬</span> AI Chatbot</a></li>
@@ -31,385 +29,94 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
-        <main class="main-content" role="main">
-            <header class="header">
-                <h1>👤 My Medical Profile</h1>
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span id="userName">User</span>
-                </div>
-            </header>
+        <main class="main-content">
+            <div class="header">
+                <h1>👤 My Profile</h1>
+            </div>
 
-            <!-- Profile Overview Card -->
-            <div class="card profile-overview" role="region" aria-label="Profile overview">
+            <div class="card">
                 <div class="profile-header">
                     <div class="profile-avatar-large" id="profileAvatar">U</div>
                     <h2 id="profileName">User Name</h2>
-                    <p style="color: var(--gray-600);" id="profileEmail">user@email.com</p>
-                    
-                    <!-- Profile Completion Badge -->
-                    <div class="profile-badge" id="profileBadge">
-                        <span class="badge-icon">✅</span>
-                        <span class="badge-text">Profile Complete</span>
-                    </div>
+                    <p style="color: #7f8c8d;" id="profileEmail">user@email.com</p>
                 </div>
 
-                <!-- Profile Stats Grid -->
-                <div class="profile-stats">
-                    <div class="profile-stat-item" role="article">
-                        <span class="stat-icon">📊</span>
-                        <div>
-                            <span class="stat-label">Total Analyses</span>
-                            <span class="stat-value" id="totalAnalyses">0</span>
-                        </div>
-                    </div>
-                    <div class="profile-stat-item" role="article">
-                        <span class="stat-icon">🔬</span>
-                        <div>
-                            <span class="stat-label">Skin Analyses</span>
-                            <span class="stat-value" id="skinAnalyses">0</span>
-                        </div>
-                    </div>
-                    <div class="profile-stat-item" role="article">
-                        <span class="stat-icon">🧪</span>
-                        <div>
-                            <span class="stat-label">Lab Results</span>
-                            <span class="stat-value" id="labAnalyses">0</span>
-                        </div>
-                    </div>
-                    <div class="profile-stat-item" role="article">
-                        <span class="stat-icon">🎤</span>
-                        <div>
-                            <span class="stat-label">Sound Analyses</span>
-                            <span class="stat-value" id="soundAnalyses">0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Profile Completion Progress -->
-                <div class="profile-completion">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-xs);">
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                         <span>Profile Completion</span>
                         <span id="completionPercent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        <div class="progress-fill" id="progressFill" style="width: 0%;">0%</div>
                     </div>
-                    <p class="completion-message" id="completionMessage">
+                    <p style="margin-top: 10px; color: #e74c3c; font-size: 0.9rem;">
                         ⚠️ Complete your profile with accurate information for better health assessments
                     </p>
                 </div>
-            </div>
-
-            <!-- Personal Information Card -->
-            <div class="card" role="region" aria-labelledby="personal-info-heading">
-                <header class="card-header">
-                    <h2 id="personal-info-heading" class="card-title">📋 Personal Information</h2>
-                    <span class="badge" id="infoStatus">Not Updated</span>
-                </header>
 
                 <form id="profileForm">
-                    <!-- Name Field -->
                     <div class="form-group">
-                        <label for="name">
-                            Full Name
-                            <span class="required-badge">Required</span>
-                        </label>
-                        <input type="text" id="name" required 
-                               placeholder="Enter your full name"
-                               autocomplete="name"
-                               aria-required="true">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
                     </div>
 
-                    <!-- Email Field (Read-only) -->
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" readonly 
-                               class="readonly-field"
-                               value="user@email.com">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="1" max="150">
                     </div>
 
-                    <!-- Age Field -->
                     <div class="form-group">
-                        <label for="age">
-                            Age
-                            <span class="optional-badge">Optional</span>
-                        </label>
-                        <input type="number" id="age" 
-                               placeholder="Enter your age"
-                               min="1" max="150"
-                               aria-required="false">
+                        <label for="address">Address</label>
+                        <input type="text" id="address">
                     </div>
 
-                    <!-- Address Field -->
-                    <div class="form-group">
-                        <label for="address">
-                            Address
-                            <span class="optional-badge">Optional</span>
-                        </label>
-                        <input type="text" id="address" 
-                               placeholder="Enter your address"
-                               autocomplete="address">
-                    </div>
-
-                    <!-- Medical History Field (New) -->
-                    <div class="form-group">
-                        <label for="medicalHistory">
-                            Medical History
-                            <span class="optional-badge">Optional</span>
-                        </label>
-                        <textarea id="medicalHistory" 
-                                  rows="3" 
-                                  placeholder="List any chronic conditions, allergies, or previous surgeries..."></textarea>
-                    </div>
-
-                    <!-- Emergency Contact Field (New) -->
-                    <div class="form-group">
-                        <label for="emergencyContact">
-                            Emergency Contact
-                            <span class="optional-badge">Optional</span>
-                        </label>
-                        <input type="text" id="emergencyContact" 
-                               placeholder="Name and phone number">
-                    </div>
-
-                    <!-- Blood Type Field (New) -->
-                    <div class="form-group">
-                        <label for="bloodType">
-                            Blood Type
-                            <span class="optional-badge">Optional</span>
-                        </label>
-                        <select id="bloodType">
-                            <option value="">Select blood type</option>
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" id="updateProfileBtn">
-                        <span>💾</span> Update Profile
-                    </button>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
                 </form>
-            </div>
-
-            <!-- Account Settings Card -->
-            <div class="card" role="region" aria-labelledby="settings-heading">
-                <header class="card-header">
-                    <h2 id="settings-heading" class="card-title">⚙️ Account Settings</h2>
-                </header>
-
-                <div class="settings-grid">
-                    <!-- Change Password -->
-                    <div class="settings-item">
-                        <div class="settings-icon">🔐</div>
-                        <div class="settings-content">
-                            <h3>Change Password</h3>
-                            <p>Update your password regularly for security</p>
-                        </div>
-                        <button class="btn btn-secondary btn-small" onclick="changePassword()">
-                            Update
-                        </button>
-                    </div>
-
-                    <!-- Two-Factor Authentication -->
-                    <div class="settings-item">
-                        <div class="settings-icon">📱</div>
-                        <div class="settings-content">
-                            <h3>Two-Factor Authentication</h3>
-                            <p>Add an extra layer of security</p>
-                        </div>
-                        <button class="btn btn-secondary btn-small" onclick="enable2FA()">
-                            Enable
-                        </button>
-                    </div>
-
-                    <!-- Data Export -->
-                    <div class="settings-item">
-                        <div class="settings-icon">📥</div>
-                        <div class="settings-content">
-                            <h3>Export Medical Data</h3>
-                            <p>Download your complete health records</p>
-                        </div>
-                        <button class="btn btn-secondary btn-small" onclick="exportData()">
-                            Export
-                        </button>
-                    </div>
-
-                    <!-- Delete Account -->
-                    <div class="settings-item danger">
-                        <div class="settings-icon">🗑️</div>
-                        <div class="settings-content">
-                            <h3>Delete Account</h3>
-                            <p>Permanently delete your account and data</p>
-                        </div>
-                        <button class="btn btn-danger btn-small" onclick="deleteAccount()">
-                            Delete
-                        </button>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
 
     <script src="js/app.js"></script>
     <script>
-        // Check authentication
         checkAuth();
-
-        // Load user info
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        document.getElementById('userName').textContent = user.name || 'User';
-        document.getElementById('userAvatar').textContent = (user.name || 'U')[0].toUpperCase();
-
-        // Load profile data
         loadProfile();
 
         async function loadProfile() {
             try {
                 const profile = await apiCall('/profile');
                 
-                // Update profile header
                 document.getElementById('profileName').textContent = profile.name || 'User';
                 document.getElementById('profileEmail').textContent = profile.email;
                 document.getElementById('profileAvatar').textContent = (profile.name || 'U')[0].toUpperCase();
                 
-                // Update form fields
                 document.getElementById('name').value = profile.name || '';
-                document.getElementById('email').value = profile.email || '';
                 document.getElementById('age').value = profile.age || '';
                 document.getElementById('address').value = profile.address || '';
-                document.getElementById('medicalHistory').value = profile.medicalHistory || '';
-                document.getElementById('emergencyContact').value = profile.emergencyContact || '';
-                document.getElementById('bloodType').value = profile.bloodType || '';
                 
-                // Load statistics
-                loadProfileStats();
-                
-                // Update completion bar
                 updateCompletionBar(profile);
-                
-                // Show success notification
-                showNotification('Profile loaded successfully', 'success');
-                
             } catch (error) {
                 showNotification('Failed to load profile', 'error');
             }
         }
 
-        async function loadProfileStats() {
-            try {
-                const stats = await apiCall('/dashboard/stats');
-                
-                // Animate stats
-                animateNumber('totalAnalyses', stats.total_analyses || 0);
-                animateNumber('skinAnalyses', stats.skin_analyses || 0);
-                animateNumber('labAnalyses', stats.lab_analyses || 0);
-                animateNumber('soundAnalyses', stats.sound_analyses || 0);
-                
-            } catch (error) {
-                console.error('Failed to load stats:', error);
-            }
-        }
-
-        function animateNumber(elementId, finalNumber) {
-            const element = document.getElementById(elementId);
-            if (!element) return;
-            
-            const startNumber = parseInt(element.textContent) || 0;
-            const duration = 1000;
-            const steps = 60;
-            const increment = (finalNumber - startNumber) / steps;
-            let currentStep = 0;
-
-            const interval = setInterval(() => {
-                currentStep++;
-                const currentNumber = Math.round(startNumber + (increment * currentStep));
-                element.textContent = currentNumber;
-
-                if (currentStep >= steps) {
-                    element.textContent = finalNumber;
-                    clearInterval(interval);
-                }
-            }, duration / steps);
-        }
-
         function updateCompletionBar(profile) {
-            const fields = ['name', 'email', 'age', 'address', 'medicalHistory', 'emergencyContact', 'bloodType'];
-            const completed = fields.filter(field => profile[field] && profile[field].toString().trim() !== '').length;
+            const fields = ['name', 'age', 'address', 'email'];
+            const completed = fields.filter(field => profile[field]).length;
             const percentage = Math.round((completed / fields.length) * 100);
             
-            // Update progress bar
             document.getElementById('completionPercent').textContent = percentage + '%';
-            const progressFill = document.getElementById('progressFill');
-            progressFill.style.width = percentage + '%';
-            progressFill.textContent = percentage + '%';
-            progressFill.setAttribute('aria-valuenow', percentage);
-            
-            // Update completion message based on percentage
-            const messageEl = document.getElementById('completionMessage');
-            const badgeEl = document.getElementById('infoStatus');
-            
-            if (percentage === 100) {
-                messageEl.innerHTML = '✅ Excellent! Your profile is complete';
-                badgeEl.textContent = 'Complete';
-                badgeEl.style.background = 'var(--secondary)';
-                badgeEl.style.color = 'white';
-            } else if (percentage >= 70) {
-                messageEl.innerHTML = '👍 Good progress! Add more details for better health insights';
-                badgeEl.textContent = 'In Progress';
-                badgeEl.style.background = 'var(--warning)';
-                badgeEl.style.color = 'white';
-            } else if (percentage >= 40) {
-                messageEl.innerHTML = '📝 Keep going! Complete your profile for personalized health analysis';
-                badgeEl.textContent = 'Partial';
-                badgeEl.style.background = 'var(--primary)';
-                badgeEl.style.color = 'white';
-            } else {
-                messageEl.innerHTML = '⚠️ Complete your profile with accurate information for better health assessments';
-                badgeEl.textContent = 'Incomplete';
-                badgeEl.style.background = 'var(--danger)';
-                badgeEl.style.color = 'white';
-            }
-            
-            // Update profile badge
-            const profileBadge = document.getElementById('profileBadge');
-            if (percentage === 100) {
-                profileBadge.innerHTML = '<span class="badge-icon">✅</span><span class="badge-text">Verified Profile</span>';
-                profileBadge.style.background = 'var(--secondary)';
-            } else if (percentage >= 50) {
-                profileBadge.innerHTML = '<span class="badge-icon">🔄</span><span class="badge-text">Partial Profile</span>';
-                profileBadge.style.background = 'var(--warning)';
-            } else {
-                profileBadge.innerHTML = '<span class="badge-icon">⚠️</span><span class="badge-text">Incomplete Profile</span>';
-                profileBadge.style.background = 'var(--danger)';
-            }
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressFill').textContent = percentage + '%';
         }
 
-        // Profile form submission
         document.getElementById('profileForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const data = {
                 name: document.getElementById('name').value,
-                age: parseInt(document.getElementById('age').value) || null,
-                address: document.getElementById('address').value,
-                medicalHistory: document.getElementById('medicalHistory').value,
-                emergencyContact: document.getElementById('emergencyContact').value,
-                bloodType: document.getElementById('bloodType').value
+                age: parseInt(document.getElementById('age').value),
+                address: document.getElementById('address').value
             };
-
-            // Show loading state
-            const submitBtn = document.getElementById('updateProfileBtn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="spinner" style="width:20px;height:20px;margin:0;"></span> Updating...';
-            submitBtn.disabled = true;
 
             try {
                 await apiCall('/profile', {
@@ -419,41 +126,11 @@
                 });
                 
                 showNotification('Profile updated successfully!', 'success');
-                
-                // Reload profile to update completion bar
                 loadProfile();
-                
             } catch (error) {
                 showNotification('Failed to update profile', 'error');
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
             }
         });
-
-        // Settings functions
-        function changePassword() {
-            showNotification('Password change feature coming soon!', 'info');
-        }
-
-        function enable2FA() {
-            showNotification('Two-factor authentication coming soon!', 'info');
-        }
-
-        function exportData() {
-            showNotification('Preparing your medical data for export...', 'info');
-            
-            // Simulate export
-            setTimeout(() => {
-                showNotification('Data exported successfully! Check your downloads.', 'success');
-            }, 2000);
-        }
-
-        function deleteAccount() {
-            if (confirm('⚠️ Are you sure? This action cannot be undone. All your medical data will be permanently deleted.')) {
-                showNotification('Account deletion requested. You will receive an email confirmation.', 'warning');
-            }
-        }
 
         function logout() {
             localStorage.clear();

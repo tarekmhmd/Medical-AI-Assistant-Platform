@@ -1,0 +1,420 @@
+================================================================================
+                    MEDICAL AI PLATFORM - MODEL SUMMARY
+================================================================================
+Generated: 2026-03-01
+Project: D:\project 2
+================================================================================
+
+This document provides a comprehensive overview of all AI models in the Medical
+Assistant Platform, including architecture details, training configurations,
+and dataset information.
+
+================================================================================
+                              TABLE OF CONTENTS
+================================================================================
+1. Skin Lesion Analyzer (Segmentation)
+2. Respiratory Sound Analyzer (Classification)
+3. Lab Data Analyzer (Classification)
+4. Medical Chatbot (Classification)
+5. Model Checkpoint Files
+6. GPU Configuration
+
+================================================================================
+1. SKIN LESION ANALYZER - SEGMENTATION MODEL
+================================================================================
+
+File:             train_skin_full.py
+Model Class:      FullUNet
+Checkpoint:       checkpoints/skin_model_full.pth (88.95 MB)
+Backend File:     backend/models/skin_analyzer.py
+
+TASK: Image Segmentation
+------------------------
+- Segments skin lesions from dermatological images
+- Outputs binary masks indicating lesion boundaries
+- Used for melanoma detection and skin condition analysis
+
+ARCHITECTURE: U-Net (Full)
+--------------------------
+- Type: Encoder-Decoder with Skip Connections
+- Input Shape: [batch, 3, H, W] - RGB images
+- Output Shape: [batch, 1, H, W] - Binary segmentation mask
+- Initial Features: 32
+- Encoder Blocks: 4 (with MaxPool2d downsampling)
+- Decoder Blocks: 4 (with ConvTranspose2d upsampling)
+- Bottleneck: 512 features
+- Normalization: BatchNorm2d
+- Activation: ReLU
+
+MODEL PARAMETERS:
+-----------------
+- Total Parameters: ~31,000,000+
+- Model Size: ~88.95 MB
+
+LOSS FUNCTION: BCEWithLogitsLoss
+--------------------------------
+- Binary Cross-Entropy with Logits
+- Combines sigmoid activation with BCE loss
+- Optimal for binary segmentation tasks
+
+DATASET: ISIC 2016 (International Skin Imaging Collaboration)
+------------------------------------------------------------
+- Training Path: data/ISIC2016_Task1/train_images/
+- Training Masks: data/ISIC2016_Task1/train_masks/
+- Validation Path: data/ISIC2016_Task1/test_images/
+- Validation Masks: data/ISIC2016_Task1/test_masks/
+- Image Size: 256x256 (resized)
+- Image Format: JPG (input), PNG (masks)
+
+TRAINING CONFIGURATION:
+-----------------------
+- Epochs: 20
+- Batch Size: 8
+- Learning Rate: 0.0001 (1e-4)
+- Optimizer: Adam
+- Scheduler: ReduceLROnPlateau (factor=0.5, patience=3)
+- Image Normalization: ImageNet mean/std
+
+METRICS:
+--------
+- Loss: BCEWithLogitsLoss
+- IoU (Intersection over Union)
+- Dice Coefficient
+
+CONDITIONS DETECTED:
+--------------------
+0. Healthy Skin
+1. Acne
+2. Eczema
+3. Psoriasis
+4. Melanoma
+5. Dermatitis
+6. Rosacea
+7. Fungal Infection
+
+================================================================================
+2. RESPIRATORY SOUND ANALYZER - CLASSIFICATION MODEL
+================================================================================
+
+File:             train_sound.py
+Model Class:      RespiratorySoundCNN
+Checkpoint:       checkpoints/sound_model.pth (29.24 MB)
+Backend File:     backend/models/sound_analyzer.py
+
+TASK: Audio Classification
+--------------------------
+- Classifies respiratory sounds (healthy vs unhealthy)
+- Detects respiratory conditions from breathing/cough sounds
+- Uses mel-spectrogram as input features
+
+ARCHITECTURE: CNN (Convolutional Neural Network)
+------------------------------------------------
+- Type: 4-Layer CNN with Fully Connected Head
+- Input Shape: [batch, 1, 64, 128] - Mel-spectrogram
+- Output Shape: [batch, 2] - Class probabilities
+
+Layers:
+-------
+- Conv1: 1 -> 32 channels (3x3 kernel) + BatchNorm + ReLU + MaxPool
+- Conv2: 32 -> 64 channels (3x3 kernel) + BatchNorm + ReLU + MaxPool
+- Conv3: 64 -> 128 channels (3x3 kernel) + BatchNorm + ReLU + MaxPool
+- Conv4: 128 -> 256 channels (3x3 kernel) + BatchNorm + ReLU + MaxPool
+- AdaptiveAvgPool: (4, 4)
+- FC1: 4096 -> 512 (with Dropout 0.3)
+- FC2: 512 -> 128 (with Dropout 0.3)
+- FC3: 128 -> 2 (output)
+
+MODEL PARAMETERS:
+-----------------
+- Total Parameters: ~2,000,000+
+- Model Size: 29.24 MB
+
+LOSS FUNCTION: CrossEntropyLoss
+-------------------------------
+- Standard classification loss
+- Includes softmax activation internally
+
+DATASET: Respiratory Sound Database
+-----------------------------------
+- Training Path: data/sound/train/
+- Validation Path: data/sound/val/
+- Sample Rate: 22050 Hz
+- Audio Format: WAV
+- Feature: Mel-Spectrogram (64 mel bands, 128 time frames)
+
+AUDIO PROCESSING:
+-----------------
+- Sample Rate: 22050 Hz
+- n_mels: 64 (mel bands)
+- n_fft: 1024 (FFT window size)
+- hop_length: 512
+- Target Width: 128 frames
+
+TRAINING CONFIGURATION:
+-----------------------
+- Epochs: 10
+- Batch Size: 16
+- Learning Rate: 0.001
+- Optimizer: Adam
+- Scheduler: ReduceLROnPlateau (factor=0.5, patience=3)
+- Dropout: 0.3
+- Data Augmentation: Time shift, Volume change
+
+CONDITIONS DETECTED:
+--------------------
+0. Healthy Breathing
+1. Asthma
+2. Bronchitis
+3. Pneumonia
+4. COPD
+5. Whooping Cough
+
+================================================================================
+3. LAB DATA ANALYZER - CLASSIFICATION MODEL
+================================================================================
+
+File:             train_lab.py
+Model Class:      LabMLP
+Checkpoint:       checkpoints/lab_model.pth (0.16 MB)
+Backend File:     backend/models/lab_analyzer.py
+
+TASK: Tabular Classification
+----------------------------
+- Classifies medical lab results (e.g., diabetes prediction)
+- Analyzes blood test values and other lab metrics
+- OCR capability for reading lab report images
+
+ARCHITECTURE: MLP (Multi-Layer Perceptron)
+------------------------------------------
+- Type: Fully Connected Neural Network
+- Input Shape: [batch, input_dim] - Tabular features
+- Output Shape: [batch, num_classes] - Class probabilities
+
+Layers:
+-------
+- Input Layer: 8 features (diabetes dataset)
+- Hidden Layer 1: 128 neurons + BatchNorm + ReLU + Dropout(0.3)
+- Hidden Layer 2: 64 neurons + BatchNorm + ReLU + Dropout(0.3)
+- Hidden Layer 3: 32 neurons + BatchNorm + ReLU + Dropout(0.3)
+- Output Layer: 2 classes
+
+MODEL PARAMETERS:
+-----------------
+- Total Parameters: ~12,000
+- Model Size: 0.16 MB (very lightweight)
+
+LOSS FUNCTION: CrossEntropyLoss
+-------------------------------
+- Standard classification loss
+
+DATASET: Diabetes Dataset
+-------------------------
+- Training Path: data/lab/train/diabetes_data_train.csv
+- Validation Path: data/lab/val/diabetes_data_val.csv
+- Test Path: data/lab/test/diabetes_data_test.csv
+- Input Features: 8 (glucose, blood pressure, BMI, etc.)
+- Output Classes: 2 (diabetic/non-diabetic)
+
+FEATURES ANALYZED:
+------------------
+- Glucose (mg/dL)
+- Cholesterol (mg/dL)
+- HDL (mg/dL)
+- LDL (mg/dL)
+- Triglycerides (mg/dL)
+- Hemoglobin (g/dL)
+- WBC (cells/mcL)
+- RBC (million cells/mcL)
+- Platelets (cells/mcL)
+- Creatinine (mg/dL)
+- ALT (U/L)
+- AST (U/L)
+
+TRAINING CONFIGURATION:
+-----------------------
+- Epochs: 50
+- Batch Size: 32
+- Learning Rate: 0.001
+- Optimizer: Adam
+- Scheduler: ReduceLROnPlateau (factor=0.5, patience=5)
+- Dropout: 0.3
+- Normalization: Z-score (mean=0, std=1)
+
+OCR CAPABILITY:
+---------------
+- Uses Tesseract OCR for reading lab report images
+- Supports multiple preprocessing techniques
+- Pattern matching for common lab test names
+
+================================================================================
+4. MEDICAL CHATBOT - CLASSIFICATION MODEL
+================================================================================
+
+File:             train_chatbot.py
+Model Class:      MedicalChatbot
+Checkpoint:       checkpoints/chatbot_model.pth (8.08 MB)
+Backend File:     backend/models/chatbot.py
+
+TASK: Text Classification / Symptom Analysis
+--------------------------------------------
+- Classifies symptoms to predict diseases
+- Provides medical advice and recommendations
+- NLP-based symptom understanding
+
+ARCHITECTURE: LSTM with Attention
+---------------------------------
+- Type: Bidirectional LSTM + Attention Mechanism
+- Input Shape: [batch, seq_len] - Word indices
+- Output Shape: [batch, num_classes] - Disease probabilities
+
+Layers:
+-------
+- Embedding: vocab_size -> 128 dimensions
+- Bidirectional LSTM: 128 -> 256 (128 x 2 directions)
+  - 2 layers
+  - Dropout between layers: 0.3
+- Attention: 256 -> 1
+- FC1: 256 -> 128 + BatchNorm + ReLU + Dropout(0.3)
+- FC2: 128 -> num_classes
+
+MODEL PARAMETERS:
+-----------------
+- Total Parameters: ~2,000,000+
+- Model Size: 8.08 MB
+
+LOSS FUNCTION: CrossEntropyLoss
+-------------------------------
+- Standard multi-class classification loss
+
+DATASET: Medical QA Database
+----------------------------
+- Source: processed_data/databases/disease_database.json
+- Training Pairs: ~1000+ (symptom-disease pairs)
+- Max Sequence Length: 20 words
+- Vocabulary Size: Dynamic (built from data)
+
+TRAINING CONFIGURATION:
+-----------------------
+- Epochs: 100
+- Batch Size: 32
+- Learning Rate: 0.001
+- Optimizer: Adam
+- Scheduler: ReduceLROnPlateau (factor=0.5, patience=10)
+- Embedding Dimension: 128
+- Hidden Dimension: 256
+- LSTM Layers: 2
+- Dropout: 0.3
+- Max Sequence Length: 20
+
+VOCABULARY:
+-----------
+- Special Tokens: <PAD>=0, <UNK>=1, <EOS>=2
+- Built dynamically from training data
+- Minimum word frequency: 1
+
+DATA AUGMENTATION:
+------------------
+- Full symptom list -> disease
+- Individual symptoms -> disease
+- Pairs of symptoms -> disease
+- Question patterns -> disease
+
+MEDICAL DATABASES USED:
+-----------------------
+- disease_database.json - General diseases
+- skin_disease_database.json - Skin conditions
+- respiratory_database.json - Respiratory conditions
+- lab_test_database.json - Lab test reference
+
+================================================================================
+5. MODEL CHECKPOINT FILES
+================================================================================
+
+Location: D:\project 2\checkpoints\
+
++----------------------+------------+---------------------+
+| File Name            | Size (MB)  | Last Modified       |
++----------------------+------------+---------------------+
+| skin_model_full.pth  | 88.95      | 2026-02-28 04:33    |
+| sound_model.pth      | 29.24      | 2026-02-28 02:12    |
+| chatbot_model.pth    | 8.08       | 2026-02-28 03:19    |
+| lab_model.pth        | 0.16       | 2026-02-28 03:10    |
+| skin_model.pth       | 0.00       | 2026-02-28 01:50    |
++----------------------+------------+---------------------+
+
+Total Model Size: ~126.43 MB
+
+CHECKPOINT CONTENTS:
+--------------------
+Each checkpoint contains:
+- epoch: Training epoch when saved
+- model_state_dict: Model weights
+- optimizer_state_dict: Optimizer state
+- Training metrics (accuracy, loss, etc.)
+- Model configuration (dimensions, classes, etc.)
+- Preprocessing parameters (scalers, vocabulary, etc.)
+
+================================================================================
+6. GPU CONFIGURATION
+================================================================================
+
+Configuration File: backend/utils/gpu_config.py
+
+TARGET HARDWARE: NVIDIA GTX 1650 (4GB VRAM)
+-------------------------------------------
+
+GPU CONFIG CLASS: GPUConfig
+---------------------------
+Features:
+- Automatic device selection (CUDA if available, else CPU)
+- Mixed precision training support (torch.amp.autocast)
+- Memory optimization (empty_cache, set_per_process_memory_fraction)
+- Recommended batch sizes for limited VRAM
+
+RECOMMENDED BATCH SIZES (for 4GB VRAM):
+---------------------------------------
+- CNN (Audio): 16
+- U-Net (Segmentation): 4
+- Transformer: 2
+- Audio Processing: 16
+- Tabular (MLP): 32
+
+CUDA CONFIGURATION:
+-------------------
+- PyTorch Version: 2.7.1+cu118
+- CUDA Version: 11.8
+- cuDNN Benchmark: Enabled
+- Memory Format: Channels Last (optional)
+
+MEMORY OPTIMIZATION:
+--------------------
+- Gradient checkpointing available
+- Automatic memory clearing
+- Mixed precision (FP16) training
+- Optimized data loading (pin_memory, non-blocking)
+
+================================================================================
+                              SUMMARY TABLE
+================================================================================
+
++------------------+---------------+------------------+------------------+
+| Model            | Task          | Architecture     | Loss Function    |
++------------------+---------------+------------------+------------------+
+| Skin Analyzer    | Segmentation  | U-Net            | BCEWithLogitsLoss|
+| Sound Analyzer   | Classification| CNN              | CrossEntropyLoss |
+| Lab Analyzer     | Classification| MLP              | CrossEntropyLoss |
+| Medical Chatbot  | Classification| LSTM + Attention | CrossEntropyLoss |
++------------------+---------------+------------------+------------------+
+
++------------------+------------------+------------------+------------------+
+| Model            | Input            | Output           | Dataset          |
++------------------+------------------+------------------+------------------+
+| Skin Analyzer    | [B,3,256,256]    | [B,1,256,256]    | ISIC 2016        |
+| Sound Analyzer   | [B,1,64,128]     | [B,2]            | Respiratory WAV  |
+| Lab Analyzer     | [B,8]            | [B,2]            | Diabetes CSV     |
+| Medical Chatbot  | [B,20]           | [B,num_classes]  | Disease Database |
++------------------+------------------+------------------+------------------+
+
+================================================================================
+                              END OF SUMMARY
+================================================================================

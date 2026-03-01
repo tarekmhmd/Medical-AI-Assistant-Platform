@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-02-27T22:05:00.000000",
+  "duration_seconds": 125.777272,
+  "data_source": "D:\\project 2\\data",
+  "output_directory": "D:\\project 2\\processed_data",
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "image_scan": {
+    "timestamp": "2026-02-27T22:05:00.000000",
+    "extensions_searched": [".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff"],
+    "directories_scanned": [
+      "D:\\project 2\\data\\skin_images",
+      "D:\\project 2\\data\\datasets_raw"
+    ],
+    "total_images_found": 0,
+    "note": "No image files found in data directory. Skin image datasets (HAM10000, ISIC) need to be downloaded separately."
+  },
+  "statistics": {
+    "audio": {
+      "train": 840,
+      "val": 261,
+      "test": 261,
+      "total": 1362,
+      "errors": 0
+    },
+    "images": {
+      "train": 0,
+      "val": 0,
+      "test": 0,
+      "total": 0,
+      "errors": 0,
+      "note": "No image files found in source data directory"
+    },
+    "csv": {
+      "train": 39560,
+      "val": 8476,
+      "test": 8481,
+      "errors": 0
+    },
+    "json": {
+      "total": 4,
+      "errors": 0
+    }
+  },
+  "total_files_processed": 58361,
+  "errors": "None"
+}

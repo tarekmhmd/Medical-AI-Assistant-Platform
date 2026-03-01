@@ -1,0 +1,626 @@
+{
+  "timestamp": "2026-03-01T17:48:56.655416",
+  "project_root": "D:\\project 2",
+  "scan_results": {
+    "total_scripts": 50,
+    "total_models": 13,
+    "total_datasets": 76
+  },
+  "script_categories": {
+    "setup": [
+      "setup_dl_structure.py",
+      "setup_project.py"
+    ],
+    "data_preparation": [
+      "download_and_unzip_ham10000.py",
+      "download_isic2016_task1.py",
+      "organize_isic_dataset.py",
+      "prepare_dataset.py",
+      "prepare_data_and_check.py",
+      "prepare_drugs_dataset.py",
+      "prepare_finetuning_dataset.py"
+    ],
+    "training": [
+      "finetune_medical_chatbot.py",
+      "merge_medical_datasets.py",
+      "train_all.py",
+      "train_all_iflow.py",
+      "train_all_models.py",
+      "train_chatbot.py",
+      "train_chatbot_fast.py",
+      "train_lab.py",
+      "train_skin_full.py",
+      "train_sound.py",
+      "train_unified_complete.py",
+      "train_unified_models.py"
+    ],
+    "evaluation": [
+      "evaluate_all_models.py",
+      "evaluate_models.py",
+      "full_system_test.py",
+      "test_project_preview.py"
+    ],
+    "viewing": [
+      "view_chatbot_model.py",
+      "view_lab_model.py",
+      "view_skin_model.py",
+      "view_skin_model_full.py",
+      "view_sound_model.py"
+    ],
+    "utility": [
+      "add_new_data.py",
+      "build_medical_chatbot_dataset.py",
+      "check_data_folders.py",
+      "check_data_folders_recursive.py",
+      "convert_to_word.py",
+      "create_admin.py",
+      "final_inventory.py",
+      "generate_report.py",
+      "push_to_github.py",
+      "translate_chatbot_dataset_ar.py",
+      "translate_chatbot_fast.py",
+      "upload_to_github.py",
+      "validate_and_run_project.py"
+    ],
+    "backend": [
+      "app.py",
+      "__init__.py"
+    ],
+    "models": [
+      "chatbot.py",
+      "lab_analyzer.py",
+      "skin_analyzer.py",
+      "sound_analyzer.py",
+      "unified_models.py"
+    ]
+  },
+  "dependencies": {
+    "add_new_data.py": {
+      "imports": [
+        "os",
+        "shutil"
+      ],
+      "data_dependencies": [],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "build_medical_chatbot_dataset.py": {
+      "imports": [
+        "json",
+        "urllib",
+        "re",
+        "collections",
+        "csv",
+        "random",
+        "os",
+        "typing",
+        "time",
+        "hashlib"
+      ],
+      "data_dependencies": [
+        "D:\\project 2\\processed_data\\databases\\disease_database.json",
+        "D:\\project 2\\processed_data\\databases\\lab_test_database.json",
+        "combined_medical_qa_backup_{timestamp}.json",
+        "D:\\project 2\\data\\archive (1)\\medquad.csv",
+        "D:\\project 2\\processed_data\\databases\\skin_disease_database.json",
+        "D:\\project 2\\processed_data\\databases\\respiratory_database.json",
+        "D:\\project 2\\data\\chatbot\\combined_medical_qa.json",
+        "https://raw.githubusercontent.com/pubmedqa/pubmedqa/master/data/ori_pqal.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "check_data_folders.py": {
+      "imports": [
+        "os",
+        "json"
+      ],
+      "data_dependencies": [
+        "data_check_report.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "check_data_folders_recursive.py": {
+      "imports": [
+        "os",
+        "json"
+      ],
+      "data_dependencies": [
+        "data_check_recursive_report.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "convert_to_word.py": {
+      "imports": [
+        "docx",
+        "re"
+      ],
+      "data_dependencies": [
+        "*.h5"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "create_admin.py": {
+      "imports": [
+        "os",
+        "sqlite3",
+        "werkzeug"
+      ],
+      "data_dependencies": [],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "download_and_unzip_ham10000.py": {
+      "imports": [
+        "pathlib",
+        "requests",
+        "tqdm",
+        "os",
+        "zipfile"
+      ],
+      "data_dependencies": [],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "download_isic2016_task1.py": {
+      "imports": [
+        "json",
+        "pathlib",
+        "requests",
+        "os",
+        "concurrent"
+      ],
+      "data_dependencies": [
+        "Downloaded {image_id}_segmentation.png",
+        "Downloaded {image_id}.jpg",
+        "https://isic-archive.s3.amazonaws.com/masks/{image_id}_segmentation.png",
+        "https://isic-archive.s3.amazonaws.com/segmentations/{image_id}_segmentation.png",
+        "{image_id}{file_suffix}.jpg",
+        "{image_id}_segmentation.png",
+        "https://isic-archive.s3.amazonaws.com/images/{image_id}.jpg"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "evaluate_all_models.py": {
+      "imports": [
+        "json",
+        "torch",
+        "csv",
+        "os",
+        "PIL",
+        "numpy",
+        "torchvision"
+      ],
+      "data_dependencies": [
+        "disease_database.json",
+        "sound_model.pth",
+        "D:\\project 2\\data\\lab\\test\\diabetes_data_test.csv",
+        "_segmentation.png",
+        "lab_model.pth",
+        "skin_model.pth",
+        "chatbot_model.pth",
+        "skin_model_full.pth",
+        "training_summary.txt"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "evaluate_models.py": {
+      "imports": [
+        "json",
+        "numpy",
+        "collections",
+        "torchvision",
+        "models",
+        "warnings",
+        "datetime",
+        "os",
+        "PIL",
+        "time",
+        "sys",
+        "torch"
+      ],
+      "data_dependencies": [
+        "checkpoints/chatbot_model_cls_seg_trained.pth",
+        "_segmentation.png",
+        "checkpoints/skin_model_full.pth",
+        "data/lab/test/diabetes_data_test.csv",
+        "checkpoints/lab_model_cls_seg_trained.pth",
+        "evaluation_summary.json",
+        "checkpoints/sound_model_cls_seg_trained.pth",
+        "_mask.png",
+        "{base_name}_segmentation.png",
+        "data/chatbot/combined_medical_qa.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "final_inventory.py": {
+      "imports": [
+        "os"
+      ],
+      "data_dependencies": [],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "finetune_medical_chatbot.py": {
+      "imports": [
+        "json",
+        "collections",
+        "random",
+        "os",
+        "math",
+        "datetime",
+        "numpy",
+        "torch"
+      ],
+      "data_dependencies": [
+        "D:\\project 2\\data\\chatbot_training_combined\\chatbot_training_combined.json",
+        "training_summary.txt",
+        "D:\\project 2\\checkpoints\\medical_chatbot_finetuned.pth",
+        "training_report.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "full_system_test.py": {
+      "imports": [
+        "json",
+        "torch",
+        "datetime",
+        "os",
+        "PIL",
+        "sys",
+        "numpy",
+        "torchvision"
+      ],
+      "data_dependencies": [
+        "checkpoints/chatbot_model_cls_seg_trained.pth",
+        "Results saved to: models_summary/full_system_test_report.json",
+        "checkpoints/skin_model_full.pth",
+        "checkpoints/lab_model_cls_seg_trained.pth",
+        "checkpoints/sound_model_cls_seg_trained.pth",
+        "{base}_segmentation.png",
+        "models_summary/full_system_test_report.json"
+      ],
+      "model_dependencies": [],
+      "output_files": [
+        "models_summary/full_system_test_report.json"
+      ]
+    },
+    "generate_report.py": {
+      "imports": [
+        "docx",
+        "torch",
+        "os",
+        "datetime"
+      ],
+      "data_dependencies": [
+        "skin_model_cls_seg_trained.pth",
+        "lab_model_cls_seg_trained.pth",
+        "chatbot_model_cls_seg_trained.pth",
+        "sound_model_cls_seg_trained.pth",
+        "checkpoints/skin_model_cls_seg_trained.pth"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "merge_medical_datasets.py": {
+      "imports": [
+        "json",
+        "pathlib",
+        "re",
+        "collections",
+        "random",
+        "hashlib",
+        "datetime"
+      ],
+      "data_dependencies": [
+        "combined_medical_qa.json",
+        "chatbot_training_combined.json",
+        "chatbot_training_dataset.json",
+        "combined_medical_qa_ar.json",
+        "processing_report.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "organize_isic_dataset.py": {
+      "imports": [
+        "os",
+        "zipfile",
+        "shutil",
+        "pathlib"
+      ],
+      "data_dependencies": [
+        "*.csv"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "prepare_dataset.py": {
+      "imports": [
+        "json",
+        "pathlib",
+        "shutil",
+        "csv",
+        "random",
+        "os",
+        "typing",
+        "sys",
+        "datetime"
+      ],
+      "data_dependencies": [
+        "*.json",
+        "*.csv",
+        "{audio_file.stem}.wav",
+        "{base_name}_test.csv",
+        "{image_file.stem}.jpg",
+        "{base_name}_train.csv",
+        "processing_report.json",
+        "{image_file.stem}.png",
+        "{base_name}_val.csv"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "prepare_data_and_check.py": {
+      "imports": [
+        "os",
+        "json",
+        "shutil",
+        "random"
+      ],
+      "data_dependencies": [
+        "_segmentation.png",
+        "data_preparation_report.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "prepare_drugs_dataset.py": {
+      "imports": [
+        "json",
+        "pathlib",
+        "collections",
+        "shutil",
+        "datetime",
+        "os",
+        "logging",
+        "zipfile",
+        "sys"
+      ],
+      "data_dependencies": [
+        "_processed.json",
+        "indication_processed.json",
+        "chatbot_training_dataset.json",
+        "cim10_processed.json",
+        "commonnamegroup_atc_processed.json",
+        "processing_report.json",
+        "commonnamegroup_processed.json",
+        "commonnamegroup_indication_processed.json",
+        "sideeffect_processed.json",
+        "atcclass_processed.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    },
+    "prepare_finetuning_dataset.py": {
+      "imports": [
+        "json",
+        "pathlib",
+        "random",
+        "datasets",
+        "datetime"
+      ],
+      "data_dependencies": [
+        "statistics.json",
+        "all_splits.json",
+        "chatbot_training_dataset.json"
+      ],
+      "model_dependencies": [],
+      "output_files": []
+    }
+  },
+  "execution_results": [
+    {
+      "script": "organize_isic_dataset.py",
+      "path": "D:\\project 2\\organize_isic_dataset.py",
+      "status": "error",
+      "output": "",
+      "error": "object of type 'NoneType' has no len()",
+      "duration": 0.922518,
+      "timestamp": "2026-03-01T17:45:16.422166"
+    },
+    {
+      "script": "prepare_dataset.py",
+      "path": "D:\\project 2\\prepare_dataset.py",
+      "status": "timeout",
+      "output": "",
+      "error": "Script timed out after 60 seconds",
+      "duration": 0,
+      "timestamp": "2026-03-01T17:45:17.344684"
+    },
+    {
+      "script": "prepare_data_and_check.py",
+      "path": "D:\\project 2\\prepare_data_and_check.py",
+      "status": "success",
+      "output": "âœ… Skin data split: train=720, val=90, test=90\n\nâœ… Data preparation & check complete! Report saved: data_preparation_report.json\nSKIN: 1800 files found\nSOUND: 2764 files found\nLAB: 20 files found\n",
+      "error": "",
+      "duration": 0.170813,
+      "timestamp": "2026-03-01T17:46:17.356341"
+    },
+    {
+      "script": "prepare_drugs_dataset.py",
+      "path": "D:\\project 2\\prepare_drugs_dataset.py",
+      "status": "success",
+      "output": "datasets-master\\latam_csv\\indicationgroup_indication.csv\n2026-03-01 17:46:18,992 - INFO - Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\indicationgroup_indication_processed.json\n2026-03-01 17:46:19,001 - INFO - Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\sideeffect.csv\n2026-03-01 17:46:19,034 - INFO - Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\sideeffect_processed.json\n2026-03-01 17:46:19,035 - INFO - Processing JSON: D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd.json\n2026-03-01 17:46:21,049 - INFO - Saved processed JSON to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_processed.json\n2026-03-01 17:46:21,066 - INFO - Processing JSON: D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd_c2.json\n2026-03-01 17:46:21,067 - INFO - Saved processed JSON to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_c2_processed.json\n2026-03-01 17:46:21,067 - INFO - Processing JSON: D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd_H.json\n2026-03-01 17:46:21,466 - INFO - Saved processed JSON to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_H_processed.json\n2026-03-01 17:46:21,466 - INFO - Creating chatbot training dataset...\n2026-03-01 17:46:21,466 - INFO - Creating chatbot training dataset with relational joins...\n2026-03-01 17:46:21,685 - INFO - Loaded 12827 drugs, 3848 indications, 4093 side effects\n2026-03-01 17:46:22,801 - INFO - Created chatbot dataset with 12827 drugs and 50655 QA pairs\n2026-03-01 17:46:22,835 - INFO - ============================================================\n2026-03-01 17:46:22,835 - INFO - Processing Complete!\n2026-03-01 17:46:22,835 - INFO - Total drugs processed: 12827\n2026-03-01 17:46:22,835 - INFO - Total QA pairs generated: 50655\n2026-03-01 17:46:22,835 - INFO - Output directory: D:\\project 2\\data\\drugs-datasets-processed\n2026-03-01 17:46:22,835 - INFO - ============================================================\n",
+      "error": "",
+      "duration": 5.344344,
+      "timestamp": "2026-03-01T17:46:17.527154"
+    },
+    {
+      "script": "prepare_finetuning_dataset.py",
+      "path": "D:\\project 2\\prepare_finetuning_dataset.py",
+      "status": "success",
+      "output": "============================================================\nPreparing Fine-Tuning Dataset\n============================================================\n\n[1/6] Loading chatbot dataset...\nLoaded 50655 QA pairs\n\n[2/6] Creating HuggingFace format...\n[3/6] Creating OpenAI format...\n[4/6] Creating conversational format...\n[5/6] Creating instruction format...\n\n[6/6] Splitting and saving datasets...\n  - huggingface: train=45589, val=2532, test=2534\n  - openai: train=45589, val=2532, test=2534\n  - conversational: train=45589, val=2532, test=2534\n  - instruction: train=45589, val=2532, test=2534\n\n============================================================\nFine-Tuning Dataset Preparation Complete!\nOutput directory: D:\\project 2\\data\\drugs-datasets-processed\\finetuning_data\n============================================================\n",
+      "error": "",
+      "duration": 6.015968,
+      "timestamp": "2026-03-01T17:46:22.872496"
+    },
+    {
+      "script": "finetune_medical_chatbot.py",
+      "path": "D:\\project 2\\finetune_medical_chatbot.py",
+      "status": "timeout",
+      "output": "",
+      "error": "Script timed out after 60 seconds",
+      "duration": 0,
+      "timestamp": "2026-03-01T17:46:28.888464"
+    },
+    {
+      "script": "merge_medical_datasets.py",
+      "path": "D:\\project 2\\merge_medical_datasets.py",
+      "status": "success",
+      "output": "[INFO] ============================================================\n[INFO] Starting Dataset Merge Process\n[INFO] ============================================================\n[INFO] Loading D:\\project 2\\data\\chatbot\\combined_medical_qa.json...\n[INFO] Loaded 14693 QA pairs from D:\\project 2\\data\\chatbot\\combined_medical_qa.json\n[INFO] Loading D:\\project 2\\data\\drugs-datasets-processed\\chatbot_training_dataset.json...\n[INFO] Loaded 50655 QA pairs from D:\\project 2\\data\\drugs-datasets-processed\\chatbot_training_dataset.json\n[INFO] Total QA pairs before deduplication: 65348\n[INFO] Cleaning answer text...\n[INFO] Removing duplicates...\n[INFO] Removed 45 duplicates, 65303 unique pairs remaining\n[INFO] Validating QA pairs...\n[INFO] Validated: 65303 valid, 0 invalid\n[INFO] Saving merged dataset...\n[INFO] Splitting dataset...\n[INFO]   - train: 58772 pairs\n[INFO]   - validation: 3265 pairs\n[INFO]   - test: 3266 pairs\n[INFO] Creating fine-tuning formats...\n[INFO]   Creating huggingface format...\n[INFO]   Creating openai format...\n[INFO]   Creating conversational format...\n[INFO]   Creating instruction format...\n[INFO] ============================================================\n[INFO] Dataset Merge Complete!\n[INFO] ============================================================\n[INFO] Total QA pairs: 65303\n[INFO]   - Train: 58772\n[INFO]   - Validation: 3265\n[INFO]   - Test: 3266\n[INFO] Output directory: D:\\project 2\\data\\chatbot_training_combined\n[INFO] ============================================================\n",
+      "error": "",
+      "duration": 6.499344,
+      "timestamp": "2026-03-01T17:47:28.934135"
+    },
+    {
+      "script": "evaluate_all_models.py",
+      "path": "D:\\project 2\\evaluate_all_models.py",
+      "status": "error",
+      "output": "",
+      "error": "object of type 'NoneType' has no len()",
+      "duration": 36.803521,
+      "timestamp": "2026-03-01T17:47:35.433479"
+    },
+    {
+      "script": "evaluate_models.py",
+      "path": "D:\\project 2\\evaluate_models.py",
+      "status": "error",
+      "output": "",
+      "error": "object of type 'NoneType' has no len()",
+      "duration": 37.019055,
+      "timestamp": "2026-03-01T17:48:12.237000"
+    },
+    {
+      "script": "full_system_test.py",
+      "path": "D:\\project 2\\full_system_test.py",
+      "status": "success",
+      "output": "======================================================================\nFULL PIPELINE TEST - Inference on Random Samples\n======================================================================\nDevice: cuda\n\nTEST 1: Skin Lesion Segmentation\n--------------------------------------------------\nSamples tested: 5\nAverage IoU: 0.8692\nAverage Dice: 0.9270\n\nTEST 2: Respiratory Sound Classification\n--------------------------------------------------\n  Sample 1: Predicted = Healthy\n  Sample 2: Predicted = Healthy\n  Sample 3: Predicted = Healthy\n  Sample 4: Predicted = Healthy\n  Sample 5: Predicted = Healthy\nTotal samples tested: 5\n\nTEST 3: Lab Data Classification (Diabetes)\n--------------------------------------------------\n  Sample 1: Diabetes = Positive (confidence: 87.62%)\n  Sample 2: Diabetes = Positive (confidence: 77.79%)\n  Sample 3: Diabetes = Positive (confidence: 76.93%)\n  Sample 4: Diabetes = Negative (confidence: 70.61%)\n  Sample 5: Diabetes = Negative (confidence: 56.87%)\nTotal samples tested: 5\n\nTEST 4: Medical Chatbot Classification\n--------------------------------------------------\n  Sample 1: Predicted class = 0\n  Sample 2: Predicted class = 0\n  Sample 3: Predicted class = 0\n  Sample 4: Predicted class = 0\n  Sample 5: Predicted class = 0\nTotal samples tested: 5\n\n======================================================================\nPIPELINE TEST COMPLETE\n======================================================================\nResults saved to: models_summary/full_system_test_report.json\n",
+      "error": "",
+      "duration": 4.945179,
+      "timestamp": "2026-03-01T17:48:49.256055"
+    },
+    {
+      "script": "test_project_preview.py",
+      "path": "D:\\project 2\\test_project_preview.py",
+      "status": "error",
+      "output": "",
+      "error": "object of type 'NoneType' has no len()",
+      "duration": 2.454182,
+      "timestamp": "2026-03-01T17:48:54.201234"
+    }
+  ],
+  "output_verification": {
+    "models": {
+      "checkpoints/chatbot_model.pth": true,
+      "checkpoints/skin_model.pth": true,
+      "checkpoints/lab_model.pth": true,
+      "checkpoints/sound_model.pth": true
+    },
+    "datasets": {
+      "processed_data/databases/disease_database.json": true,
+      "data/chatbot_training_combined/chatbot_training_combined.json": true
+    },
+    "reports": {
+      "models_summary/training_summary.json": true
+    }
+  },
+  "model_files": [
+    "chatbot_model.pth",
+    "chatbot_model_cls_seg_trained.pth",
+    "lab_model.pth",
+    "lab_model_cls_seg_trained.pth",
+    "medical_chatbot_fast.pth",
+    "medical_chatbot_finetuned.pth",
+    "skin_model.pth",
+    "skin_model_full.pth",
+    "sound_model.pth",
+    "sound_model_cls_seg_trained.pth",
+    "lab_model.h5",
+    "skin_model.h5",
+    "sound_model.h5"
+  ],
+  "warnings": [
+    "build_medical_chatbot_dataset.py: Missing data file - combined_medical_qa_backup_{timestamp}.json",
+    "build_medical_chatbot_dataset.py: Missing data file - D:\\project 2\\data\\archive (1)\\medquad.csv",
+    "build_medical_chatbot_dataset.py: Missing data file - D:\\project 2\\processed_data\\databases\\skin_disease_database.json",
+    "build_medical_chatbot_dataset.py: Missing data file - D:\\project 2\\processed_data\\databases\\respiratory_database.json",
+    "build_medical_chatbot_dataset.py: Missing data file - D:\\project 2\\data\\chatbot\\combined_medical_qa.json",
+    "build_medical_chatbot_dataset.py: Missing data file - https://raw.githubusercontent.com/pubmedqa/pubmedqa/master/data/ori_pqal.json",
+    "check_data_folders.py: Missing data file - data_check_report.json",
+    "check_data_folders_recursive.py: Missing data file - data_check_recursive_report.json",
+    "convert_to_word.py: Missing data file - *.h5",
+    "download_isic2016_task1.py: Missing data file - Downloaded {image_id}_segmentation.png",
+    "download_isic2016_task1.py: Missing data file - Downloaded {image_id}.jpg",
+    "download_isic2016_task1.py: Missing data file - https://isic-archive.s3.amazonaws.com/masks/{image_id}_segmentation.png",
+    "download_isic2016_task1.py: Missing data file - https://isic-archive.s3.amazonaws.com/segmentations/{image_id}_segmentation.png",
+    "download_isic2016_task1.py: Missing data file - {image_id}{file_suffix}.jpg",
+    "download_isic2016_task1.py: Missing data file - {image_id}_segmentation.png",
+    "download_isic2016_task1.py: Missing data file - https://isic-archive.s3.amazonaws.com/images/{image_id}.jpg",
+    "evaluate_all_models.py: Missing data file - disease_database.json",
+    "evaluate_all_models.py: Missing data file - sound_model.pth",
+    "evaluate_all_models.py: Missing data file - D:\\project 2\\data\\lab\\test\\diabetes_data_test.csv",
+    "evaluate_all_models.py: Missing data file - _segmentation.png",
+    "evaluate_all_models.py: Missing data file - lab_model.pth",
+    "evaluate_all_models.py: Missing data file - skin_model.pth",
+    "evaluate_all_models.py: Missing data file - chatbot_model.pth",
+    "evaluate_all_models.py: Missing data file - skin_model_full.pth",
+    "evaluate_all_models.py: Missing data file - training_summary.txt",
+    "evaluate_models.py: Missing data file - _segmentation.png",
+    "evaluate_models.py: Missing data file - evaluation_summary.json",
+    "evaluate_models.py: Missing data file - _mask.png",
+    "evaluate_models.py: Missing data file - {base_name}_segmentation.png",
+    "finetune_medical_chatbot.py: Missing data file - training_summary.txt",
+    "finetune_medical_chatbot.py: Missing data file - D:\\project 2\\checkpoints\\medical_chatbot_finetuned.pth",
+    "finetune_medical_chatbot.py: Missing data file - training_report.json",
+    "full_system_test.py: Missing data file - Results saved to: models_summary/full_system_test_report.json",
+    "full_system_test.py: Missing data file - {base}_segmentation.png",
+    "generate_report.py: Missing data file - skin_model_cls_seg_trained.pth",
+    "generate_report.py: Missing data file - lab_model_cls_seg_trained.pth",
+    "generate_report.py: Missing data file - chatbot_model_cls_seg_trained.pth",
+    "generate_report.py: Missing data file - sound_model_cls_seg_trained.pth",
+    "generate_report.py: Missing data file - checkpoints/skin_model_cls_seg_trained.pth",
+    "merge_medical_datasets.py: Missing data file - combined_medical_qa.json",
+    "merge_medical_datasets.py: Missing data file - chatbot_training_combined.json",
+    "merge_medical_datasets.py: Missing data file - chatbot_training_dataset.json",
+    "merge_medical_datasets.py: Missing data file - combined_medical_qa_ar.json",
+    "merge_medical_datasets.py: Missing data file - processing_report.json",
+    "organize_isic_dataset.py: Missing data file - *.csv",
+    "prepare_dataset.py: Missing data file - *.json",
+    "prepare_dataset.py: Missing data file - *.csv",
+    "prepare_dataset.py: Missing data file - {audio_file.stem}.wav",
+    "prepare_dataset.py: Missing data file - {base_name}_test.csv",
+    "prepare_dataset.py: Missing data file - {image_file.stem}.jpg"
+  ],
+  "errors": [
+    "organize_isic_dataset.py: object of type 'NoneType' has no len()",
+    "evaluate_all_models.py: object of type 'NoneType' has no len()",
+    "evaluate_models.py: object of type 'NoneType' has no len()",
+    "test_project_preview.py: object of type 'NoneType' has no len()"
+  ],
+  "summary": {
+    "scripts_executed": 5,
+    "scripts_succeeded": 5,
+    "scripts_failed": 0,
+    "scripts_timeout": 2,
+    "total_warnings": 144,
+    "total_errors": 4
+  }
+}

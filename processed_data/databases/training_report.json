@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-03-01T17:36:52.737300",
+  "configuration": {
+    "embed_dim": 64,
+    "hidden_dim": 128,
+    "num_layers": 1,
+    "max_seq_len": 32,
+    "batch_size": 128,
+    "epochs": 10,
+    "learning_rate": 0.01,
+    "min_word_freq": 5,
+    "data_path": "D:\\project 2\\data\\chatbot_training_combined\\chatbot_training_combined.json",
+    "output_dir": "D:\\project 2\\data\\chatbot_training_combined\\training_results",
+    "checkpoint_path": "D:\\project 2\\checkpoints\\medical_chatbot_fast.pth"
+  },
+  "vocabulary_size": 17086,
+  "dataset": {
+    "train_samples": 25000,
+    "val_samples": 3265,
+    "test_samples": 3266
+  },
+  "training": {
+    "epochs": 10,
+    "best_val_loss": 0.059041806389219485,
+    "final_train_loss": 0.0002590898228827056,
+    "final_val_loss": 0.05954494939830441,
+    "train_losses": [
+      1.1220446223659175,
+      0.07322799460962415,
+      0.009999232717114975,
+      0.0015848018953633703,
+      0.0009198046853048347,
+      0.0006558349562751851,
+      0.0004973751930840675,
+      0.00039114983786819315,
+      0.00031553338948822564,
+      0.0002590898228827056
+    ],
+    "val_losses": [
+      0.1879526170400473,
+      0.07164236745582177,
+      0.059847797302959055,
+      0.059062241504971795,
+      0.059041806389219485,
+      0.05912979914305302,
+      0.05922152266766016,
+      0.05931995099840256,
+      0.05943290334051618,
+      0.05954494939830441
+    ]
+  },
+  "evaluation": {
+    "test_loss": 0.0718308061074752,
+    "test_perplexity": 1.0744735343240115
+  },
+  "category_metrics": {
+    "definition": {
+      "accuracy": 0.9861535328853595,
+      "samples": 4911
+    },
+    "active_ingredient": {
+      "accuracy": 0.9986633765165536,
+      "samples": 9726
+    },
+    "classification": {
+      "accuracy": 0.999279761292314,
+      "samples": 9719
+    },
+    "general": {
+      "accuracy": 0.9906723668869024,
+      "samples": 10292
+    },
+    "indication": {
+      "accuracy": 0.9986179891742485,
+      "samples": 8683
+    },
+    "causes": {
+      "accuracy": 0.9941002949852508,
+      "samples": 339
+    },
+    "diagnosis": {
+      "accuracy": 0.9933554817275747,
+      "samples": 301
+    },
+    "risk_factors": {
+      "accuracy": 0.9781021897810219,
+      "samples": 137
+    },
+    "symptoms": {
+      "accuracy": 0.84375,
+      "samples": 32
+    },
+    "prevention": {
+      "accuracy": 1.0,
+      "samples": 73
+    },
+    "treatment": {
+      "accuracy": 0.95,
+      "samples": 40
+    },
+    "side_effects": {
+      "accuracy": 0.8888888888888888,
+      "samples": 18
+    }
+  },
+  "sample_outputs": [
+    {
+      "question": "What are the symptoms of Chondrosarcoma ?",
+      "reference": "What are the signs and symptoms of Chondrosarcoma? The Human Phenotype Ontology provides the following list of signs and symptoms for Chondrosarcoma. If the information is available, the table below i",
+      "generated": "what are the symptoms of ?"
+    },
+    {
+      "question": "What is the active ingredient in ZIPRASIDONA (clorhidrato) 60 mg cápsula dura?",
+      "reference": "The active ingredient(s) in ZIPRASIDONA (clorhidrato) 60 mg cápsula dura is/are: ziprasidona (clorhidrato) mg ; vía oral.",
+      "generated": "what is the active ingredient in ziprasidona (clorhidrato) 60 mg cápsula dura?"
+    },
+    {
+      "question": "What is the ATC code for TETRACAINA CLORHIDRATO 0,5 % colirio en solución?",
+      "reference": "TETRACAINA CLORHIDRATO 0,5 % colirio en solución has ATC code(s): S01HA03. This classification helps identify the drug's therapeutic use.",
+      "generated": "what is the atc code for tetracaina clorhidrato 0,5 % colirio en solución?"
+    },
+    {
+      "question": "Tell me about DEXAMETASONA 1 mg/ml + NEOMICINA SULFATO 3.500 UI/ml + POLIMIXINA B SULFATO 6.000 UI/ml colirio en suspensión.",
+      "reference": "DEXAMETASONA 1 mg/ml + NEOMICINA SULFATO 3.500 UI/ml + POLIMIXINA B SULFATO 6.000 UI/ml colirio en suspensión is a medication containing dexametasona mg/ml, neomicina sulfato UI/ml. It is used for Inf",
+      "generated": "tell me about dexametasona 1 mg/ml + neomicina sulfato 3.500 ui/ml + polimixina b sulfato 6.000 ui/ml colirio en suspensión."
+    },
+    {
+      "question": "What is the ATC code for RISPERIDONA 3 mg comprimido?",
+      "reference": "RISPERIDONA 3 mg comprimido has ATC code(s): N05AX08. This classification helps identify the drug's therapeutic use.",
+      "generated": "what is the atc code for risperidona 3 mg comprimido?"
+    }
+  ]
+}

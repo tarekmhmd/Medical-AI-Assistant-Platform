@@ -1,0 +1,80 @@
+{
+  "cleanup_report": {
+    "timestamp": "2026-03-01T21:00:00",
+    "project_path": "C:/project 2",
+    "backup_path": "C:/project 2/backup_before_cleanup"
+  },
+  "models_kept": {
+    "filter": "classification, segmentation",
+    "files": [
+      {
+        "name": "skin_model_cls_seg_trained.pth",
+        "type": "classification + segmentation",
+        "description": "Skin analyzer with U-Net segmentation and classification"
+      },
+      {
+        "name": "lab_model_cls_seg_trained.pth",
+        "type": "classification + feature importance",
+        "description": "Lab analyzer with MLP classification and feature importance map"
+      },
+      {
+        "name": "sound_model_cls_seg_trained.pth",
+        "type": "classification + attention",
+        "description": "Sound analyzer with LSTM classification and attention map"
+      },
+      {
+        "name": "chatbot_model_cls_seg_trained.pth",
+        "type": "classification + attention",
+        "description": "Chatbot with LSTM classification and word attention"
+      },
+      {
+        "name": "skin_model_full.pth",
+        "type": "full model",
+        "description": "Complete skin analyzer with full U-Net architecture"
+      }
+    ]
+  },
+  "files_removed": {
+    "old_models": [
+      "skin_model.pth",
+      "lab_model.pth",
+      "sound_model.pth",
+      "chatbot_model.pth",
+      "medical_chatbot_fast.pth",
+      "medical_chatbot_finetuned.pth"
+    ],
+    "temp_files": [
+      "logs/training_log.txt",
+      "logs/training_error.txt"
+    ],
+    "cache_dirs": [
+      "__pycache__/",
+      "backend/__pycache__/",
+      "models/__pycache__/"
+    ]
+  },
+  "backup_contents": {
+    "models_backed_up": [
+      "skin_model.pth",
+      "lab_model.pth",
+      "sound_model.pth",
+      "chatbot_model.pth",
+      "medical_chatbot_fast.pth",
+      "medical_chatbot_finetuned.pth"
+    ],
+    "logs_backed_up": [
+      "training_log.txt",
+      "training_error.txt"
+    ]
+  },
+  "storage_summary": {
+    "backup_size_mb": 91.67,
+    "remaining_checkpoints_size_mb": 201.71,
+    "logs_removed_kb": "~10"
+  },
+  "recommendations": {
+    "restore_from_backup": "Copy files from backup_before_cleanup/ to checkpoints/ if needed",
+    "delete_backup": "Remove backup_before_cleanup/ folder after verifying everything works",
+    "git_ignore": "Ensure backup_before_cleanup/ is in .gitignore (already excluded)"
+  }
+}

@@ -1,0 +1,65 @@
+{
+    "skin": {
+        "train": {
+            "path": "D:\\project 2\\data\\train\\skin",
+            "num_files": 1800,
+            "files": [
+                "ISIC_0000000.jpg",
+                "ISIC_0000000_Segmentation.png",
+                "ISIC_0000001.jpg",
+                "ISIC_0000001_Segmentation.png",
+                "ISIC_0000002.jpg"
+            ]
+        },
+        "val": {
+            "path": "D:\\project 2\\data\\val\\skin",
+            "num_files": 758,
+            "files": [
+                "ISIC_0000003.jpg",
+                "ISIC_0000003_Segmentation.png",
+                "ISIC_0000012.jpg",
+                "ISIC_0000012_Segmentation.png",
+                "ISIC_0000013.jpg"
+            ]
+        },
+        "test": {
+            "path": "D:\\project 2\\data\\test\\skin",
+            "num_files": 0,
+            "files": []
+        }
+    },
+    "sound": {
+        "train": {
+            "path": "D:\\project 2\\data\\train\\sound",
+            "num_files": 0,
+            "files": []
+        },
+        "val": {
+            "path": "D:\\project 2\\data\\val\\sound",
+            "num_files": 0,
+            "files": []
+        },
+        "test": {
+            "path": "D:\\project 2\\data\\test\\sound",
+            "num_files": 0,
+            "files": []
+        }
+    },
+    "lab": {
+        "train": {
+            "path": "D:\\project 2\\data\\train\\lab",
+            "num_files": 0,
+            "files": []
+        },
+        "val": {
+            "path": "D:\\project 2\\data\\val\\lab",
+            "num_files": 0,
+            "files": []
+        },
+        "test": {
+            "path": "D:\\project 2\\data\\test\\lab",
+            "num_files": 0,
+            "files": []
+        }
+    }
+}

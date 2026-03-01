@@ -4,276 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skin Analysis - Medical AI Assistant</title>
-    <meta name="description" content="AI-powered skin condition analysis - Upload images for instant preliminary diagnosis">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
         <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>🏥 Medical AI</h2>
             </div>
             <nav>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a></li>
-                    <li class="nav-item"><a href="profile.html" class="nav-link"><span>👤</span> Profile</a></li>
-                    <li class="nav-item"><a href="skin-analysis.html" class="nav-link active" aria-current="page"><span>🔬</span> Skin Analysis</a></li>
-                    <li class="nav-item"><a href="lab-analysis.html" class="nav-link"><span>🧪</span> Lab Results</a></li>
-                    <li class="nav-item"><a href="chatbot.html" class="nav-link"><span>💬</span> AI Chatbot</a></li>
-                    <li class="nav-item"><a href="sound-analysis.html" class="nav-link"><span>🎤</span> Sound Analysis</a></li>
-                    <li class="nav-item"><a href="health-records.html" class="nav-link"><span>📋</span> Health Records</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link"><span>ℹ️</span> About Us</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"><span>📧</span> Contact</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" onclick="logout()"><span>🚪</span> Logout</a></li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <span>📊</span> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-link">
+                            <span>👤</span> Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="skin-analysis.html" class="nav-link active">
+                            <span>🔬</span> Skin Analysis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lab-analysis.html" class="nav-link">
+                            <span>🧪</span> Lab Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="chatbot.html" class="nav-link">
+                            <span>💬</span> AI Chatbot
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sound-analysis.html" class="nav-link">
+                            <span>🎤</span> Sound Analysis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-records.html" class="nav-link">
+                            <span>📋</span> Health Records
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            <span>ℹ️</span> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span>📧</span> Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="logout()">
+                            <span>🚪</span> Logout
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content" role="main">
-            <header class="header">
+        <main class="main-content">
+            <div class="header">
                 <h1>🔬 Skin Condition Analysis</h1>
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span id="userName">User</span>
-                </div>
-            </header>
-
-            <!-- Analysis Steps Indicator -->
-            <div class="steps-indicator">
-                <div class="step active" id="step1">
-                    <div class="step-number">1</div>
-                    <div class="step-label">Upload Image</div>
-                </div>
-                <div class="step-line"></div>
-                <div class="step" id="step2">
-                    <div class="step-number">2</div>
-                    <div class="step-label">Review & Analyze</div>
-                </div>
-                <div class="step-line"></div>
-                <div class="step" id="step3">
-                    <div class="step-number">3</div>
-                    <div class="step-label">Get Results</div>
-                </div>
             </div>
 
-            <!-- Main Analysis Card -->
-            <div class="card analysis-card">
-                <!-- Step 1: Upload Area -->
-                <div id="uploadStep" class="analysis-step">
-                    <div class="step-header">
-                        <h2>📸 Upload Skin Image</h2>
-                        <p>Take a clear photo of the affected skin area for AI analysis</p>
-                    </div>
-
-                    <div class="upload-area-enhanced" id="uploadArea" onclick="document.getElementById('fileInput').click()">
-                        <div class="upload-icon">📸</div>
-                        <h3>Click or Drag to Upload</h3>
-                        <p>Upload a clear image of the affected skin area</p>
-                        
-                        <div class="upload-requirements">
-                            <div class="requirement-item">
-                                <span class="requirement-icon">✅</span>
-                                <span>Good lighting</span>
-                            </div>
-                            <div class="requirement-item">
-                                <span class="requirement-icon">✅</span>
-                                <span>Clear focus</span>
-                            </div>
-                            <div class="requirement-item">
-                                <span class="requirement-icon">✅</span>
-                                <span>Affected area visible</span>
-                            </div>
-                            <div class="requirement-item">
-                                <span class="requirement-icon">📷</span>
-                                <span>JPG, PNG, BMP</span>
-                            </div>
-                        </div>
-
-                        <button class="btn btn-primary browse-btn" onclick="event.stopPropagation(); document.getElementById('fileInput').click()">
-                            <span>📁</span> Browse Files
-                        </button>
-                    </div>
-
-                    <input type="file" id="fileInput" class="file-input" accept="image/*" onchange="handleFileSelect(event)">
-
-                    <!-- Camera Capture Option -->
-                    <div class="camera-option">
-                        <div class="divider">OR</div>
-                        <button class="btn btn-secondary" onclick="openCamera()">
-                            <span>📱</span> Use Camera
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Preview & Confirm -->
-                <div id="previewStep" class="analysis-step hidden">
-                    <div class="step-header">
-                        <h2>👁️ Review Your Image</h2>
-                        <p>Ensure the image is clear and shows the affected area properly</p>
-                    </div>
-
-                    <div class="image-preview-container">
-                        <div class="image-preview-wrapper">
-                            <img id="previewImg" class="preview-image" src="" alt="Skin analysis preview">
-                            <button class="btn-change-image" onclick="resetToUpload()">
-                                <span>🔄</span> Change Image
-                            </button>
-                        </div>
-
-                        <div class="image-quality-check">
-                            <h3>Image Quality Check</h3>
-                            <div class="checklist">
-                                <div class="checklist-item" id="checkLighting">
-                                    <span class="check-icon">⏳</span>
-                                    <span>Good lighting</span>
-                                </div>
-                                <div class="checklist-item" id="checkFocus">
-                                    <span class="check-icon">⏳</span>
-                                    <span>Clear focus</span>
-                                </div>
-                                <div class="checklist-item" id="checkArea">
-                                    <span class="check-icon">⏳</span>
-                                    <span>Affected area visible</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="preview-actions">
-                        <button class="btn btn-secondary" onclick="resetToUpload()">
-                            <span>↩️</span> Back
-                        </button>
-                        <button class="btn btn-primary" id="analyzeBtn" onclick="analyzeSkin()">
-                            <span>🔬</span> Analyze Skin Condition
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Results -->
-                <div id="resultsStep" class="analysis-step hidden">
-                    <div class="step-header">
-                        <h2>📊 Analysis Results</h2>
-                        <p>AI-powered preliminary diagnosis</p>
-                    </div>
-
-                    <div id="results" class="results-container">
-                        <!-- Results will be injected here -->
-                    </div>
-
-                    <div class="results-actions">
-                        <button class="btn btn-secondary" onclick="resetToUpload()">
-                            <span>🔄</span> New Analysis
-                        </button>
-                        <button class="btn btn-primary" onclick="saveToRecords()">
-                            <span>💾</span> Save to Records
-                        </button>
-                        <button class="btn btn-secondary" onclick="downloadReport()">
-                            <span>📥</span> Download Report
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Skin Conditions Guide -->
             <div class="card">
                 <div class="card-header">
-                    <h2 class="card-title">📚 Common Skin Conditions</h2>
-                    <button class="btn-toggle" onclick="toggleGuide()">Show Guide</button>
+                    <h2 class="card-title">Upload Skin Image</h2>
                 </div>
-                
-                <div id="conditionsGuide" class="conditions-guide hidden">
-                    <div class="conditions-grid">
-                        <div class="condition-card">
-                            <div class="condition-icon">🔴</div>
-                            <h3>Acne</h3>
-                            <p>Pimples, blackheads, whiteheads - common in oily skin</p>
-                        </div>
-                        <div class="condition-card">
-                            <div class="condition-icon">⚪</div>
-                            <h3>Eczema</h3>
-                            <p>Dry, itchy, inflamed skin patches</p>
-                        </div>
-                        <div class="condition-card">
-                            <div class="condition-icon">🟤</div>
-                            <h3>Melasma</h3>
-                            <p>Brown patches on face, common during pregnancy</p>
-                        </div>
-                        <div class="condition-card">
-                            <div class="condition-icon">🔴</div>
-                            <h3>Psoriasis</h3>
-                            <p>Scaly, silvery skin patches</p>
-                        </div>
-                        <div class="condition-card">
-                            <div class="condition-icon">⚫</div>
-                            <h3>Melanoma</h3>
-                            <p>Serious skin cancer - irregular moles</p>
-                        </div>
-                        <div class="condition-card">
-                            <div class="condition-icon">🟠</div>
-                            <h3>Rosacea</h3>
-                            <p>Redness, visible blood vessels on face</p>
-                        </div>
-                    </div>
-                    <p class="guide-disclaimer">⚠️ This guide is for educational purposes only</p>
+
+                <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-icon">📸</div>
+                    <h3>Click or Drag to Upload</h3>
+                    <p>Upload a clear image of the affected skin area</p>
+                    <p style="color: #95a5a6; font-size: 0.9rem;">Supported formats: JPG, PNG, BMP</p>
                 </div>
+
+                <input type="file" id="fileInput" class="file-input" accept="image/*">
+
+                <div id="imagePreview" class="hidden" style="text-align: center; margin: 20px 0;">
+                    <img id="previewImg" style="max-width: 100%; max-height: 400px; border-radius: 10px;">
+                </div>
+
+                <button id="analyzeBtn" class="btn btn-primary hidden" onclick="analyzeSkin()">
+                    Analyze Skin Condition
+                </button>
+
+                <div id="results"></div>
             </div>
 
-            <!-- Tips Card -->
-            <div class="card tips-card">
-                <div class="tips-header">
-                    <span class="tips-icon">💡</span>
-                    <h3>Tips for Best Results</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">ℹ️ Tips for Best Results</h2>
                 </div>
-                <ul class="tips-list">
-                    <li>📸 Use natural daylight when taking photos</li>
-                    <li>🎯 Keep the camera 6-8 inches from the skin</li>
-                    <li>✨ Clean the area before photographing</li>
-                    <li>🔄 Take multiple angles if possible</li>
-                    <li>📏 Include a ruler for size reference if applicable</li>
-                    <li>🚫 Avoid using filters or editing the image</li>
+                <ul style="line-height: 2;">
+                    <li>Use good lighting when taking the photo</li>
+                    <li>Ensure the affected area is clearly visible</li>
+                    <li>Avoid blurry or low-quality images</li>
+                    <li>Take the photo from a close distance</li>
+                    <li>Clean the area before photographing</li>
                 </ul>
-            </div>
-
-            <!-- Medical Disclaimer -->
-            <div class="card disclaimer-card">
-                <div class="disclaimer-content">
-                    <span class="disclaimer-icon">⚠️</span>
-                    <div>
-                        <strong>Important Medical Disclaimer:</strong>
-                        <p>This AI analysis is for preliminary screening only and should not replace professional medical diagnosis. Always consult a dermatologist for proper evaluation of skin conditions.</p>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
 
     <script src="js/app.js"></script>
     <script>
-        // Check authentication
         checkAuth();
 
-        // Load user info
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        document.getElementById('userName').textContent = user.name || 'User';
-        document.getElementById('userAvatar').textContent = (user.name || 'U')[0].toUpperCase();
-
-        // Global variables
         let selectedFile = null;
-        let currentAnalysisResult = null;
+
+        // Setup file input
+        document.getElementById('fileInput').addEventListener('change', (e) => {
+            handleFileSelection(e.target.files[0]);
+        });
 
         // Setup drag and drop
         const uploadArea = document.getElementById('uploadArea');
-        setupDragAndDrop(uploadArea, handleFile);
+        setupDragAndDrop(uploadArea, handleFileSelection);
 
-        function handleFileSelect(event) {
-            const file = event.target.files[0];
-            handleFile(file);
-        }
-
-        function handleFile(file) {
+        function handleFileSelection(file) {
             if (!file || !file.type.startsWith('image/')) {
                 showNotification('Please select a valid image file', 'error');
                 return;
@@ -285,59 +143,10 @@
             const reader = new FileReader();
             reader.onload = (e) => {
                 document.getElementById('previewImg').src = e.target.result;
-                
-                // Move to preview step
-                document.getElementById('uploadStep').classList.add('hidden');
-                document.getElementById('previewStep').classList.remove('hidden');
-                
-                // Update steps indicator
-                document.getElementById('step1').classList.remove('active');
-                document.getElementById('step2').classList.add('active');
-                
-                // Simulate quality checks
-                simulateQualityChecks();
+                document.getElementById('imagePreview').classList.remove('hidden');
+                document.getElementById('analyzeBtn').classList.remove('hidden');
             };
             reader.readAsDataURL(file);
-        }
-
-        function simulateQualityChecks() {
-            // Simulate checking image quality
-            const checks = [
-                { id: 'checkLighting', icon: '✅', text: 'Good lighting' },
-                { id: 'checkFocus', icon: '✅', text: 'Clear focus' },
-                { id: 'checkArea', icon: '✅', text: 'Affected area visible' }
-            ];
-
-            checks.forEach((check, index) => {
-                setTimeout(() => {
-                    const element = document.getElementById(check.id);
-                    if (element) {
-                        element.innerHTML = `<span class="check-icon">${check.icon}</span><span>${check.text}</span>`;
-                    }
-                }, 500 * (index + 1));
-            });
-        }
-
-        function resetToUpload() {
-            // Reset UI
-            document.getElementById('uploadStep').classList.remove('hidden');
-            document.getElementById('previewStep').classList.add('hidden');
-            document.getElementById('resultsStep').classList.add('hidden');
-            
-            // Reset steps indicator
-            document.getElementById('step1').classList.add('active');
-            document.getElementById('step2').classList.remove('active');
-            document.getElementById('step3').classList.remove('active');
-            
-            // Clear file input
-            document.getElementById('fileInput').value = '';
-            selectedFile = null;
-            
-            // Clear preview
-            document.getElementById('previewImg').src = '';
-            
-            // Clear results
-            document.getElementById('results').innerHTML = '';
         }
 
         async function analyzeSkin() {
@@ -347,155 +156,20 @@
             }
 
             const resultsDiv = document.getElementById('results');
-            
-            // Show loading
-            resultsDiv.innerHTML = `
-                <div class="analysis-loading">
-                    <div class="spinner"></div>
-                    <p>AI is analyzing your skin condition...</p>
-                    <div class="loading-steps">
-                        <div class="loading-step">🔬 Processing image</div>
-                        <div class="loading-step">🧠 Running AI model</div>
-                        <div class="loading-step">📊 Generating results</div>
-                    </div>
-                </div>
-            `;
-
-            // Move to results step
-            document.getElementById('previewStep').classList.add('hidden');
-            document.getElementById('resultsStep').classList.remove('hidden');
-            
-            // Update steps indicator
-            document.getElementById('step2').classList.remove('active');
-            document.getElementById('step3').classList.add('active');
+            showLoading(resultsDiv);
 
             try {
                 const result = await uploadFile('/analyze/skin', selectedFile, 'image');
-                currentAnalysisResult = result;
-                displaySkinResult(resultsDiv, result);
+                displayResult(resultsDiv, result);
                 showNotification('Analysis completed successfully!', 'success');
             } catch (error) {
                 resultsDiv.innerHTML = `
                     <div class="message error">
-                        <strong>Error:</strong> ${error.message || 'Analysis failed. Please try again.'}
+                        <strong>Error:</strong> ${error.message}
                     </div>
                 `;
                 showNotification('Analysis failed. Please try again.', 'error');
             }
-        }
-
-        function displaySkinResult(container, result) {
-            // Determine severity color
-            const severityColors = {
-                'none': '#50C878',
-                'mild': '#F39C12',
-                'moderate': '#E74C3C',
-                'severe': '#C0392B'
-            };
-
-            container.innerHTML = `
-                <div class="result-card">
-                    <div class="result-header" style="border-left-color: ${severityColors[result.severity] || '#2A5C9A'}">
-                        <div>
-                            <span class="result-badge">Preliminary Diagnosis</span>
-                            <h3>${result.diagnosis || 'Analysis Complete'}</h3>
-                        </div>
-                        <span class="severity-badge severity-${result.severity}">${result.severity.toUpperCase()}</span>
-                    </div>
-
-                    <div class="result-body">
-                        ${result.confidence ? `
-                        <div class="result-section">
-                            <div class="section-label">AI Confidence</div>
-                            <div class="confidence-meter">
-                                <div class="confidence-fill" style="width: ${result.confidence}%"></div>
-                                <span class="confidence-value">${result.confidence}%</span>
-                            </div>
-                        </div>
-                        ` : ''}
-
-                        <div class="result-section">
-                            <div class="section-label">Treatment Recommendations</div>
-                            <div class="treatment-text">${result.treatment || 'Consult a dermatologist for proper treatment.'}</div>
-                        </div>
-
-                        ${result.recommendations && result.recommendations.length > 0 ? `
-                        <div class="result-section">
-                            <div class="section-label">Additional Recommendations</div>
-                            <ul class="recommendations-list">
-                                ${result.recommendations.map(rec => `<li>${rec}</li>`).join('')}
-                            </ul>
-                        </div>
-                        ` : ''}
-
-                        <div class="result-section">
-                            <div class="section-label">Next Steps</div>
-                            <div class="next-steps">
-                                <div class="next-step">
-                                    <span class="step-number">1</span>
-                                    <span>Monitor the area for changes</span>
-                                </div>
-                                <div class="next-step">
-                                    <span class="step-number">2</span>
-                                    <span>Consult a dermatologist if concerned</span>
-                                </div>
-                                <div class="next-step">
-                                    <span class="step-number">3</span>
-                                    <span>Follow treatment recommendations</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="result-footer">
-                        <p class="analysis-date">Analysis completed: ${new Date().toLocaleString()}</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        function openCamera() {
-            showNotification('Camera feature coming soon! Use file upload for now.', 'info');
-        }
-
-        function toggleGuide() {
-            const guide = document.getElementById('conditionsGuide');
-            const button = event.currentTarget;
-            
-            guide.classList.toggle('hidden');
-            button.textContent = guide.classList.contains('hidden') ? 'Show Guide' : 'Hide Guide';
-        }
-
-        function saveToRecords() {
-            if (!currentAnalysisResult) {
-                showNotification('No analysis result to save', 'error');
-                return;
-            }
-
-            // Simulate saving
-            showNotification('Analysis saved to your health records!', 'success');
-        }
-
-        function downloadReport() {
-            if (!currentAnalysisResult) {
-                showNotification('No analysis result to download', 'error');
-                return;
-            }
-
-            const report = {
-                date: new Date().toISOString(),
-                type: 'Skin Analysis',
-                ...currentAnalysisResult
-            };
-
-            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `skin-analysis-${Date.now()}.json`;
-            a.click();
-
-            showNotification('Report downloaded successfully!', 'success');
         }
 
         function logout() {

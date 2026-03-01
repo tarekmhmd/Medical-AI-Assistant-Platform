@@ -1,0 +1,26 @@
+{
+    "skin": {
+        "num_files": 1800,
+        "sample_files": [
+            "ISIC_0000008.jpg",
+            "ISIC_0000008_segmentation.png",
+            "ISIC_0000038.jpg",
+            "ISIC_0000038_segmentation.png",
+            "ISIC_0000041.jpg"
+        ]
+    },
+    "sound": {
+        "num_files": 1844,
+        "sample_files": [
+            "demographic_info.txt",
+            "filename_differences.txt",
+            "filename_format.txt",
+            "patient_diagnosis.csv",
+            "101_1b1_Al_sc_Meditron.txt"
+        ]
+    },
+    "lab": {
+        "num_files": 0,
+        "sample_files": []
+    }
+}

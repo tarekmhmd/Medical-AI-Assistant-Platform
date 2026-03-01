@@ -1,0 +1,280 @@
+{
+  "tests": [
+    {
+      "name": "Glucose (Fasting)",
+      "unit": "mg/dL",
+      "normal_range": {
+        "min": 70,
+        "max": 100
+      },
+      "interpretation": {
+        "low": {
+          "range": "<70",
+          "meaning": "Hypoglycemia",
+          "action": "Eat glucose, consult doctor"
+        },
+        "normal": {
+          "range": "70-100",
+          "meaning": "Normal",
+          "action": "Maintain healthy lifestyle"
+        },
+        "prediabetes": {
+          "range": "100-125",
+          "meaning": "Prediabetes",
+          "action": "Diet modification, exercise"
+        },
+        "diabetes": {
+          "range": ">126",
+          "meaning": "Diabetes",
+          "action": "Urgent: Consult endocrinologist, start medication"
+        }
+      },
+      "medications": {
+        "high": [
+          "Metformin",
+          "Insulin",
+          "Sulfonylureas",
+          "GLP-1 agonists"
+        ],
+        "low": [
+          "Glucose tablets",
+          "Adjust diabetes medication"
+        ]
+      }
+    },
+    {
+      "name": "Total Cholesterol",
+      "unit": "mg/dL",
+      "normal_range": {
+        "min": 0,
+        "max": 200
+      },
+      "interpretation": {
+        "desirable": {
+          "range": "<200",
+          "meaning": "Desirable",
+          "action": "Maintain healthy diet"
+        },
+        "borderline": {
+          "range": "200-239",
+          "meaning": "Borderline high",
+          "action": "Diet changes, exercise"
+        },
+        "high": {
+          "range": "≥240",
+          "meaning": "High",
+          "action": "Urgent: Consult cardiologist, start statin"
+        }
+      },
+      "medications": {
+        "high": [
+          "Atorvastatin",
+          "Simvastatin",
+          "Rosuvastatin",
+          "Ezetimibe"
+        ]
+      }
+    },
+    {
+      "name": "HDL Cholesterol",
+      "unit": "mg/dL",
+      "normal_range": {
+        "min": 40,
+        "max": 1000
+      },
+      "interpretation": {
+        "low": {
+          "range": "<40 (men), <50 (women)",
+          "meaning": "Low (risk factor)",
+          "action": "Exercise, healthy fats"
+        },
+        "normal": {
+          "range": "40-60",
+          "meaning": "Normal",
+          "action": "Maintain lifestyle"
+        },
+        "high": {
+          "range": ">60",
+          "meaning": "Protective",
+          "action": "Excellent, continue"
+        }
+      },
+      "medications": {
+        "low": [
+          "Niacin",
+          "Fibrates",
+          "Exercise",
+          "Omega-3"
+        ]
+      }
+    },
+    {
+      "name": "LDL Cholesterol",
+      "unit": "mg/dL",
+      "normal_range": {
+        "min": 0,
+        "max": 100
+      },
+      "interpretation": {
+        "optimal": {
+          "range": "<100",
+          "meaning": "Optimal",
+          "action": "Maintain"
+        },
+        "near_optimal": {
+          "range": "100-129",
+          "meaning": "Near optimal",
+          "action": "Monitor"
+        },
+        "borderline": {
+          "range": "130-159",
+          "meaning": "Borderline high",
+          "action": "Diet, exercise"
+        },
+        "high": {
+          "range": "160-189",
+          "meaning": "High",
+          "action": "Medication likely needed"
+        },
+        "very_high": {
+          "range": "≥190",
+          "meaning": "Very high",
+          "action": "Urgent: Start statin therapy"
+        }
+      },
+      "medications": {
+        "high": [
+          "Atorvastatin",
+          "Simvastatin",
+          "Rosuvastatin"
+        ]
+      }
+    },
+    {
+      "name": "Hemoglobin",
+      "unit": "g/dL",
+      "normal_range": {
+        "min": 12,
+        "max": 17
+      },
+      "interpretation": {
+        "low": {
+          "range": "<12 (women), <13 (men)",
+          "meaning": "Anemia",
+          "action": "Iron supplements, investigate cause"
+        },
+        "normal": {
+          "range": "12-17",
+          "meaning": "Normal",
+          "action": "Maintain"
+        },
+        "high": {
+          "range": ">17",
+          "meaning": "Polycythemia",
+          "action": "Investigate cause, hydration"
+        }
+      },
+      "medications": {
+        "low": [
+          "Iron supplements",
+          "Vitamin B12",
+          "Folic acid",
+          "Erythropoietin"
+        ],
+        "high": [
+          "Phlebotomy",
+          "Treat underlying cause"
+        ]
+      }
+    },
+    {
+      "name": "WBC (White Blood Cells)",
+      "unit": "cells/mcL",
+      "normal_range": {
+        "min": 4000,
+        "max": 11000
+      },
+      "interpretation": {
+        "low": {
+          "range": "<4000",
+          "meaning": "Leukopenia",
+          "action": "Investigate cause, boost immunity"
+        },
+        "normal": {
+          "range": "4000-11000",
+          "meaning": "Normal",
+          "action": "Maintain"
+        },
+        "high": {
+          "range": ">11000",
+          "meaning": "Leukocytosis",
+          "action": "Investigate infection/inflammation"
+        }
+      },
+      "medications": {
+        "low": [
+          "G-CSF (if severe)",
+          "Treat underlying cause"
+        ],
+        "high": [
+          "Antibiotics (if infection)",
+          "Treat underlying cause"
+        ]
+      }
+    },
+    {
+      "name": "Creatinine",
+      "unit": "mg/dL",
+      "normal_range": {
+        "min": 0.6,
+        "max": 1.2
+      },
+      "interpretation": {
+        "normal": {
+          "range": "0.6-1.2",
+          "meaning": "Normal kidney function",
+          "action": "Maintain"
+        },
+        "elevated": {
+          "range": ">1.2",
+          "meaning": "Possible kidney dysfunction",
+          "action": "Urgent: Consult nephrologist"
+        }
+      },
+      "medications": {
+        "high": [
+          "ACE inhibitors",
+          "Treat underlying cause",
+          "Reduce protein intake"
+        ]
+      }
+    },
+    {
+      "name": "ALT (Liver Enzyme)",
+      "unit": "U/L",
+      "normal_range": {
+        "min": 7,
+        "max": 56
+      },
+      "interpretation": {
+        "normal": {
+          "range": "7-56",
+          "meaning": "Normal liver function",
+          "action": "Maintain"
+        },
+        "elevated": {
+          "range": ">56",
+          "meaning": "Liver damage/inflammation",
+          "action": "Urgent: Consult hepatologist, stop alcohol"
+        }
+      },
+      "medications": {
+        "high": [
+          "Stop hepatotoxic drugs",
+          "Treat underlying cause",
+          "Liver support supplements"
+        ]
+      }
+    }
+  ]
+}

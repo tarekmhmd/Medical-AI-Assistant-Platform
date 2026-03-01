@@ -1,0 +1,130 @@
+{
+  "conditions": [
+    {
+      "name": "Acne",
+      "description": "Inflammatory skin condition with pimples and blackheads",
+      "symptoms": [
+        "red bumps",
+        "blackheads",
+        "whiteheads",
+        "oily skin"
+      ],
+      "medications": [
+        "Benzoyl peroxide",
+        "Salicylic acid",
+        "Retinoids",
+        "Antibiotics (topical)"
+      ],
+      "severity": "mild to moderate",
+      "treatment_duration": "6-8 weeks"
+    },
+    {
+      "name": "Eczema (Atopic Dermatitis)",
+      "description": "Chronic inflammatory skin condition",
+      "symptoms": [
+        "dry skin",
+        "itching",
+        "red patches",
+        "cracked skin"
+      ],
+      "medications": [
+        "Hydrocortisone cream",
+        "Moisturizers",
+        "Antihistamines",
+        "Tacrolimus"
+      ],
+      "severity": "mild to severe",
+      "treatment_duration": "ongoing"
+    },
+    {
+      "name": "Psoriasis",
+      "description": "Autoimmune condition causing skin cell buildup",
+      "symptoms": [
+        "red patches",
+        "silvery scales",
+        "dry cracked skin",
+        "itching"
+      ],
+      "medications": [
+        "Corticosteroids",
+        "Vitamin D analogues",
+        "Methotrexate",
+        "Biologics"
+      ],
+      "severity": "moderate to severe",
+      "treatment_duration": "chronic management"
+    },
+    {
+      "name": "Rosacea",
+      "description": "Chronic skin condition causing facial redness",
+      "symptoms": [
+        "facial redness",
+        "visible blood vessels",
+        "bumps",
+        "eye irritation"
+      ],
+      "medications": [
+        "Metronidazole gel",
+        "Azelaic acid",
+        "Doxycycline",
+        "Laser therapy"
+      ],
+      "severity": "mild to moderate",
+      "treatment_duration": "ongoing"
+    },
+    {
+      "name": "Fungal Infection",
+      "description": "Infection caused by fungi",
+      "symptoms": [
+        "itching",
+        "redness",
+        "scaling",
+        "ring-shaped rash"
+      ],
+      "medications": [
+        "Clotrimazole",
+        "Miconazole",
+        "Terbinafine",
+        "Fluconazole"
+      ],
+      "severity": "mild",
+      "treatment_duration": "2-4 weeks"
+    },
+    {
+      "name": "Dermatitis",
+      "description": "General term for skin inflammation",
+      "symptoms": [
+        "redness",
+        "swelling",
+        "itching",
+        "blisters"
+      ],
+      "medications": [
+        "Corticosteroid creams",
+        "Antihistamines",
+        "Moisturizers",
+        "Avoid irritants"
+      ],
+      "severity": "mild to moderate",
+      "treatment_duration": "1-2 weeks"
+    },
+    {
+      "name": "Melanoma",
+      "description": "Serious form of skin cancer",
+      "symptoms": [
+        "irregular mole",
+        "color changes",
+        "asymmetry",
+        "diameter > 6mm"
+      ],
+      "medications": [
+        "Surgical removal",
+        "Immunotherapy",
+        "Targeted therapy",
+        "Radiation"
+      ],
+      "severity": "severe",
+      "treatment_duration": "requires immediate medical attention"
+    }
+  ]
+}

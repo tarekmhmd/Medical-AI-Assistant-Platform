@@ -1,0 +1,112 @@
+{
+  "conditions": [
+    {
+      "name": "Healthy Breathing",
+      "description": "Normal respiratory sounds",
+      "characteristics": [
+        "regular rhythm",
+        "clear sounds",
+        "no wheezing",
+        "no crackles"
+      ],
+      "medications": [
+        "None needed",
+        "Maintain healthy lifestyle"
+      ],
+      "severity": "none"
+    },
+    {
+      "name": "Asthma",
+      "description": "Chronic inflammatory airway disease",
+      "characteristics": [
+        "wheezing",
+        "prolonged expiration",
+        "high-pitched sounds"
+      ],
+      "medications": [
+        "Albuterol inhaler",
+        "Corticosteroids (inhaled)",
+        "Montelukast",
+        "Long-acting beta agonists"
+      ],
+      "severity": "moderate",
+      "emergency_signs": [
+        "Severe shortness of breath",
+        "Blue lips",
+        "Inability to speak"
+      ]
+    },
+    {
+      "name": "Bronchitis",
+      "description": "Inflammation of bronchial tubes",
+      "characteristics": [
+        "productive cough",
+        "rhonchi",
+        "coarse crackles"
+      ],
+      "medications": [
+        "Bronchodilators",
+        "Expectorants",
+        "Antibiotics (if bacterial)",
+        "Rest"
+      ],
+      "severity": "moderate",
+      "duration": "2-3 weeks"
+    },
+    {
+      "name": "Pneumonia",
+      "description": "Lung infection with fluid/pus in air sacs",
+      "characteristics": [
+        "crackles",
+        "decreased breath sounds",
+        "dullness to percussion"
+      ],
+      "medications": [
+        "Antibiotics (Amoxicillin/Azithromycin)",
+        "Oxygen therapy",
+        "Fever reducers",
+        "Rest"
+      ],
+      "severity": "severe",
+      "emergency_signs": [
+        "High fever",
+        "Confusion",
+        "Rapid breathing"
+      ]
+    },
+    {
+      "name": "COPD",
+      "description": "Chronic obstructive pulmonary disease",
+      "characteristics": [
+        "decreased breath sounds",
+        "prolonged expiration",
+        "wheezing"
+      ],
+      "medications": [
+        "Bronchodilators",
+        "Corticosteroids",
+        "Oxygen therapy",
+        "Pulmonary rehabilitation"
+      ],
+      "severity": "severe",
+      "management": "chronic"
+    },
+    {
+      "name": "Whooping Cough",
+      "description": "Bacterial infection causing severe coughing",
+      "characteristics": [
+        "paroxysmal cough",
+        "inspiratory whoop",
+        "post-tussive vomiting"
+      ],
+      "medications": [
+        "Antibiotics (Erythromycin)",
+        "Supportive care",
+        "Isolation",
+        "Hydration"
+      ],
+      "severity": "moderate to severe",
+      "contagious": true
+    }
+  ]
+}

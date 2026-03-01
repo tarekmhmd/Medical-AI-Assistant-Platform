@@ -1,0 +1,298 @@
+{
+  "start_time": "2026-03-01T16:31:21.174268",
+  "files_processed": [
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\atcclass.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\atcclass_processed.json",
+      "rows": 6232,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\cim10.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\cim10_processed.json",
+      "rows": 40165,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\cim10_indicationgroup.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\cim10_indicationgroup_processed.json",
+      "rows": 10432,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\commonnamegroup.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\commonnamegroup_processed.json",
+      "rows": 12827,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\commonnamegroup_atc.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\commonnamegroup_atc_processed.json",
+      "rows": 12320,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\commonnamegroup_indication.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\commonnamegroup_indication_processed.json",
+      "rows": 50662,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\indication.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\indication_processed.json",
+      "rows": 3848,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\indicationgroup.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\indicationgroup_processed.json",
+      "rows": 706,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\indicationgroup_indication.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\indicationgroup_indication_processed.json",
+      "rows": 5292,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\sideeffect.csv",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\sideeffect_processed.json",
+      "rows": 4093,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd.json",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_processed.json",
+      "rows": 1,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd_c2.json",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_c2_processed.json",
+      "rows": 1,
+      "category": "drugs"
+    },
+    {
+      "original": "D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd_H.json",
+      "processed": "D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_H_processed.json",
+      "rows": 1,
+      "category": "drugs"
+    }
+  ],
+  "transformations": [
+    {
+      "timestamp": "2026-03-01T16:31:21.174268",
+      "type": "info",
+      "message": "============================================================"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.174268",
+      "type": "info",
+      "message": "Starting Drug Dataset Preparation Pipeline"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.174268",
+      "type": "info",
+      "message": "============================================================"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.174268",
+      "type": "info",
+      "message": "Directory already exists: D:\\project 2\\data\\drugs-datasets-master"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.174268",
+      "type": "info",
+      "message": "Discovering data files..."
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.175265",
+      "type": "info",
+      "message": "Discovered: 10 CSV, 3 JSON, 0 Excel, 1 TXT files"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.175265",
+      "type": "info",
+      "message": "Processing discovered files..."
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.175265",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\atcclass.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.193217",
+      "type": "info",
+      "message": "Filled 2 missing values"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.241594",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\atcclass_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.242592",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\cim10.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.371254",
+      "type": "info",
+      "message": "Filled 21271 missing values"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.724356",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\cim10_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.730340",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\cim10_indicationgroup.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.799230",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\cim10_indicationgroup_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.800224",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\commonnamegroup.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:21.998820",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\commonnamegroup_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.002810",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\commonnamegroup_atc.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.093569",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\commonnamegroup_atc_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.095563",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\commonnamegroup_indication.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.465402",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\commonnamegroup_indication_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.473399",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\indication.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.515269",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\indication_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.515269",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\indicationgroup.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.521253",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\indicationgroup_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.522251",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\indicationgroup_indication.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.556276",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\indicationgroup_indication_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.557240",
+      "type": "info",
+      "message": "Processing CSV: D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\sideeffect.csv"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.585265",
+      "type": "info",
+      "message": "Saved processed data to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\sideeffect_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:22.586229",
+      "type": "info",
+      "message": "Processing JSON: D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:24.448321",
+      "type": "info",
+      "message": "Saved processed JSON to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:24.467319",
+      "type": "info",
+      "message": "Processing JSON: D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd_c2.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:24.468273",
+      "type": "info",
+      "message": "Saved processed JSON to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_c2_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:24.468273",
+      "type": "info",
+      "message": "Processing JSON: D:\\project 2\\data\\drugs-datasets-master\\graph_atc_icd_H.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:24.892133",
+      "type": "info",
+      "message": "Saved processed JSON to D:\\project 2\\data\\drugs-datasets-processed\\drugs\\graph_atc_icd_H_processed.json"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:24.895126",
+      "type": "info",
+      "message": "Creating chatbot training dataset..."
+    },
+    {
+      "timestamp": "2026-03-01T16:31:24.896123",
+      "type": "info",
+      "message": "Creating chatbot training dataset with relational joins..."
+    },
+    {
+      "timestamp": "2026-03-01T16:31:25.090504",
+      "type": "info",
+      "message": "Loaded 12827 drugs, 3848 indications, 4093 side effects"
+    },
+    {
+      "timestamp": "2026-03-01T16:31:26.193339",
+      "type": "info",
+      "message": "Created chatbot dataset with 12827 drugs and 50655 QA pairs"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "statistics": {
+    "total_drugs": 12827,
+    "total_qa_pairs": 50655,
+    "drugs_with_ingredients": 12827,
+    "drugs_with_indications": 12827,
+    "drugs_with_atc": 12171,
+    "qa_categories": {
+      "active_ingredient": 12827,
+      "indication": 12827,
+      "general": 12827,
+      "classification": 12171,
+      "safety": 3
+    }
+  },
+  "end_time": "2026-03-01T16:31:26.224361",
+  "status": "completed"
+}

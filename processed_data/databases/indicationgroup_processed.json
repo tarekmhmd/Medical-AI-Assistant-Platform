@@ -1,0 +1,2834 @@
+{
+  "source_file": "D:\\project 2\\data\\drugs-datasets-master\\latam_csv\\indicationgroup.csv",
+  "columns": [
+    "indicationgroupid",
+    "name"
+  ],
+  "row_count": 706,
+  "data": [
+    {
+      "indicationgroupid": "1",
+      "name": "Angina (excepto Prinzmetal)"
+    },
+    {
+      "indicationgroupid": "2",
+      "name": "Infarto agudo de miocardio"
+    },
+    {
+      "indicationgroupid": "3",
+      "name": "Fibrilación auricular"
+    },
+    {
+      "indicationgroupid": "5",
+      "name": "Taquicardia supraventricular"
+    },
+    {
+      "indicationgroupid": "6",
+      "name": "Extrasístole"
+    },
+    {
+      "indicationgroupid": "9",
+      "name": "Valvulopatía"
+    },
+    {
+      "indicationgroupid": "11",
+      "name": "Miocardiopatía obstructiva"
+    },
+    {
+      "indicationgroupid": "12",
+      "name": "Bloqueo auriculoventricular"
+    },
+    {
+      "indicationgroupid": "14",
+      "name": "Edema agudo de pulmón (cardiogénico)"
+    },
+    {
+      "indicationgroupid": "16",
+      "name": "Insuficiencia cardíaca"
+    },
+    {
+      "indicationgroupid": "20",
+      "name": "Accidente vascular cerebromeníngeo"
+    },
+    {
+      "indicationgroupid": "21",
+      "name": "Hipertensión arterial"
+    },
+    {
+      "indicationgroupid": "29",
+      "name": "Arritmia ventricular"
+    },
+    {
+      "indicationgroupid": "30",
+      "name": "Endocarditis bacteriana"
+    },
+    {
+      "indicationgroupid": "32",
+      "name": "Insuficiencia de la microcirculación periférica"
+    },
+    {
+      "indicationgroupid": "33",
+      "name": "Hiperlipidemia"
+    },
+    {
+      "indicationgroupid": "34",
+      "name": "Déficit cognitivo en ancianos"
+    },
+    {
+      "indicationgroupid": "35",
+      "name": "Retinopatías supuestamente vasculares"
+    },
+    {
+      "indicationgroupid": "36",
+      "name": "Palpitación y eretismo cardiaco"
+    },
+    {
+      "indicationgroupid": "37",
+      "name": "Taquicardia sinusal"
+    },
+    {
+      "indicationgroupid": "38",
+      "name": "Hipotensión ortostática"
+    },
+    {
+      "indicationgroupid": "40",
+      "name": "Cardiopatía congénita"
+    },
+    {
+      "indicationgroupid": "41",
+      "name": "Hemorroides"
+    },
+    {
+      "indicationgroupid": "42",
+      "name": "Fisura anal"
+    },
+    {
+      "indicationgroupid": "43",
+      "name": "Hipertiroidismo"
+    },
+    {
+      "indicationgroupid": "44",
+      "name": "Contusión y traumatismo superficial"
+    },
+    {
+      "indicationgroupid": "45",
+      "name": "Traumatismo craneal"
+    },
+    {
+      "indicationgroupid": "47",
+      "name": "Menometrorragia (funcional)"
+    },
+    {
+      "indicationgroupid": "48",
+      "name": "Edema periférico"
+    },
+    {
+      "indicationgroupid": "49",
+      "name": "Trombosis venosa"
+    },
+    {
+      "indicationgroupid": "50",
+      "name": "Varices de miembros inferiores"
+    },
+    {
+      "indicationgroupid": "53",
+      "name": "Lipotimia"
+    },
+    {
+      "indicationgroupid": "54",
+      "name": "Crisis convulsiva"
+    },
+    {
+      "indicationgroupid": "55",
+      "name": "Arteritis de las extremidades inferiores"
+    },
+    {
+      "indicationgroupid": "57",
+      "name": "Intervención cardiológica"
+    },
+    {
+      "indicationgroupid": "58",
+      "name": "Anestesia local"
+    },
+    {
+      "indicationgroupid": "59",
+      "name": "Anestesia regional"
+    },
+    {
+      "indicationgroupid": "61",
+      "name": "Insuficiencia cardiocirculatoria"
+    },
+    {
+      "indicationgroupid": "62",
+      "name": "Premedicación"
+    },
+    {
+      "indicationgroupid": "65",
+      "name": "Hipovolemia"
+    },
+    {
+      "indicationgroupid": "66",
+      "name": "Acidosis"
+    },
+    {
+      "indicationgroupid": "67",
+      "name": "Síndrome de bajo gasto cardiaco"
+    },
+    {
+      "indicationgroupid": "68",
+      "name": "Deshidratación"
+    },
+    {
+      "indicationgroupid": "69",
+      "name": "Anestesia general"
+    },
+    {
+      "indicationgroupid": "70",
+      "name": "Hipoglucemia"
+    },
+    {
+      "indicationgroupid": "71",
+      "name": "Delírium tremens"
+    },
+    {
+      "indicationgroupid": "73",
+      "name": "Epilepsia"
+    },
+    {
+      "indicationgroupid": "74",
+      "name": "Asistencia respiratoria"
+    },
+    {
+      "indicationgroupid": "75",
+      "name": "Hipoalbuminemia"
+    },
+    {
+      "indicationgroupid": "76",
+      "name": "Hemodilución normovolémica"
+    },
+    {
+      "indicationgroupid": "77",
+      "name": "Infiltracción"
+    },
+    {
+      "indicationgroupid": "78",
+      "name": "Vehículo para administración de medicamentos"
+    },
+    {
+      "indicationgroupid": "80",
+      "name": "Insuficiencia renal terminal"
+    },
+    {
+      "indicationgroupid": "87",
+      "name": "Anemia ferropénica"
+    },
+    {
+      "indicationgroupid": "95",
+      "name": "Endometriosis"
+    },
+    {
+      "indicationgroupid": "97",
+      "name": "Hirsutismo"
+    },
+    {
+      "indicationgroupid": "104",
+      "name": "Bowen, enfermedad (de)"
+    },
+    {
+      "indicationgroupid": "105",
+      "name": "Aplasia medular"
+    },
+    {
+      "indicationgroupid": "107",
+      "name": "Lupus eritematoso"
+    },
+    {
+      "indicationgroupid": "108",
+      "name": "Poliartritis reumatoide"
+    },
+    {
+      "indicationgroupid": "111",
+      "name": "Enfermedad de Paget"
+    },
+    {
+      "indicationgroupid": "114",
+      "name": "Hipercorticalismo"
+    },
+    {
+      "indicationgroupid": "117",
+      "name": "Trastorno de la pubertad"
+    },
+    {
+      "indicationgroupid": "121",
+      "name": "Policitemia primaria"
+    },
+    {
+      "indicationgroupid": "122",
+      "name": "Condiloma acuminado"
+    },
+    {
+      "indicationgroupid": "123",
+      "name": "Anticoncepción oral"
+    },
+    {
+      "indicationgroupid": "128",
+      "name": "Hipercalcemia"
+    },
+    {
+      "indicationgroupid": "129",
+      "name": "Técnicas de reproducción asistida (ART)"
+    },
+    {
+      "indicationgroupid": "130",
+      "name": "Glomerulonefritis"
+    },
+    {
+      "indicationgroupid": "131",
+      "name": "Náuseas y vómitos por quimioterapia"
+    },
+    {
+      "indicationgroupid": "133",
+      "name": "Leuco-neutropenia congénita"
+    },
+    {
+      "indicationgroupid": "137",
+      "name": "Trombocitopenia"
+    },
+    {
+      "indicationgroupid": "138",
+      "name": "Infección por VIH"
+    },
+    {
+      "indicationgroupid": "141",
+      "name": "Exploración de la función cardiaca"
+    },
+    {
+      "indicationgroupid": "142",
+      "name": "Depresión"
+    },
+    {
+      "indicationgroupid": "143",
+      "name": "Agitación"
+    },
+    {
+      "indicationgroupid": "145",
+      "name": "Migraña"
+    },
+    {
+      "indicationgroupid": "147",
+      "name": "Ansiedad"
+    },
+    {
+      "indicationgroupid": "148",
+      "name": "Astenia funcional"
+    },
+    {
+      "indicationgroupid": "149",
+      "name": "Trastorno psicótico crónico"
+    },
+    {
+      "indicationgroupid": "151",
+      "name": "Toxicomanía a los opiáceos"
+    },
+    {
+      "indicationgroupid": "154",
+      "name": "Insomnio"
+    },
+    {
+      "indicationgroupid": "155",
+      "name": "Trastornos de la menopausia"
+    },
+    {
+      "indicationgroupid": "158",
+      "name": "Trastornos psicóticos menores"
+    },
+    {
+      "indicationgroupid": "159",
+      "name": "Tétanos"
+    },
+    {
+      "indicationgroupid": "160",
+      "name": "Movimiento anormal no parkinsoniano"
+    },
+    {
+      "indicationgroupid": "163",
+      "name": "Trastorno cocleovestibular"
+    },
+    {
+      "indicationgroupid": "164",
+      "name": "Tabaco, deshabituación"
+    },
+    {
+      "indicationgroupid": "167",
+      "name": "Complicación de la quimioterapia anticancerosa"
+    },
+    {
+      "indicationgroupid": "168",
+      "name": "Náuseas y vómitos"
+    },
+    {
+      "indicationgroupid": "169",
+      "name": "Nutrición parenteral"
+    },
+    {
+      "indicationgroupid": "176",
+      "name": "Manifestaciones alérgicas"
+    },
+    {
+      "indicationgroupid": "177",
+      "name": "Trasplante de médula ósea"
+    },
+    {
+      "indicationgroupid": "179",
+      "name": "Deprivación alcohólica"
+    },
+    {
+      "indicationgroupid": "180",
+      "name": "Trastorno psicótico agudo"
+    },
+    {
+      "indicationgroupid": "181",
+      "name": "Hipersomnia"
+    },
+    {
+      "indicationgroupid": "182",
+      "name": "Acné"
+    },
+    {
+      "indicationgroupid": "183",
+      "name": "Rosácea"
+    },
+    {
+      "indicationgroupid": "184",
+      "name": "Acrodermatitis enteropática"
+    },
+    {
+      "indicationgroupid": "186",
+      "name": "Antisepsia de lesiones mucocutáneas"
+    },
+    {
+      "indicationgroupid": "190",
+      "name": "Antisepsia de la piel y mucosas"
+    },
+    {
+      "indicationgroupid": "191",
+      "name": "Parasitosis externa"
+    },
+    {
+      "indicationgroupid": "193",
+      "name": "Trastorno de la transpiración"
+    },
+    {
+      "indicationgroupid": "194",
+      "name": "Quemadura cutánea"
+    },
+    {
+      "indicationgroupid": "195",
+      "name": "Dermatitis atópica"
+    },
+    {
+      "indicationgroupid": "196",
+      "name": "Alopecia y fragilidad capilar"
+    },
+    {
+      "indicationgroupid": "198",
+      "name": "Hiperpigmentación"
+    },
+    {
+      "indicationgroupid": "199",
+      "name": "Infección bacteriana cutánea"
+    },
+    {
+      "indicationgroupid": "200",
+      "name": "Problemas de cicatrización"
+    },
+    {
+      "indicationgroupid": "201",
+      "name": "Pediculosis"
+    },
+    {
+      "indicationgroupid": "202",
+      "name": "Prurito"
+    },
+    {
+      "indicationgroupid": "204",
+      "name": "Callosidad"
+    },
+    {
+      "indicationgroupid": "205",
+      "name": "Hiperqueratosis y dermatosis escamosas"
+    },
+    {
+      "indicationgroupid": "206",
+      "name": "Dermitis irritativa"
+    },
+    {
+      "indicationgroupid": "207",
+      "name": "Complicación de radioterapia"
+    },
+    {
+      "indicationgroupid": "208",
+      "name": "Dermatitis seborreica"
+    },
+    {
+      "indicationgroupid": "209",
+      "name": "Eccema"
+    },
+    {
+      "indicationgroupid": "210",
+      "name": "Heridas, escaras y úlceras"
+    },
+    {
+      "indicationgroupid": "212",
+      "name": "Eritema solar"
+    },
+    {
+      "indicationgroupid": "214",
+      "name": "Trastornos ungueales"
+    },
+    {
+      "indicationgroupid": "217",
+      "name": "Psoriasis"
+    },
+    {
+      "indicationgroupid": "218",
+      "name": "Sequedad cutánea"
+    },
+    {
+      "indicationgroupid": "219",
+      "name": "Verruga"
+    },
+    {
+      "indicationgroupid": "220",
+      "name": "Infección por virus herpes"
+    },
+    {
+      "indicationgroupid": "223",
+      "name": "Artrosis"
+    },
+    {
+      "indicationgroupid": "226",
+      "name": "Epistaxis"
+    },
+    {
+      "indicationgroupid": "227",
+      "name": "Granuloma anular"
+    },
+    {
+      "indicationgroupid": "228",
+      "name": "Infección vaginal"
+    },
+    {
+      "indicationgroupid": "230",
+      "name": "Otitis media aguda"
+    },
+    {
+      "indicationgroupid": "231",
+      "name": "Paludismo"
+    },
+    {
+      "indicationgroupid": "232",
+      "name": "Picadura de insectos"
+    },
+    {
+      "indicationgroupid": "234",
+      "name": "Rechazo al trasplante"
+    },
+    {
+      "indicationgroupid": "235",
+      "name": "Rinitis y rinofaringitis aguda"
+    },
+    {
+      "indicationgroupid": "236",
+      "name": "Urticaria"
+    },
+    {
+      "indicationgroupid": "237",
+      "name": "Vértigo"
+    },
+    {
+      "indicationgroupid": "238",
+      "name": "Dermatofitosis"
+    },
+    {
+      "indicationgroupid": "241",
+      "name": "Pérdida de apetito"
+    },
+    {
+      "indicationgroupid": "242",
+      "name": "Carencia de magnesio"
+    },
+    {
+      "indicationgroupid": "243",
+      "name": "Trastorno del comportamiento del niño"
+    },
+    {
+      "indicationgroupid": "244",
+      "name": "Síndrome de Raynaud"
+    },
+    {
+      "indicationgroupid": "245",
+      "name": "Aftosis"
+    },
+    {
+      "indicationgroupid": "246",
+      "name": "Estado epiléptico"
+    },
+    {
+      "indicationgroupid": "249",
+      "name": "Dermatosis bullosa"
+    },
+    {
+      "indicationgroupid": "251",
+      "name": "Foliculitis"
+    },
+    {
+      "indicationgroupid": "252",
+      "name": "Intertrigo"
+    },
+    {
+      "indicationgroupid": "255",
+      "name": "Alergia alimentaria"
+    },
+    {
+      "indicationgroupid": "257",
+      "name": "Desensibilización"
+    },
+    {
+      "indicationgroupid": "260",
+      "name": "Úlcera gastroduodenal"
+    },
+    {
+      "indicationgroupid": "261",
+      "name": "Dispepsia"
+    },
+    {
+      "indicationgroupid": "262",
+      "name": "Candidiasis digestiva"
+    },
+    {
+      "indicationgroupid": "263",
+      "name": "Estreñimiento"
+    },
+    {
+      "indicationgroupid": "264",
+      "name": "Rectocolitis hemorrágica"
+    },
+    {
+      "indicationgroupid": "265",
+      "name": "Diarrea aguda"
+    },
+    {
+      "indicationgroupid": "266",
+      "name": "Dolor espasmódico"
+    },
+    {
+      "indicationgroupid": "267",
+      "name": "Anitis, hemorroides y fisura anal"
+    },
+    {
+      "indicationgroupid": "268",
+      "name": "Exploraciones radiográficas"
+    },
+    {
+      "indicationgroupid": "269",
+      "name": "Hepatitis vírica"
+    },
+    {
+      "indicationgroupid": "271",
+      "name": "Cinetosis"
+    },
+    {
+      "indicationgroupid": "272",
+      "name": "Complicaciones digestivas postquirúrgicas"
+    },
+    {
+      "indicationgroupid": "273",
+      "name": "Litiasis biliar"
+    },
+    {
+      "indicationgroupid": "274",
+      "name": "Insuficiencia pancreática"
+    },
+    {
+      "indicationgroupid": "276",
+      "name": "Enfermedad de Crohn"
+    },
+    {
+      "indicationgroupid": "278",
+      "name": "Encefalopatía hepática"
+    },
+    {
+      "indicationgroupid": "279",
+      "name": "Colopatía funcional"
+    },
+    {
+      "indicationgroupid": "282",
+      "name": "Reflujo gastroesofágico"
+    },
+    {
+      "indicationgroupid": "284",
+      "name": "Profilaxis para el viajero"
+    },
+    {
+      "indicationgroupid": "285",
+      "name": "Peritonitis"
+    },
+    {
+      "indicationgroupid": "287",
+      "name": "Enfermedad de Alzheimer"
+    },
+    {
+      "indicationgroupid": "288",
+      "name": "Dislexia"
+    },
+    {
+      "indicationgroupid": "289",
+      "name": "Miastenia"
+    },
+    {
+      "indicationgroupid": "290",
+      "name": "Síndrome parkinsoniano"
+    },
+    {
+      "indicationgroupid": "291",
+      "name": "Esclerosis en placas"
+    },
+    {
+      "indicationgroupid": "293",
+      "name": "Coma"
+    },
+    {
+      "indicationgroupid": "294",
+      "name": "Exploraciones en nueurología"
+    },
+    {
+      "indicationgroupid": "295",
+      "name": "Infección neuromeníngea"
+    },
+    {
+      "indicationgroupid": "296",
+      "name": "Neuritis óptica"
+    },
+    {
+      "indicationgroupid": "297",
+      "name": "Parkinsoniano inducido por neurolépticos, síndrome"
+    },
+    {
+      "indicationgroupid": "300",
+      "name": "Síndrome de Guillain-Barré"
+    },
+    {
+      "indicationgroupid": "302",
+      "name": "Hepatopatía colestásica crónica"
+    },
+    {
+      "indicationgroupid": "303",
+      "name": "Trastorno del ciclo de la urea"
+    },
+    {
+      "indicationgroupid": "304",
+      "name": "Espasmo"
+    },
+    {
+      "indicationgroupid": "305",
+      "name": "Exploraciones en endocrinología"
+    },
+    {
+      "indicationgroupid": "306",
+      "name": "Gripe"
+    },
+    {
+      "indicationgroupid": "307",
+      "name": "Hipopotasemia"
+    },
+    {
+      "indicationgroupid": "308",
+      "name": "Hiperprolactinemia"
+    },
+    {
+      "indicationgroupid": "309",
+      "name": "Mal de montaña"
+    },
+    {
+      "indicationgroupid": "310",
+      "name": "Oculomotricidad, trastornos (de)"
+    },
+    {
+      "indicationgroupid": "311",
+      "name": "Esclerosis lateral amiotrófica"
+    },
+    {
+      "indicationgroupid": "312",
+      "name": "Asma (excepto crisis)"
+    },
+    {
+      "indicationgroupid": "313",
+      "name": "Bronquitis aguda"
+    },
+    {
+      "indicationgroupid": "314",
+      "name": "Enfermedad pulmonar crónica"
+    },
+    {
+      "indicationgroupid": "317",
+      "name": "Mucoviscidosis"
+    },
+    {
+      "indicationgroupid": "318",
+      "name": "Exoftalmia"
+    },
+    {
+      "indicationgroupid": "319",
+      "name": "Fibrosis pulmonar"
+    },
+    {
+      "indicationgroupid": "321",
+      "name": "Hepatitis autoinmune"
+    },
+    {
+      "indicationgroupid": "322",
+      "name": "Uveítis"
+    },
+    {
+      "indicationgroupid": "323",
+      "name": "Insuficiencia respiratoria"
+    },
+    {
+      "indicationgroupid": "324",
+      "name": "Edema cerebral"
+    },
+    {
+      "indicationgroupid": "325",
+      "name": "Laringitis aguda"
+    },
+    {
+      "indicationgroupid": "326",
+      "name": "Sinusitis aguda"
+    },
+    {
+      "indicationgroupid": "327",
+      "name": "Tos"
+    },
+    {
+      "indicationgroupid": "329",
+      "name": "Espasticidad"
+    },
+    {
+      "indicationgroupid": "331",
+      "name": "Infección ORL y de vías respiratorias superiores"
+    },
+    {
+      "indicationgroupid": "332",
+      "name": "Exploración en neumología"
+    },
+    {
+      "indicationgroupid": "333",
+      "name": "Otitis externa"
+    },
+    {
+      "indicationgroupid": "335",
+      "name": "Fiebre"
+    },
+    {
+      "indicationgroupid": "336",
+      "name": "Intervención ORL"
+    },
+    {
+      "indicationgroupid": "337",
+      "name": "Lavado ocular"
+    },
+    {
+      "indicationgroupid": "338",
+      "name": "Estomatitis"
+    },
+    {
+      "indicationgroupid": "344",
+      "name": "Infección nosocomial"
+    },
+    {
+      "indicationgroupid": "345",
+      "name": "Estado gripal"
+    },
+    {
+      "indicationgroupid": "346",
+      "name": "Otitis media serosa"
+    },
+    {
+      "indicationgroupid": "347",
+      "name": "Rinitis crónica"
+    },
+    {
+      "indicationgroupid": "348",
+      "name": "Sinusitis crónica"
+    },
+    {
+      "indicationgroupid": "351",
+      "name": "Neumonía infecciosa"
+    },
+    {
+      "indicationgroupid": "353",
+      "name": "Insuficiencia renal"
+    },
+    {
+      "indicationgroupid": "354",
+      "name": "Hipertrofia prostática benigna"
+    },
+    {
+      "indicationgroupid": "355",
+      "name": "Cistitis aguda"
+    },
+    {
+      "indicationgroupid": "356",
+      "name": "Litiasis urinaria"
+    },
+    {
+      "indicationgroupid": "357",
+      "name": "Exploraciones en nefrología"
+    },
+    {
+      "indicationgroupid": "358",
+      "name": "Eyaculación retrógrada"
+    },
+    {
+      "indicationgroupid": "361",
+      "name": "Uretritis"
+    },
+    {
+      "indicationgroupid": "362",
+      "name": "Dolor musculoesquelético"
+    },
+    {
+      "indicationgroupid": "363",
+      "name": "Prostatitis"
+    },
+    {
+      "indicationgroupid": "364",
+      "name": "Linfoedema"
+    },
+    {
+      "indicationgroupid": "365",
+      "name": "Diabetes insípida"
+    },
+    {
+      "indicationgroupid": "368",
+      "name": "Dismenorrea"
+    },
+    {
+      "indicationgroupid": "370",
+      "name": "Dolor leve a moderado"
+    },
+    {
+      "indicationgroupid": "371",
+      "name": "Dolor intenso o incoercible"
+    },
+    {
+      "indicationgroupid": "376",
+      "name": "Contracciones uterinas durante el embarazo"
+    },
+    {
+      "indicationgroupid": "377",
+      "name": "Diabetes mellitus"
+    },
+    {
+      "indicationgroupid": "378",
+      "name": "Obesidad"
+    },
+    {
+      "indicationgroupid": "379",
+      "name": "Carencia de vitamina A o E"
+    },
+    {
+      "indicationgroupid": "380",
+      "name": "Raquitismo y osteomalacia"
+    },
+    {
+      "indicationgroupid": "381",
+      "name": "Nutrición oral o enteral"
+    },
+    {
+      "indicationgroupid": "382",
+      "name": "Osteoporosis"
+    },
+    {
+      "indicationgroupid": "383",
+      "name": "Pelagra"
+    },
+    {
+      "indicationgroupid": "384",
+      "name": "Carencia de zinc"
+    },
+    {
+      "indicationgroupid": "385",
+      "name": "Carencia de ácido fólico y vitamina B12"
+    },
+    {
+      "indicationgroupid": "386",
+      "name": "Anemia hemolítica autoinmune"
+    },
+    {
+      "indicationgroupid": "387",
+      "name": "Deficiencia de carnitina"
+    },
+    {
+      "indicationgroupid": "388",
+      "name": "Fenilcetonuria"
+    },
+    {
+      "indicationgroupid": "389",
+      "name": "Hipocalcemia"
+    },
+    {
+      "indicationgroupid": "390",
+      "name": "Hipoparatiroidismo"
+    },
+    {
+      "indicationgroupid": "391",
+      "name": "Escorbuto"
+    },
+    {
+      "indicationgroupid": "392",
+      "name": "Carencia de vitaminas del grupo B (excepto folatos y vitamina B12)"
+    },
+    {
+      "indicationgroupid": "393",
+      "name": "Crisis asmática"
+    },
+    {
+      "indicationgroupid": "394",
+      "name": "Prevención de carencias"
+    },
+    {
+      "indicationgroupid": "395",
+      "name": "Desnutrición y carencia"
+    },
+    {
+      "indicationgroupid": "398",
+      "name": "Cistinosis"
+    },
+    {
+      "indicationgroupid": "399",
+      "name": "Embarazo normal"
+    },
+    {
+      "indicationgroupid": "400",
+      "name": "Trastornos óseos asociados a corticoterapia"
+    },
+    {
+      "indicationgroupid": "401",
+      "name": "Problemas metabólicos infantiles"
+    },
+    {
+      "indicationgroupid": "402",
+      "name": "Angina de Prinzmetal"
+    },
+    {
+      "indicationgroupid": "403",
+      "name": "Choque anafiláctico"
+    },
+    {
+      "indicationgroupid": "404",
+      "name": "Embolia pulmonar"
+    },
+    {
+      "indicationgroupid": "406",
+      "name": "Hipertensión arterial pulmonar"
+    },
+    {
+      "indicationgroupid": "407",
+      "name": "Enfermedad benigna de venas y capilares"
+    },
+    {
+      "indicationgroupid": "408",
+      "name": "Aleteo auricular"
+    },
+    {
+      "indicationgroupid": "409",
+      "name": "Trastorno severo del ritmo cardiaco"
+    },
+    {
+      "indicationgroupid": "410",
+      "name": "Gota"
+    },
+    {
+      "indicationgroupid": "411",
+      "name": "Algodistrofia"
+    },
+    {
+      "indicationgroupid": "413",
+      "name": "Behçet, enfermedad (de)"
+    },
+    {
+      "indicationgroupid": "414",
+      "name": "Espondilitis anquilosante"
+    },
+    {
+      "indicationgroupid": "415",
+      "name": "Artritis psoriásica"
+    },
+    {
+      "indicationgroupid": "416",
+      "name": "Reumatismo abarticular"
+    },
+    {
+      "indicationgroupid": "417",
+      "name": "Lumbago"
+    },
+    {
+      "indicationgroupid": "419",
+      "name": "Reumatismo crónico"
+    },
+    {
+      "indicationgroupid": "420",
+      "name": "Esguince"
+    },
+    {
+      "indicationgroupid": "424",
+      "name": "Poliartritis crónica juvenil"
+    },
+    {
+      "indicationgroupid": "425",
+      "name": "Calambre muscular"
+    },
+    {
+      "indicationgroupid": "426",
+      "name": "Condrocalcinosis"
+    },
+    {
+      "indicationgroupid": "427",
+      "name": "Conjuntivitis alérgica"
+    },
+    {
+      "indicationgroupid": "428",
+      "name": "Urgencias alérgicas"
+    },
+    {
+      "indicationgroupid": "430",
+      "name": "Amenorrea no gestacional"
+    },
+    {
+      "indicationgroupid": "432",
+      "name": "Distrofia ovárica"
+    },
+    {
+      "indicationgroupid": "434",
+      "name": "Aborto terapéutico"
+    },
+    {
+      "indicationgroupid": "435",
+      "name": "Mastosis"
+    },
+    {
+      "indicationgroupid": "436",
+      "name": "Síndrome premenstrual"
+    },
+    {
+      "indicationgroupid": "437",
+      "name": "Hipofertilidad femenina"
+    },
+    {
+      "indicationgroupid": "438",
+      "name": "Posparto"
+    },
+    {
+      "indicationgroupid": "439",
+      "name": "Parto y anteparto"
+    },
+    {
+      "indicationgroupid": "440",
+      "name": "Trastornos tróficos vulvovaginales"
+    },
+    {
+      "indicationgroupid": "441",
+      "name": "Higiene ginecológica"
+    },
+    {
+      "indicationgroupid": "443",
+      "name": "Amenaza de parto prematuro"
+    },
+    {
+      "indicationgroupid": "445",
+      "name": "Lactancia"
+    },
+    {
+      "indicationgroupid": "446",
+      "name": "Intervención ginecológica"
+    },
+    {
+      "indicationgroupid": "447",
+      "name": "Irregularidad menstrual"
+    },
+    {
+      "indicationgroupid": "448",
+      "name": "Agresividad"
+    },
+    {
+      "indicationgroupid": "452",
+      "name": "Cuidados paliativos"
+    },
+    {
+      "indicationgroupid": "453",
+      "name": "Dermatosis sensibles a corticoides"
+    },
+    {
+      "indicationgroupid": "455",
+      "name": "Lepra"
+    },
+    {
+      "indicationgroupid": "456",
+      "name": "Fotoquimioterapia"
+    },
+    {
+      "indicationgroupid": "458",
+      "name": "Arrugas"
+    },
+    {
+      "indicationgroupid": "460",
+      "name": "Cesárea"
+    },
+    {
+      "indicationgroupid": "461",
+      "name": "Anticoncepción de urgencia"
+    },
+    {
+      "indicationgroupid": "462",
+      "name": "Anticoncepción intrauterina"
+    },
+    {
+      "indicationgroupid": "463",
+      "name": "Hipofertilidad masculina"
+    },
+    {
+      "indicationgroupid": "464",
+      "name": "Síndrome del túnel carpiano"
+    },
+    {
+      "indicationgroupid": "465",
+      "name": "Horton, enfermedad (de)"
+    },
+    {
+      "indicationgroupid": "466",
+      "name": "Neuralgia cervicobraquial"
+    },
+    {
+      "indicationgroupid": "468",
+      "name": "Pseudopoliartritis rizomélica"
+    },
+    {
+      "indicationgroupid": "469",
+      "name": "Púrpura trombocitopénica"
+    },
+    {
+      "indicationgroupid": "470",
+      "name": "Fiebre reumática aguda"
+    },
+    {
+      "indicationgroupid": "471",
+      "name": "Sarcoidosis"
+    },
+    {
+      "indicationgroupid": "472",
+      "name": "Estimulación preoperatoria de la eritropoyesis"
+    },
+    {
+      "indicationgroupid": "473",
+      "name": "Fiebre tifoidea"
+    },
+    {
+      "indicationgroupid": "474",
+      "name": "Hepatitis alcohólica aguda"
+    },
+    {
+      "indicationgroupid": "475",
+      "name": "Tuberculosis"
+    },
+    {
+      "indicationgroupid": "476",
+      "name": "Complicación inflamatoria postquirúrgica "
+    },
+    {
+      "indicationgroupid": "477",
+      "name": "Vasculitis"
+    },
+    {
+      "indicationgroupid": "478",
+      "name": "Tiroiditis"
+    },
+    {
+      "indicationgroupid": "479",
+      "name": "Talalgia"
+    },
+    {
+      "indicationgroupid": "480",
+      "name": "Polimiositis"
+    },
+    {
+      "indicationgroupid": "481",
+      "name": "Polirradiculoneuritis crónica"
+    },
+    {
+      "indicationgroupid": "482",
+      "name": "Fibroma uterino"
+    },
+    {
+      "indicationgroupid": "484",
+      "name": "Granulomatosis de Wegener"
+    },
+    {
+      "indicationgroupid": "485",
+      "name": "Acromegalia"
+    },
+    {
+      "indicationgroupid": "487",
+      "name": "Hipotiroidismo"
+    },
+    {
+      "indicationgroupid": "488",
+      "name": "Insuficiencia suprarrenal"
+    },
+    {
+      "indicationgroupid": "490",
+      "name": "Retraso en el crecimiento"
+    },
+    {
+      "indicationgroupid": "493",
+      "name": "Accidente hemorrágico"
+    },
+    {
+      "indicationgroupid": "494",
+      "name": "Criptorquidia"
+    },
+    {
+      "indicationgroupid": "495",
+      "name": "Hiperplasia suprarrenal congénita "
+    },
+    {
+      "indicationgroupid": "496",
+      "name": "Hiperuricemia"
+    },
+    {
+      "indicationgroupid": "497",
+      "name": "Cólico nefrítico"
+    },
+    {
+      "indicationgroupid": "498",
+      "name": "Cólico biliar"
+    },
+    {
+      "indicationgroupid": "499",
+      "name": "Herpes zóster"
+    },
+    {
+      "indicationgroupid": "500",
+      "name": "Policondritis atrofiante"
+    },
+    {
+      "indicationgroupid": "501",
+      "name": "Fiebre mediterránea familiar"
+    },
+    {
+      "indicationgroupid": "502",
+      "name": "Cerumen"
+    },
+    {
+      "indicationgroupid": "503",
+      "name": "Riesgo tromboembólico"
+    },
+    {
+      "indicationgroupid": "504",
+      "name": "Inhibición de la lactancia"
+    },
+    {
+      "indicationgroupid": "506",
+      "name": "Infección confirmada por microorganismo sensible"
+    },
+    {
+      "indicationgroupid": "507",
+      "name": "Infección bacteriana grave"
+    },
+    {
+      "indicationgroupid": "508",
+      "name": "Secreción bronquial, trastorno (de la)"
+    },
+    {
+      "indicationgroupid": "510",
+      "name": "Anginas"
+    },
+    {
+      "indicationgroupid": "511",
+      "name": "Otitis media crónica"
+    },
+    {
+      "indicationgroupid": "513",
+      "name": "Ciática"
+    },
+    {
+      "indicationgroupid": "515",
+      "name": "Algia facial vascular"
+    },
+    {
+      "indicationgroupid": "516",
+      "name": "Neuralgia facial"
+    },
+    {
+      "indicationgroupid": "519",
+      "name": "Varicela"
+    },
+    {
+      "indicationgroupid": "521",
+      "name": "Amebiasis"
+    },
+    {
+      "indicationgroupid": "522",
+      "name": "Bilharziasis"
+    },
+    {
+      "indicationgroupid": "523",
+      "name": "Alcalosis metabólica"
+    },
+    {
+      "indicationgroupid": "524",
+      "name": "Neonato"
+    },
+    {
+      "indicationgroupid": "525",
+      "name": "Ginecomastia"
+    },
+    {
+      "indicationgroupid": "526",
+      "name": "Avitaminosis K"
+    },
+    {
+      "indicationgroupid": "527",
+      "name": "Intoxicación medicamentosa"
+    },
+    {
+      "indicationgroupid": "528",
+      "name": "Intoxicación doméstica"
+    },
+    {
+      "indicationgroupid": "529",
+      "name": "Ambliopía"
+    },
+    {
+      "indicationgroupid": "530",
+      "name": "Anguilulosis"
+    },
+    {
+      "indicationgroupid": "531",
+      "name": "Enfermedad del colágeno"
+    },
+    {
+      "indicationgroupid": "532",
+      "name": "Diarrea crónica"
+    },
+    {
+      "indicationgroupid": "533",
+      "name": "Eclampsia"
+    },
+    {
+      "indicationgroupid": "534",
+      "name": "Vacunación y seroterapia"
+    },
+    {
+      "indicationgroupid": "535",
+      "name": "Giardiasis"
+    },
+    {
+      "indicationgroupid": "537",
+      "name": "Neumocistosis"
+    },
+    {
+      "indicationgroupid": "538",
+      "name": "Anquilostoma"
+    },
+    {
+      "indicationgroupid": "540",
+      "name": "Cólera"
+    },
+    {
+      "indicationgroupid": "543",
+      "name": "Toxoplasmosis"
+    },
+    {
+      "indicationgroupid": "544",
+      "name": "Enfermedad de Von Willebrand"
+    },
+    {
+      "indicationgroupid": "545",
+      "name": "Tenia, infestación (por)"
+    },
+    {
+      "indicationgroupid": "547",
+      "name": "Tracoma"
+    },
+    {
+      "indicationgroupid": "548",
+      "name": "Pielonefritis"
+    },
+    {
+      "indicationgroupid": "549",
+      "name": "Salpingitis"
+    },
+    {
+      "indicationgroupid": "550",
+      "name": "Orquiepididimitis"
+    },
+    {
+      "indicationgroupid": "551",
+      "name": "Queratitis"
+    },
+    {
+      "indicationgroupid": "552",
+      "name": "Infección digestiva y biliar"
+    },
+    {
+      "indicationgroupid": "553",
+      "name": "Parasitosis tropical"
+    },
+    {
+      "indicationgroupid": "554",
+      "name": "Parasitosis comunitaria"
+    },
+    {
+      "indicationgroupid": "555",
+      "name": "Septicemia"
+    },
+    {
+      "indicationgroupid": "556",
+      "name": "Infección osteoarticular"
+    },
+    {
+      "indicationgroupid": "557",
+      "name": "Infección quirúrgica"
+    },
+    {
+      "indicationgroupid": "558",
+      "name": "Leptospirosis"
+    },
+    {
+      "indicationgroupid": "559",
+      "name": "Enfermedad de Lyme"
+    },
+    {
+      "indicationgroupid": "564",
+      "name": "Adyuvante a la antibioterapia"
+    },
+    {
+      "indicationgroupid": "565",
+      "name": "Rickettsiosis"
+    },
+    {
+      "indicationgroupid": "567",
+      "name": "Nocardiosis"
+    },
+    {
+      "indicationgroupid": "568",
+      "name": "Brucelosis"
+    },
+    {
+      "indicationgroupid": "569",
+      "name": "Infección por citomegalovirus"
+    },
+    {
+      "indicationgroupid": "570",
+      "name": "Sarampión"
+    },
+    {
+      "indicationgroupid": "572",
+      "name": "Micosis sistémica"
+    },
+    {
+      "indicationgroupid": "573",
+      "name": "Candidiasis mucocutánea"
+    },
+    {
+      "indicationgroupid": "576",
+      "name": "Treponematosis"
+    },
+    {
+      "indicationgroupid": "579",
+      "name": "Intervención oftalmológica"
+    },
+    {
+      "indicationgroupid": "580",
+      "name": "Hipertensión intracraneal"
+    },
+    {
+      "indicationgroupid": "581",
+      "name": "Insuficiencia lagrimal"
+    },
+    {
+      "indicationgroupid": "583",
+      "name": "Miopía"
+    },
+    {
+      "indicationgroupid": "584",
+      "name": "Hemeralopía"
+    },
+    {
+      "indicationgroupid": "585",
+      "name": "Dacriocistitis"
+    },
+    {
+      "indicationgroupid": "587",
+      "name": "Escleritis y epiescleritis"
+    },
+    {
+      "indicationgroupid": "588",
+      "name": "Traumatismo ocular"
+    },
+    {
+      "indicationgroupid": "589",
+      "name": "Hiposialia"
+    },
+    {
+      "indicationgroupid": "593",
+      "name": "Trastorno de la visión binocular"
+    },
+    {
+      "indicationgroupid": "595",
+      "name": "Pasteurelosis"
+    },
+    {
+      "indicationgroupid": "597",
+      "name": "Kawasaki, enfermedad (de)"
+    },
+    {
+      "indicationgroupid": "598",
+      "name": "Enfermedad de las membranas hialinas"
+    },
+    {
+      "indicationgroupid": "601",
+      "name": "Hemofilia"
+    },
+    {
+      "indicationgroupid": "602",
+      "name": "Enfermedad periodontal"
+    },
+    {
+      "indicationgroupid": "603",
+      "name": "Pulpitis"
+    },
+    {
+      "indicationgroupid": "604",
+      "name": "Intoxicación por plomo"
+    },
+    {
+      "indicationgroupid": "605",
+      "name": "Transfusión sanguínea"
+    },
+    {
+      "indicationgroupid": "606",
+      "name": "Angioma infantil"
+    },
+    {
+      "indicationgroupid": "607",
+      "name": "Embarazo de alto riesgo"
+    },
+    {
+      "indicationgroupid": "608",
+      "name": "Caries dental"
+    },
+    {
+      "indicationgroupid": "609",
+      "name": "Enfermedad de Dupuytren"
+    },
+    {
+      "indicationgroupid": "610",
+      "name": "Síndrome de Lyell"
+    },
+    {
+      "indicationgroupid": "611",
+      "name": "Dolor dental del lactante"
+    },
+    {
+      "indicationgroupid": "612",
+      "name": "Cuidados estomatológicos"
+    },
+    {
+      "indicationgroupid": "613",
+      "name": "Terapia electroconvulsiva"
+    },
+    {
+      "indicationgroupid": "618",
+      "name": "Insuficiencia lútea"
+    },
+    {
+      "indicationgroupid": "619",
+      "name": "Complicaciones hemorrágicas por medicamentos"
+    },
+    {
+      "indicationgroupid": "620",
+      "name": "Desobstrucción de circuitos de infusión y vías de acceso vascular"
+    },
+    {
+      "indicationgroupid": "621",
+      "name": "Sobrecarga adiposa localizada"
+    },
+    {
+      "indicationgroupid": "622",
+      "name": "Factor de coagulación, deficiencia (de)"
+    },
+    {
+      "indicationgroupid": "623",
+      "name": "Kernicterus del recién nacido"
+    },
+    {
+      "indicationgroupid": "625",
+      "name": "Déficit enzimático"
+    },
+    {
+      "indicationgroupid": "626",
+      "name": "Edema angioneurótico"
+    },
+    {
+      "indicationgroupid": "627",
+      "name": "Gingivitis"
+    },
+    {
+      "indicationgroupid": "628",
+      "name": "Pitiriasis capitis"
+    },
+    {
+      "indicationgroupid": "629",
+      "name": "Gastroparesia"
+    },
+    {
+      "indicationgroupid": "631",
+      "name": "Anticoncepción local"
+    },
+    {
+      "indicationgroupid": "633",
+      "name": "Varices esofágicas"
+    },
+    {
+      "indicationgroupid": "635",
+      "name": "Íleo meconial"
+    },
+    {
+      "indicationgroupid": "636",
+      "name": "Coagulación intravascular diseminada"
+    },
+    {
+      "indicationgroupid": "637",
+      "name": "Quiste sebáceo"
+    },
+    {
+      "indicationgroupid": "638",
+      "name": "Lipoma de piel y tejido subcutáneo"
+    },
+    {
+      "indicationgroupid": "639",
+      "name": "Quiste mucoso"
+    },
+    {
+      "indicationgroupid": "640",
+      "name": "Hemocromatosis"
+    },
+    {
+      "indicationgroupid": "641",
+      "name": "Enfermedad de Gaucher"
+    },
+    {
+      "indicationgroupid": "642",
+      "name": "Hiperfosfatasemia familiar"
+    },
+    {
+      "indicationgroupid": "643",
+      "name": "Microangiopatía trombótica"
+    },
+    {
+      "indicationgroupid": "644",
+      "name": "Carencia de yodo"
+    },
+    {
+      "indicationgroupid": "648",
+      "name": "Eritroblastopenia crónica"
+    },
+    {
+      "indicationgroupid": "649",
+      "name": "Diálisis peritoneal"
+    },
+    {
+      "indicationgroupid": "650",
+      "name": "Aneurisma cerebral"
+    },
+    {
+      "indicationgroupid": "651",
+      "name": "Insuficiencia venolinfática"
+    },
+    {
+      "indicationgroupid": "652",
+      "name": "Wolff-Parkinson-White, síndrome (de)"
+    },
+    {
+      "indicationgroupid": "654",
+      "name": "Liquen plano"
+    },
+    {
+      "indicationgroupid": "655",
+      "name": "Herpes labial"
+    },
+    {
+      "indicationgroupid": "656",
+      "name": "Herpes genital"
+    },
+    {
+      "indicationgroupid": "657",
+      "name": "Esofagitis"
+    },
+    {
+      "indicationgroupid": "658",
+      "name": "Gastralgia"
+    },
+    {
+      "indicationgroupid": "659",
+      "name": "Blefaroespasmo"
+    },
+    {
+      "indicationgroupid": "661",
+      "name": "Quemadura oculopalpebral"
+    },
+    {
+      "indicationgroupid": "662",
+      "name": "Glaucoma e hipertonía ocular crónica"
+    },
+    {
+      "indicationgroupid": "669",
+      "name": "Catarata"
+    },
+    {
+      "indicationgroupid": "670",
+      "name": "Bypass coronario"
+    },
+    {
+      "indicationgroupid": "671",
+      "name": "Mola hidatiforme"
+    },
+    {
+      "indicationgroupid": "674",
+      "name": "Deficiencia constitucional de antitrombina"
+    },
+    {
+      "indicationgroupid": "678",
+      "name": "Inmunodeficiencia"
+    },
+    {
+      "indicationgroupid": "680",
+      "name": "Exposición a radioactividad"
+    },
+    {
+      "indicationgroupid": "681",
+      "name": "Analgesia perioperatoria"
+    },
+    {
+      "indicationgroupid": "682",
+      "name": "Porfiria"
+    },
+    {
+      "indicationgroupid": "683",
+      "name": "Sedación"
+    },
+    {
+      "indicationgroupid": "684",
+      "name": "Dermatosis neutrofílica"
+    },
+    {
+      "indicationgroupid": "687",
+      "name": "Circulación extracorpórea"
+    },
+    {
+      "indicationgroupid": "689",
+      "name": "Hemostasia local en cirugía"
+    },
+    {
+      "indicationgroupid": "690",
+      "name": "Hemorragia benigna"
+    },
+    {
+      "indicationgroupid": "691",
+      "name": "Hemorrágico del recién nacido, síndrome"
+    },
+    {
+      "indicationgroupid": "692",
+      "name": "Sarna"
+    },
+    {
+      "indicationgroupid": "695",
+      "name": "Anemia debida a carencia de folatos y vitamina B 12"
+    },
+    {
+      "indicationgroupid": "698",
+      "name": "Dermatitis solar"
+    },
+    {
+      "indicationgroupid": "699",
+      "name": "Infección por micobacteria atípica"
+    },
+    {
+      "indicationgroupid": "700",
+      "name": "Seroterapia"
+    },
+    {
+      "indicationgroupid": "702",
+      "name": "Carencia de hierro"
+    },
+    {
+      "indicationgroupid": "703",
+      "name": "Hiperpotasemia"
+    },
+    {
+      "indicationgroupid": "704",
+      "name": "Enfermedad de Parkinson"
+    },
+    {
+      "indicationgroupid": "705",
+      "name": "Rinitis alérgica"
+    },
+    {
+      "indicationgroupid": "706",
+      "name": "Depresión respiratoria iatrogénica"
+    },
+    {
+      "indicationgroupid": "707",
+      "name": "Trastorno bipolar"
+    },
+    {
+      "indicationgroupid": "708",
+      "name": "Trastorno obsesivo-compulsivo"
+    },
+    {
+      "indicationgroupid": "709",
+      "name": "Complicaciones hemorrágicas en cirugía"
+    },
+    {
+      "indicationgroupid": "712",
+      "name": "Examen oftalmológico"
+    },
+    {
+      "indicationgroupid": "713",
+      "name": "Alveolitis dental"
+    },
+    {
+      "indicationgroupid": "714",
+      "name": "Hipofosfatemia"
+    },
+    {
+      "indicationgroupid": "715",
+      "name": "Listeriosis"
+    },
+    {
+      "indicationgroupid": "716",
+      "name": "Trombólisis"
+    },
+    {
+      "indicationgroupid": "717",
+      "name": "Ascitis cirrótica"
+    },
+    {
+      "indicationgroupid": "719",
+      "name": "Trastorno de pánico"
+    },
+    {
+      "indicationgroupid": "720",
+      "name": "Espasmofilia"
+    },
+    {
+      "indicationgroupid": "721",
+      "name": "Exploración del sistema digestivo"
+    },
+    {
+      "indicationgroupid": "722",
+      "name": "Potinfarto de miocardio, prevención de recurrencias"
+    },
+    {
+      "indicationgroupid": "723",
+      "name": "Glaucoma de ángulo cerrado"
+    },
+    {
+      "indicationgroupid": "725",
+      "name": "Infección urogenital"
+    },
+    {
+      "indicationgroupid": "728",
+      "name": "Eritema glúteo del lactante"
+    },
+    {
+      "indicationgroupid": "730",
+      "name": "Restauración del equilibrio electrolítico"
+    },
+    {
+      "indicationgroupid": "733",
+      "name": "Irritación conjuntival"
+    },
+    {
+      "indicationgroupid": "734",
+      "name": "Infección urinaria"
+    },
+    {
+      "indicationgroupid": "736",
+      "name": "Hipertonía ocular postquirúrgica"
+    },
+    {
+      "indicationgroupid": "737",
+      "name": "Herpes en paciente inmunodeprimido"
+    },
+    {
+      "indicationgroupid": "738",
+      "name": "Hipercalcemia maligna"
+    },
+    {
+      "indicationgroupid": "739",
+      "name": "Impétigo"
+    },
+    {
+      "indicationgroupid": "740",
+      "name": "Liquen escleroatrófico genital"
+    },
+    {
+      "indicationgroupid": "741",
+      "name": "Liquenificación"
+    },
+    {
+      "indicationgroupid": "742",
+      "name": "Lucitis"
+    },
+    {
+      "indicationgroupid": "743",
+      "name": "Neuropatía medicamentosa"
+    },
+    {
+      "indicationgroupid": "744",
+      "name": "Trastorno de la erección"
+    },
+    {
+      "indicationgroupid": "745",
+      "name": "Poliposis nasosinusal"
+    },
+    {
+      "indicationgroupid": "749",
+      "name": "Quemadura de tercer grado"
+    },
+    {
+      "indicationgroupid": "754",
+      "name": "Enfermedad de Wilson"
+    },
+    {
+      "indicationgroupid": "756",
+      "name": "Anticoncepción de acción prolongada"
+    },
+    {
+      "indicationgroupid": "757",
+      "name": "Púrpura fulminante"
+    },
+    {
+      "indicationgroupid": "758",
+      "name": "Exploraciones en urología"
+    },
+    {
+      "indicationgroupid": "759",
+      "name": "Interrupción voluntaria del embarazo"
+    },
+    {
+      "indicationgroupid": "760",
+      "name": "Candidiasis diseminada"
+    },
+    {
+      "indicationgroupid": "761",
+      "name": "Kaposi-Juliusberg, síndrome (de)"
+    },
+    {
+      "indicationgroupid": "762",
+      "name": "Trasplante cardíaco"
+    },
+    {
+      "indicationgroupid": "763",
+      "name": "Tularemia"
+    },
+    {
+      "indicationgroupid": "765",
+      "name": "Trombocitopatía"
+    },
+    {
+      "indicationgroupid": "766",
+      "name": "Peste"
+    },
+    {
+      "indicationgroupid": "767",
+      "name": "Urticaria por ortiga"
+    },
+    {
+      "indicationgroupid": "769",
+      "name": "Síndrome de Adams-Stokes"
+    },
+    {
+      "indicationgroupid": "771",
+      "name": "Degeneración macular"
+    },
+    {
+      "indicationgroupid": "772",
+      "name": "Granulomatosis séptica"
+    },
+    {
+      "indicationgroupid": "774",
+      "name": "Infiltración linfocitaria cutánea de Jessner y Kanoff"
+    },
+    {
+      "indicationgroupid": "775",
+      "name": "Deficiencia androgénica"
+    },
+    {
+      "indicationgroupid": "776",
+      "name": "Micosis fungoide"
+    },
+    {
+      "indicationgroupid": "777",
+      "name": "Neurodermatitis"
+    },
+    {
+      "indicationgroupid": "778",
+      "name": "Deficiencia de hormona de crecimiento"
+    },
+    {
+      "indicationgroupid": "779",
+      "name": "Sedación despierta"
+    },
+    {
+      "indicationgroupid": "780",
+      "name": "Deficiencia congénita de proteína C"
+    },
+    {
+      "indicationgroupid": "781",
+      "name": "Preparación para endoscopia digestiva"
+    },
+    {
+      "indicationgroupid": "782",
+      "name": "Preparación para la cirugía colónica"
+    },
+    {
+      "indicationgroupid": "1240",
+      "name": "Pitiriasis versicolor"
+    },
+    {
+      "indicationgroupid": "1242",
+      "name": "Limpieza cutánea"
+    },
+    {
+      "indicationgroupid": "1243",
+      "name": "Colitis secundaria al uso de antibióticos"
+    },
+    {
+      "indicationgroupid": "1244",
+      "name": "Proctitis"
+    },
+    {
+      "indicationgroupid": "1246",
+      "name": "Escarlatina"
+    },
+    {
+      "indicationgroupid": "1247",
+      "name": "Prevención de infección neumocócica"
+    },
+    {
+      "indicationgroupid": "1248",
+      "name": "Fobia social"
+    },
+    {
+      "indicationgroupid": "1251",
+      "name": "Fístula digestiva"
+    },
+    {
+      "indicationgroupid": "1252",
+      "name": "Fabry, enfermedad (de)"
+    },
+    {
+      "indicationgroupid": "1255",
+      "name": "Anticoncepción por vía transdérmica"
+    },
+    {
+      "indicationgroupid": "1256",
+      "name": "Retraso mental"
+    },
+    {
+      "indicationgroupid": "1257",
+      "name": "Trastorno alimentario"
+    },
+    {
+      "indicationgroupid": "1258",
+      "name": "Mastocitosis cutánea"
+    },
+    {
+      "indicationgroupid": "1259",
+      "name": "Dermatosis pustulosa"
+    },
+    {
+      "indicationgroupid": "1260",
+      "name": "Vitíligo"
+    },
+    {
+      "indicationgroupid": "1261",
+      "name": "Incontinencia urinaria"
+    },
+    {
+      "indicationgroupid": "1264",
+      "name": "Anticoncepción por vía vaginal"
+    },
+    {
+      "indicationgroupid": "1265",
+      "name": "Carbunco"
+    },
+    {
+      "indicationgroupid": "1266",
+      "name": "Trasplante de órgano"
+    },
+    {
+      "indicationgroupid": "1267",
+      "name": "Fitoterapia"
+    },
+    {
+      "indicationgroupid": "1268",
+      "name": "Hiperparatiroidismo"
+    },
+    {
+      "indicationgroupid": "1269",
+      "name": "Osteopetrosis"
+    },
+    {
+      "indicationgroupid": "1270",
+      "name": "Periarteritis nudosa"
+    },
+    {
+      "indicationgroupid": "1271",
+      "name": "Esófago de Barret"
+    },
+    {
+      "indicationgroupid": "1272",
+      "name": "Síndrome de las piernas inquietas"
+    },
+    {
+      "indicationgroupid": "1273",
+      "name": "Trombocitemia esencial"
+    },
+    {
+      "indicationgroupid": "1274",
+      "name": "Trastorno por estrés postraumático"
+    },
+    {
+      "indicationgroupid": "1275",
+      "name": "Desviación sexual"
+    },
+    {
+      "indicationgroupid": "1281",
+      "name": "Tirosinemia hereditaria "
+    },
+    {
+      "indicationgroupid": "1292",
+      "name": "Fractura"
+    },
+    {
+      "indicationgroupid": "1296",
+      "name": "Ronquidos y apnea del sueño"
+    },
+    {
+      "indicationgroupid": "1303",
+      "name": "Artrodesis"
+    },
+    {
+      "indicationgroupid": "1305",
+      "name": "Bocio"
+    },
+    {
+      "indicationgroupid": "1307",
+      "name": "Neuropatía motora multifocal"
+    },
+    {
+      "indicationgroupid": "1308",
+      "name": "Trastorno de la libido"
+    },
+    {
+      "indicationgroupid": "1313",
+      "name": "Mucopolisacaridosis"
+    },
+    {
+      "indicationgroupid": "1314",
+      "name": "Glucogenosis"
+    },
+    {
+      "indicationgroupid": "1316",
+      "name": "Drepanocitosis"
+    },
+    {
+      "indicationgroupid": "1317",
+      "name": "Hemoglobinuria paroxística nocturna"
+    },
+    {
+      "indicationgroupid": "1323",
+      "name": "Homocistinuria"
+    },
+    {
+      "indicationgroupid": "1326",
+      "name": "Regurgitación"
+    },
+    {
+      "indicationgroupid": "1327",
+      "name": "Síndrome mieloproliferativo"
+    },
+    {
+      "indicationgroupid": "1328",
+      "name": "Mieloma"
+    },
+    {
+      "indicationgroupid": "1329",
+      "name": "Preleucemia"
+    },
+    {
+      "indicationgroupid": "1330",
+      "name": "Linfoma de Hodgkin"
+    },
+    {
+      "indicationgroupid": "1331",
+      "name": "Linfoma maligno no Hodgkin"
+    },
+    {
+      "indicationgroupid": "1332",
+      "name": "Leucemia aguda"
+    },
+    {
+      "indicationgroupid": "1333",
+      "name": "Leucemia crónica"
+    },
+    {
+      "indicationgroupid": "1334",
+      "name": "Cáncer broncopulmonar"
+    },
+    {
+      "indicationgroupid": "1335",
+      "name": "Cáncer de órganos digestivos"
+    },
+    {
+      "indicationgroupid": "1336",
+      "name": "Cáncer de vías urinarias"
+    },
+    {
+      "indicationgroupid": "1337",
+      "name": "Cáncer de órganos genitales femeninos"
+    },
+    {
+      "indicationgroupid": "1338",
+      "name": "Cáncer de cabeza y cuello"
+    },
+    {
+      "indicationgroupid": "1339",
+      "name": "Cáncer de mama"
+    },
+    {
+      "indicationgroupid": "1340",
+      "name": "Cáncer de piel"
+    },
+    {
+      "indicationgroupid": "1342",
+      "name": "Cáncer tiroideo"
+    },
+    {
+      "indicationgroupid": "1343",
+      "name": "Cáncer del sistema nervioso"
+    },
+    {
+      "indicationgroupid": "1344",
+      "name": "Sarcoma"
+    },
+    {
+      "indicationgroupid": "1345",
+      "name": "Reagrupamiento histológico de cáncer distinto al sarcoma"
+    },
+    {
+      "indicationgroupid": "1346",
+      "name": "Cáncer de pleura"
+    },
+    {
+      "indicationgroupid": "1348",
+      "name": "Terapéutica asociada a enfermedad neoplásica"
+    },
+    {
+      "indicationgroupid": "1350",
+      "name": "Circuncisión"
+    },
+    {
+      "indicationgroupid": "1351",
+      "name": "Secreción inapropiada de vasopresina"
+    },
+    {
+      "indicationgroupid": "1352",
+      "name": "Enfermedad de Addison"
+    },
+    {
+      "indicationgroupid": "1353",
+      "name": "Complicaciones urinarias postoperatorias"
+    },
+    {
+      "indicationgroupid": "1354",
+      "name": "Corticoterapia sistémica por vía parenteral"
+    },
+    {
+      "indicationgroupid": "1355",
+      "name": "Dermatitis exfoliativa"
+    },
+    {
+      "indicationgroupid": "1356",
+      "name": "Eritema polimorfo"
+    },
+    {
+      "indicationgroupid": "1358",
+      "name": "Feocromocitoma"
+    },
+    {
+      "indicationgroupid": "1359",
+      "name": "Colitis"
+    },
+    {
+      "indicationgroupid": "1360",
+      "name": "Methemoglobinemia"
+    },
+    {
+      "indicationgroupid": "1361",
+      "name": "Craurosis vulvar"
+    },
+    {
+      "indicationgroupid": "1368",
+      "name": "Enfermedad de Niemann-Pick"
+    },
+    {
+      "indicationgroupid": "1369",
+      "name": "Deficiencia de tetrahidrobiopterina"
+    },
+    {
+      "indicationgroupid": "1372",
+      "name": "Síndrome extrapiramidal"
+    },
+    {
+      "indicationgroupid": "1375",
+      "name": "Trastorno circulatorio"
+    },
+    {
+      "indicationgroupid": "1376",
+      "name": "Automutilación"
+    },
+    {
+      "indicationgroupid": "1378",
+      "name": "Bronquitis crónica"
+    },
+    {
+      "indicationgroupid": "1380",
+      "name": "Enfermedad de Still"
+    },
+    {
+      "indicationgroupid": "1381",
+      "name": "Enfermedad pélvica inflamatoria"
+    },
+    {
+      "indicationgroupid": "1382",
+      "name": "Infección vírica"
+    },
+    {
+      "indicationgroupid": "1384",
+      "name": "Halitosis"
+    },
+    {
+      "indicationgroupid": "1385",
+      "name": "Déficit cognitivo"
+    },
+    {
+      "indicationgroupid": "1386",
+      "name": "Hemorragia vítrea"
+    },
+    {
+      "indicationgroupid": "1387",
+      "name": "Opacidad del cuerpo vítreo"
+    },
+    {
+      "indicationgroupid": "1388",
+      "name": "Bronquiectasia"
+    },
+    {
+      "indicationgroupid": "1390",
+      "name": "Gastroenterología intervencionista"
+    },
+    {
+      "indicationgroupid": "1393",
+      "name": "Hemangioma"
+    },
+    {
+      "indicationgroupid": "1395",
+      "name": "Traumatismo del oído"
+    },
+    {
+      "indicationgroupid": "1396",
+      "name": "Intoxicación por berilio"
+    },
+    {
+      "indicationgroupid": "1398",
+      "name": "Síndrome periódico asociado a criopirina"
+    },
+    {
+      "indicationgroupid": "1399",
+      "name": "Tumor hipofisario benigno"
+    },
+    {
+      "indicationgroupid": "1400",
+      "name": "Deficiencia de lactasa"
+    },
+    {
+      "indicationgroupid": "1401",
+      "name": "Poliposis adenomatosa familiar"
+    },
+    {
+      "indicationgroupid": "1402",
+      "name": "Exposición a agentes neurotóxicos organofosforados"
+    },
+    {
+      "indicationgroupid": "1403",
+      "name": "Pericarditis"
+    },
+    {
+      "indicationgroupid": "1404",
+      "name": "Afección miotónica"
+    },
+    {
+      "indicationgroupid": "1405",
+      "name": "Homocistinemia"
+    },
+    {
+      "indicationgroupid": "1406",
+      "name": "Desinfección de material quirúrgico"
+    },
+    {
+      "indicationgroupid": "1407",
+      "name": "Hipervitaminosis D"
+    },
+    {
+      "indicationgroupid": "1408",
+      "name": "Atonía vesical"
+    },
+    {
+      "indicationgroupid": "1410",
+      "name": "Cistitis crónica"
+    },
+    {
+      "indicationgroupid": "1411",
+      "name": "Politraumatismo"
+    },
+    {
+      "indicationgroupid": "1412",
+      "name": "Enfermedad inflamatoria"
+    },
+    {
+      "indicationgroupid": "1415",
+      "name": "Hiperaldosteronismo"
+    },
+    {
+      "indicationgroupid": "1416",
+      "name": "Mielopatía"
+    },
+    {
+      "indicationgroupid": "1417",
+      "name": "Corticoterapia general"
+    },
+    {
+      "indicationgroupid": "1418",
+      "name": "Trastorno de la eyaculación"
+    },
+    {
+      "indicationgroupid": "1419",
+      "name": "Micetoma"
+    },
+    {
+      "indicationgroupid": "1420",
+      "name": "Cáncer de páncreas"
+    },
+    {
+      "indicationgroupid": "1421",
+      "name": "Cáncer de próstata"
+    },
+    {
+      "indicationgroupid": "1422",
+      "name": "Cáncer de testículo"
+    },
+    {
+      "indicationgroupid": "1423",
+      "name": "Cáncer de vejiga"
+    },
+    {
+      "indicationgroupid": "1424",
+      "name": "Cáncer de riñón"
+    },
+    {
+      "indicationgroupid": "1425",
+      "name": "Cáncer de endometrio"
+    },
+    {
+      "indicationgroupid": "1426",
+      "name": "Cáncer de ovario"
+    },
+    {
+      "indicationgroupid": "1427",
+      "name": "Cáncer de cuello uterino"
+    },
+    {
+      "indicationgroupid": "1428",
+      "name": "Cáncer colorrectal"
+    },
+    {
+      "indicationgroupid": "1429",
+      "name": "Cáncer de hígado"
+    },
+    {
+      "indicationgroupid": "1430",
+      "name": "Cáncer de estómago"
+    },
+    {
+      "indicationgroupid": "1431",
+      "name": "Cáncer de esófago"
+    },
+    {
+      "indicationgroupid": "1432",
+      "name": "Neumonía eosinófila"
+    },
+    {
+      "indicationgroupid": "1435",
+      "name": "Amiloidosis"
+    },
+    {
+      "indicationgroupid": "1436",
+      "name": "Criptococosis"
+    },
+    {
+      "indicationgroupid": "1437",
+      "name": "Cáncer del peritoneo"
+    },
+    {
+      "indicationgroupid": "1438",
+      "name": "Oligoterapia"
+    },
+    {
+      "indicationgroupid": "1439",
+      "name": "Actinomicosis"
+    },
+    {
+      "indicationgroupid": "1440",
+      "name": "Colangitis"
+    },
+    {
+      "indicationgroupid": "1449",
+      "name": "Balantidiasis"
+    },
+    {
+      "indicationgroupid": "1450",
+      "name": "Intoxicación por setas"
+    },
+    {
+      "indicationgroupid": "1452",
+      "name": "Convulsión febril"
+    },
+    {
+      "indicationgroupid": "1453",
+      "name": "Infección del ojo o sus anexos"
+    },
+    {
+      "indicationgroupid": "1454",
+      "name": "Complicación postoperatoria tras cirugía de catarata"
+    },
+    {
+      "indicationgroupid": "1455",
+      "name": "Aneurisma aórtico"
+    },
+    {
+      "indicationgroupid": "1456",
+      "name": "Enfermedad de Bourneville"
+    },
+    {
+      "indicationgroupid": "1457",
+      "name": "Miopía degenerativa"
+    },
+    {
+      "indicationgroupid": "1458",
+      "name": "Leucemia mieloide crónica"
+    },
+    {
+      "indicationgroupid": "1459",
+      "name": "Enfermedad de Takayasu"
+    },
+    {
+      "indicationgroupid": "1460",
+      "name": "Ectropión uterino"
+    },
+    {
+      "indicationgroupid": "1461",
+      "name": "Psitacosis"
+    },
+    {
+      "indicationgroupid": "1462",
+      "name": "Poliangeítis microscópica"
+    },
+    {
+      "indicationgroupid": "1466",
+      "name": "Desprendimiento de retina"
+    },
+    {
+      "indicationgroupid": "1467",
+      "name": "Cáncer de hueso"
+    },
+    {
+      "indicationgroupid": "1469",
+      "name": "Criptosporidiosis"
+    },
+    {
+      "indicationgroupid": "1470",
+      "name": "Queratosis actínica"
+    },
+    {
+      "indicationgroupid": "1471",
+      "name": "Tumor benigno de los ganglios linfáticos"
+    },
+    {
+      "indicationgroupid": "1472",
+      "name": "Anomalía de la síntesis de ácidos biliares"
+    },
+    {
+      "indicationgroupid": "1473",
+      "name": "Diabetes insulinodependiente"
+    },
+    {
+      "indicationgroupid": "1474",
+      "name": "Diabetes no insulinodependiente"
+    },
+    {
+      "indicationgroupid": "1475",
+      "name": "Tumor benigno de huesos"
+    },
+    {
+      "indicationgroupid": "1476",
+      "name": "Radiología intervencionista"
+    },
+    {
+      "indicationgroupid": "1477",
+      "name": "Enfermedad veno-oclusiva hepática"
+    },
+    {
+      "indicationgroupid": "1478",
+      "name": "Enfermedad de Randall"
+    },
+    {
+      "indicationgroupid": "1480",
+      "name": "Bartonelosis"
+    },
+    {
+      "indicationgroupid": "1481",
+      "name": "Déficit de lipasa ácida lisosomal"
+    },
+    {
+      "indicationgroupid": "1482",
+      "name": "Enfermedad renal quística genética"
+    },
+    {
+      "indicationgroupid": "1483",
+      "name": "Hidrosadenitis supurativa"
+    },
+    {
+      "indicationgroupid": "1484",
+      "name": "Pinta"
+    },
+    {
+      "indicationgroupid": "1485",
+      "name": "Melioidosis"
+    },
+    {
+      "indicationgroupid": "1486",
+      "name": "Distrofia muscular"
+    },
+    {
+      "indicationgroupid": "1487",
+      "name": "Síndrome del intestino corto"
+    },
+    {
+      "indicationgroupid": "1488",
+      "name": "Trastorno del ciclo vigilia-sueño"
+    },
+    {
+      "indicationgroupid": "1489",
+      "name": "Síndrome nefrótico"
+    },
+    {
+      "indicationgroupid": "1492",
+      "name": "Intoxicación por talio"
+    },
+    {
+      "indicationgroupid": "1493",
+      "name": "Intoxicación por cesio"
+    },
+    {
+      "indicationgroupid": "1494",
+      "name": "Trastorno hipercinético"
+    },
+    {
+      "indicationgroupid": "1495",
+      "name": "Trastorno del metabolismo de la glicina"
+    },
+    {
+      "indicationgroupid": "1496",
+      "name": "Calcifilaxia"
+    },
+    {
+      "indicationgroupid": "1497",
+      "name": "Lipofuscinosis neuronal ceroidea"
+    },
+    {
+      "indicationgroupid": "1498",
+      "name": "Atrofia del nervio óptico"
+    },
+    {
+      "indicationgroupid": "1499",
+      "name": "Amiotrofia espinal"
+    },
+    {
+      "indicationgroupid": "1500",
+      "name": "Mastocitosis sistémica "
+    },
+    {
+      "indicationgroupid": "1501",
+      "name": "dermatopolimiositis"
+    },
+    {
+      "indicationgroupid": "1502",
+      "name": "Neovascularización coroidea"
+    },
+    {
+      "indicationgroupid": "1505",
+      "name": "Tos ferina"
+    },
+    {
+      "indicationgroupid": "1507",
+      "name": "Difteria"
+    },
+    {
+      "indicationgroupid": "1508",
+      "name": "Linfogranuloma venéreo"
+    },
+    {
+      "indicationgroupid": "1509",
+      "name": "Hiperamonemia congénita"
+    },
+    {
+      "indicationgroupid": "1510",
+      "name": "Disorder of glycoproteins metabolism"
+    },
+    {
+      "indicationgroupid": "1512",
+      "name": "Linfangioleiomiomatosis"
+    },
+    {
+      "indicationgroupid": "1513",
+      "name": " Distrofia retiniana hereditaria"
+    }
+  ]
+}

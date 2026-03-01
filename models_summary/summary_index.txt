@@ -1,0 +1,110 @@
+================================================================================
+                    MODELS SUMMARY FOLDER - INDEX
+================================================================================
+Generated: 2026-03-01
+Project: Medical AI Assistant Platform
+Location: D:\project 2\models_summary
+
+================================================================================
+                         FILES IN THIS FOLDER
+================================================================================
+
+┌─────────────────────────────────┬─────────────────────────────────────────┬──────────┬─────────────────────┐
+│ File Name                       │ Original Path                           │ Size(KB) │ Last Modified       │
+├─────────────────────────────────┼─────────────────────────────────────────┼──────────┼─────────────────────┤
+│ model_info.txt                  │ D:\project 2\model_info.txt             │ 14.41    │ 2026-03-01 04:08:xx │
+│ model_summary.txt               │ D:\project 2\model_summary.txt           │ 13.60    │ 2026-03-01          │
+│ evaluation_report.docx          │ D:\project 2\evaluation_report.docx      │ 36.37    │ 2026-03-01 04:46:xx │
+│ model_report.docx               │ D:\project 2\model_report.docx           │ 38.01    │ 2026-03-01 03:57:xx │
+│ evaluation_summary.json         │ D:\project 2\evaluation_summary.json     │ 1.20     │ 2026-03-01 04:46:xx │
+│ training_summary.json           │ D:\project 2\training_summary.json       │ 0.31     │ 2026-03-01 03:56:xx │
+│ training_report.json            │ D:\project 2\training_report.json        │ 0.28     │ Previous            │
+│ training_summary.txt            │ D:\project 2\training_summary.txt        │ 5.82     │ Previous            │
+│ data_check_report.json          │ D:\project 2\data_check_report.json      │ 1.75     │ Previous            │
+│ data_check_recursive_report.json│ D:\project 2\data_check_recursive_report.json │ 0.64 │ Previous         │
+│ data_preparation_report.json    │ D:\project 2\data_preparation_report.json│ 0.63     │ Previous            │
+│ project_full_setup_report.json  │ D:\project 2\project_full_setup_report.json │ 0.62 │ Previous          │
+│ project_update_report.json      │ D:\project 2\project_update_report.json  │ 0.62     │ Previous            │
+│ full_system_test_report.txt     │ D:\project 2\models_summary              │ 5.61     │ 2026-03-01 05:07:xx │
+│ full_system_test_report.json    │ D:\project 2\models_summary              │ 0.42     │ 2026-03-01 05:07:xx │
+└─────────────────────────────────┴─────────────────────────────────────────┴──────────┴─────────────────────┘
+
+================================================================================
+                         FILE DESCRIPTIONS
+================================================================================
+
+1. model_info.txt
+   - Comprehensive model documentation
+   - Architecture details for all unified models
+   - Training configurations and GPU settings
+
+2. model_summary.txt
+   - Quick summary of all models
+   - Task types (Classification/Segmentation)
+   - Architecture overview
+
+3. evaluation_report.docx
+   - Word document with evaluation results
+   - Metrics tables and analysis
+   - Per-model detailed results
+
+4. model_report.docx
+   - Training report for unified models
+   - Model architecture comparison
+   - GPU optimization details
+
+5. evaluation_summary.json
+   - JSON format evaluation results
+   - IoU, Dice, Accuracy, ROC-AUC metrics
+   - Test sample counts
+
+6. training_summary.json
+   - Training completion status
+   - Device information (CUDA)
+   - Model status
+
+7. training_report.json
+   - Detailed training logs
+   - Per-model training metrics
+
+8. training_summary.txt
+   - Human-readable training summary
+   - Model checkpoint information
+
+9-13. Data Reports
+   - data_check_report.json: Data validation results
+   - data_check_recursive_report.json: Recursive data scan
+   - data_preparation_report.json: Data preparation logs
+   - project_full_setup_report.json: Project setup details
+   - project_update_report.json: Update history
+
+14. full_system_test_report.txt
+   - Comprehensive system validation report
+   - Model status and evaluation results
+   - Issues and recommendations
+
+15. full_system_test_report.json
+   - JSON format system test results
+   - Per-model test status
+
+================================================================================
+                         TOTAL FILES: 15
+================================================================================
+Total Size: ~120 KB
+
+================================================================================
+                         RELATED DOCUMENTATION
+================================================================================
+
+The following documentation files remain in project root:
+- AI_MODELS_GUIDE.md: AI models usage guide
+- README.md: Project overview
+- INSTALLATION_GUIDE.md: Installation instructions
+- USER_MANUAL.md: User documentation
+- DATA_SOURCES.md: Dataset information
+- PROJECT_COMPLETE.md: Project completion status
+- Research_Paper_Medical_Assistant_Platform.md: Research paper
+
+================================================================================
+                         END OF INDEX
+================================================================================

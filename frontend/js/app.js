@@ -1,39 +1,54 @@
-/* ========================================
-   APP.JS - MEDICAL AI ASSISTANT
-   Enhanced Frontend with UI/UX Improvements
-   HCI Principles: Feedback, Consistency, Affordance
-   ======================================== */
+// Global configuration
+const API_BASE_URL = 'http://localhost:5000/api';
 
-// ---------- Global Configuration ----------
-const CONFIG = {
-    API_BASE_URL: 'http://localhost:5000/api',
-    ANIMATION_DURATION: 300,
-    MESSAGE_DELAY: 500,
-    CACHE_DURATION: 5 * 60 * 1000, // 5 minutes
-};
+// Add animated particles to body
+function createParticles() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles';
+    document.body.appendChild(particlesContainer);
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particlesContainer.appendChild(particle);
+    }
+}
 
-// Cache for API responses
-const apiCache = new Map();
+// Add entrance animations
+function addEntranceAnimations() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+        card.style.animationDelay = (index * 0.1) + 's';
+    });
+    
+    const statCards = document.querySelectorAll('.stat-card');
+    statCards.forEach((card, index) => {
+        card.style.animationDelay = (index * 0.15) + 's';
+    });
+}
 
-// ---------- Authentication & Security ----------
+// Initialize particles and animations on page load
+if (document.body.classList.contains('login-page') || document.querySelector('.dashboard')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        addEntranceAnimations();
+    });
+}
 
-/**
- * Check if user is authenticated
- * Implements security check for protected pages
- */
+// Check if user is authenticated
 function checkAuth() {
     const token = localStorage.getItem('token');
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const publicPages = ['index.html', ''];
+    const currentPage = window.location.pathname.split('/').pop();
     
-    // Redirect to login if no token and on protected page
-    if (!token && !publicPages.includes(currentPage)) {
+    if (!token && currentPage !== 'index.html' && currentPage !== '') {
         window.location.href = 'index.html';
         return false;
     }
     
-    // Redirect to dashboard if token exists and on login page
-    if (token && publicPages.includes(currentPage)) {
+    if (token && (currentPage === 'index.html' || currentPage === '')) {
         window.location.href = 'dashboard.html';
         return false;
     }
@@ -41,307 +56,94 @@ function checkAuth() {
     return true;
 }
 
-/**
- * Get authentication headers for API requests
- */
+// Get auth headers
 function getAuthHeaders() {
     const token = localStorage.getItem('token');
     return {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
     };
 }
 
-// ---------- UI/UX Feedback System ----------
-
-/**
- * Show notification message
- * Implements immediate feedback principle (HCI)
- */
-function showNotification(message, type = 'info', duration = 5000) {
-    // Remove existing notifications
-    const existing = document.querySelector('.notification');
-    if (existing) existing.remove();
-    
+// Show notification
+function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
-    notification.className = `message ${type} notification`;
+    notification.className = `message ${type}`;
     notification.textContent = message;
-    notification.setAttribute('role', 'alert');
-    notification.setAttribute('aria-live', 'polite');
-    
-    // Style for fixed positioning
-    Object.assign(notification.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        zIndex: '10000',
-        minWidth: '300px',
-        maxWidth: '400px',
-        boxShadow: 'var(--shadow-lg)',
-        animation: 'slideInRight 0.3s ease-out',
-    });
+    notification.style.position = 'fixed';
+    notification.style.top = '20px';
+    notification.style.right = '20px';
+    notification.style.zIndex = '9999';
+    notification.style.display = 'block';
+    notification.style.minWidth = '300px';
     
     document.body.appendChild(notification);
     
-    // Auto-remove after duration
     setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease-out';
-        setTimeout(() => notification.remove(), 300);
-    }, duration);
-    
-    // Add animation keyframes if not present
-    if (!document.querySelector('#notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'notification-styles';
-        style.textContent = `
-            @keyframes slideInRight {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOutRight {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-    }
+        notification.remove();
+    }, 5000);
 }
 
-/**
- * Show loading state
- * Provides visual feedback during async operations
- */
+// Format date
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
+// File upload handler
+function handleFileUpload(inputElement, callback) {
+    inputElement.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            callback(file);
+        }
+    });
+}
+
+// Drag and drop handler
+function setupDragAndDrop(dropZone, callback) {
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+    
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+    
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        
+        const file = e.dataTransfer.files[0];
+        if (file) {
+            callback(file);
+        }
+    });
+}
+
+// Show loading spinner
 function showLoading(container) {
-    if (!container) return;
-    
-    const loader = document.createElement('div');
-    loader.className = 'spinner';
-    loader.setAttribute('aria-label', 'Loading');
-    loader.setAttribute('role', 'status');
-    
-    container.innerHTML = '';
-    container.appendChild(loader);
+    container.innerHTML = '<div class="spinner"></div>';
 }
 
-/**
- * Hide loading state
- */
+// Hide loading spinner
 function hideLoading(container) {
-    if (!container) return;
     const spinner = container.querySelector('.spinner');
-    if (spinner) spinner.remove();
-}
-
-// ---------- Sidebar Menu (Three Dots) ----------
-
-/**
- * Initialize the animated sidebar
- * Implements Fitts's Law - easy to click toggle
- */
-function initSidebar() {
-    // Create menu toggle if it doesn't exist
-    if (!document.querySelector('.menu-toggle')) {
-        const toggle = document.createElement('div');
-        toggle.className = 'menu-toggle';
-        toggle.setAttribute('aria-label', 'Toggle menu');
-        toggle.setAttribute('role', 'button');
-        toggle.setAttribute('tabindex', '0');
-        
-        // Add three dots
-        for (let i = 0; i < 3; i++) {
-            const dot = document.createElement('span');
-            toggle.appendChild(dot);
-        }
-        
-        document.body.appendChild(toggle);
-        
-        // Add click event
-        toggle.addEventListener('click', toggleSidebar);
-        toggle.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleSidebar();
-            }
-        });
-    }
-    
-    // Add open class to main content based on sidebar state
-    const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.querySelector('.main-content');
-    
-    if (sidebar && mainContent) {
-        // Check local storage for sidebar state
-        const sidebarState = localStorage.getItem('sidebarOpen');
-        if (sidebarState === 'true') {
-            sidebar.classList.add('open');
-            mainContent.classList.add('sidebar-open');
-            document.querySelector('.menu-toggle')?.classList.add('open');
-        }
+    if (spinner) {
+        spinner.remove();
     }
 }
 
-/**
- * Toggle sidebar open/closed
- */
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.querySelector('.main-content');
-    const toggle = document.querySelector('.menu-toggle');
-    
-    if (!sidebar || !mainContent || !toggle) return;
-    
-    sidebar.classList.toggle('open');
-    mainContent.classList.toggle('sidebar-open');
-    toggle.classList.toggle('open');
-    
-    // Save state
-    localStorage.setItem('sidebarOpen', sidebar.classList.contains('open'));
-    
-    // Announce for screen readers
-    const isOpen = sidebar.classList.contains('open');
-    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-}
-
-// ---------- Password Visibility Toggle ----------
-
-/**
- * Add password visibility toggles to all password fields
- * Improves usability (HCI principle of user control)
- */
-function initPasswordToggles() {
-    document.querySelectorAll('input[type="password"]').forEach(passwordField => {
-        // Skip if already wrapped
-        if (passwordField.parentElement.classList.contains('password-input-wrapper')) return;
-        
-        // Create wrapper
-        const wrapper = document.createElement('div');
-        wrapper.className = 'password-input-wrapper';
-        
-        // Insert wrapper before password field
-        passwordField.parentNode.insertBefore(wrapper, passwordField);
-        
-        // Move password field into wrapper
-        wrapper.appendChild(passwordField);
-        
-        // Create toggle button
-        const toggleBtn = document.createElement('button');
-        toggleBtn.type = 'button';
-        toggleBtn.className = 'toggle-password';
-        toggleBtn.setAttribute('aria-label', 'Toggle password visibility');
-        toggleBtn.innerHTML = '👁️';
-        
-        // Add toggle functionality
-        toggleBtn.addEventListener('click', () => {
-            const type = passwordField.type === 'password' ? 'text' : 'password';
-            passwordField.type = type;
-            toggleBtn.innerHTML = type === 'password' ? '👁️' : '👁️‍🗨️';
-        });
-        
-        wrapper.appendChild(toggleBtn);
-    });
-}
-
-// ---------- Enhanced Chat Functionality ----------
-
-/**
- * Add message to chat with proper formatting
- * Organizes messages neatly (solves the "كلام مش منظم" problem)
- */
-function addChatMessage(text, sender) {
-    const messagesContainer = document.getElementById('chatMessages');
-    if (!messagesContainer) return null;
-    
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message-bubble message-${sender}`;
-    messageDiv.setAttribute('role', sender === 'user' ? 'complementary' : 'article');
-    
-    // Format message with proper line breaks and paragraphs
-    const formattedText = text
-        .split('\n')
-        .filter(line => line.trim())
-        .map(line => {
-            // Check if line is a list item
-            if (line.trim().match(/^[-*•]/)) {
-                return `<li>${line.trim().substring(1).trim()}</li>`;
-            }
-            // Check if line is numbered
-            if (line.trim().match(/^\d+\./)) {
-                return `<li style="list-style-type: decimal;">${line.trim().substring(line.indexOf('.') + 1).trim()}</li>`;
-            }
-            return `<p>${line.trim()}</p>`;
-        })
-        .join('');
-    
-    messageDiv.innerHTML = formattedText;
-    
-    // Add styling for lists
-    const listItems = messageDiv.querySelectorAll('li');
-    if (listItems.length > 0) {
-        const list = document.createElement(sender === 'user' ? 'div' : 'ul');
-        list.style.margin = 'var(--space-xs) 0 var(--space-xs) var(--space-md)';
-        listItems.forEach(item => list.appendChild(item.cloneNode(true)));
-        messageDiv.innerHTML = '';
-        messageDiv.appendChild(list);
-    }
-    
-    messagesContainer.appendChild(messageDiv);
-    messagesContainer.scrollTo({
-        top: messagesContainer.scrollHeight,
-        behavior: 'smooth'
-    });
-    
-    return messageDiv;
-}
-
-/**
- * Show typing indicator in chat
- */
-function showTypingIndicator() {
-    const messagesContainer = document.getElementById('chatMessages');
-    if (!messagesContainer) return null;
-    
-    const indicator = document.createElement('div');
-    indicator.className = 'typing-indicator';
-    indicator.id = 'typing-indicator';
-    
-    for (let i = 0; i < 3; i++) {
-        const dot = document.createElement('span');
-        indicator.appendChild(dot);
-    }
-    
-    messagesContainer.appendChild(indicator);
-    messagesContainer.scrollTo({
-        top: messagesContainer.scrollHeight,
-        behavior: 'smooth'
-    });
-    
-    return indicator;
-}
-
-/**
- * Hide typing indicator
- */
-function hideTypingIndicator() {
-    const indicator = document.getElementById('typing-indicator');
-    if (indicator) indicator.remove();
-}
-
-// ---------- API Communication (Unchanged - Safe) ----------
-
-/**
- * API call wrapper with caching
- */
+// API call wrapper
 async function apiCall(endpoint, options = {}) {
-    const cacheKey = `${endpoint}-${JSON.stringify(options)}`;
-    const cached = apiCache.get(cacheKey);
-    
-    // Return cached response if valid
-    if (cached && Date.now() - cached.timestamp < CONFIG.CACHE_DURATION) {
-        return cached.data;
-    }
-    
     try {
-        const response = await fetch(`${CONFIG.API_BASE_URL}${endpoint}`, {
+        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
             ...options,
             headers: {
                 ...getAuthHeaders(),
@@ -355,35 +157,22 @@ async function apiCall(endpoint, options = {}) {
             throw new Error(data.error || 'Request failed');
         }
         
-        // Cache successful GET requests
-        if (!options.method || options.method === 'GET') {
-            apiCache.set(cacheKey, {
-                data,
-                timestamp: Date.now()
-            });
-        }
-        
         return data;
     } catch (error) {
         console.error('API Error:', error);
-        showNotification(error.message, 'error');
         throw error;
     }
 }
 
-/**
- * Upload file to API (Preserved exactly)
- */
+// Upload file to API
 async function uploadFile(endpoint, file, fileFieldName = 'image') {
     const formData = new FormData();
     formData.append(fileFieldName, file);
     
     try {
-        const response = await fetch(`${CONFIG.API_BASE_URL}${endpoint}`, {
+        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
             method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
+            headers: getAuthHeaders(),
             body: formData
         });
         
@@ -396,36 +185,15 @@ async function uploadFile(endpoint, file, fileFieldName = 'image') {
         return data;
     } catch (error) {
         console.error('Upload Error:', error);
-        showNotification(error.message, 'error');
         throw error;
     }
 }
 
-// ---------- Display Functions ----------
-
-/**
- * Format date consistently
- */
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-}
-
-/**
- * Display analysis result with severity badge
- */
+// Display analysis result
 function displayResult(container, result) {
-    if (!container) return;
-    
     if (result.error) {
         container.innerHTML = `
-            <div class="message error" role="alert">
+            <div class="message error">
                 <strong>Error:</strong> ${result.error}
             </div>
         `;
@@ -433,7 +201,7 @@ function displayResult(container, result) {
     }
     
     container.innerHTML = `
-        <div class="result-box" role="article">
+        <div class="result-box">
             <div class="result-item">
                 <div class="result-label">Diagnosis</div>
                 <div class="result-value">${result.diagnosis}</div>
@@ -459,7 +227,7 @@ function displayResult(container, result) {
             ${result.recommendations && result.recommendations.length > 0 ? `
             <div class="result-item">
                 <div class="result-label">Additional Recommendations</div>
-                <ul style="margin-top: var(--space-xs); padding-left: var(--space-lg);">
+                <ul style="margin-top: 10px; padding-left: 20px;">
                     ${result.recommendations.map(rec => `<li>${rec}</li>`).join('')}
                 </ul>
             </div>
@@ -468,136 +236,275 @@ function displayResult(container, result) {
     `;
 }
 
-// ---------- File Upload Handlers ----------
-
-/**
- * Handle file input change
- */
-function handleFileSelection(file, previewElementId, buttonId) {
-    if (!file || !file.type.startsWith('image/') && !file.type.startsWith('audio/')) {
-        showNotification('Please select a valid file', 'error');
-        return false;
-    }
-    
-    const preview = document.getElementById(previewElementId);
-    const button = document.getElementById(buttonId);
-    
-    if (preview) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            if (preview.tagName === 'IMG') {
-                preview.src = e.target.result;
-            } else if (preview.tagName === 'AUDIO') {
-                preview.src = e.target.result;
-            }
-            preview.classList.remove('hidden');
-        };
-        reader.readAsDataURL(file);
-    }
-    
-    if (button) button.classList.remove('hidden');
-    
-    return true;
-}
-
-/**
- * Setup drag and drop
- */
-function setupDragAndDrop(dropZone, callback) {
-    if (!dropZone) return;
-    
-    dropZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropZone.classList.add('dragover');
-    });
-    
-    dropZone.addEventListener('dragleave', () => {
-        dropZone.classList.remove('dragover');
-    });
-    
-    dropZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropZone.classList.remove('dragover');
-        
-        const file = e.dataTransfer.files[0];
-        if (file) callback(file);
-    });
-}
-
-// ---------- Logout Function ----------
-
-/**
- * Logout user and clear session
- */
-function logout() {
-    // Clear all storage
-    localStorage.clear();
-    sessionStorage.clear();
-    apiCache.clear();
-    
-    // Show goodbye message
-    showNotification('Logged out successfully', 'success');
-    
-    // Redirect to login
-    setTimeout(() => {
-        window.location.href = 'index.html';
-    }, 500);
-}
-
-// ---------- Initialize Everything ----------
-
-/**
- * Main initialization function
- * Runs when DOM is loaded
- */
+// Initialize page
 document.addEventListener('DOMContentLoaded', () => {
-    // Check authentication
-    checkAuth();
-    
-    // Initialize UI components
-    initSidebar();
-    initPasswordToggles();
-    
     // Set active nav link
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage) {
+        if (link.getAttribute('href') === currentPage) {
             link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
         } else {
             link.classList.remove('active');
-            link.removeAttribute('aria-current');
         }
     });
-    
-    // Add keyboard navigation support
-    document.addEventListener('keydown', (e) => {
-        // ESC key closes sidebar
-        if (e.key === 'Escape') {
-            const sidebar = document.querySelector('.sidebar.open');
-            if (sidebar) toggleSidebar();
-        }
-    });
-    
-    // Log performance
-    if (window.performance) {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Page loaded in ${pageLoadTime}ms`);
-    }
 });
 
-// Export functions for global use
-window.checkAuth = checkAuth;
-window.logout = logout;
-window.showNotification = showNotification;
-window.formatDate = formatDate;
-window.apiCall = apiCall;
-window.uploadFile = uploadFile;
-window.displayResult = displayResult;
-window.setupDragAndDrop = setupDragAndDrop;
-window.toggleSidebar = toggleSidebar;
-window.addChatMessage = addChatMessage;
+
+// Icon mapping for consistent usage across the app
+const iconMap = {
+    dashboard: 'fas fa-chart-line',
+    profile: 'fas fa-user-circle',
+    skin: 'fas fa-microscope',
+    lab: 'fas fa-flask',
+    chatbot: 'fas fa-robot',
+    sound: 'fas fa-microphone-alt',
+    records: 'fas fa-file-medical',
+    about: 'fas fa-info-circle',
+    contact: 'fas fa-envelope',
+    logout: 'fas fa-sign-out-alt',
+    upload: 'fas fa-cloud-upload-alt',
+    analyze: 'fas fa-search-plus',
+    send: 'fas fa-paper-plane',
+    loading: 'fas fa-spinner fa-spin'
+};
+
+// Update all emoji icons to Font Awesome on page load
+function updateIconsToFontAwesome() {
+    // Update sidebar icons
+    const navLinks = document.querySelectorAll('.nav-link span');
+    const iconMapping = {
+        '📊': iconMap.dashboard,
+        '👤': iconMap.profile,
+        '🔬': iconMap.skin,
+        '🧪': iconMap.lab,
+        '💬': iconMap.chatbot,
+        '🎤': iconMap.sound,
+        '📋': iconMap.records,
+        'ℹ️': iconMap.about,
+        '📧': iconMap.contact,
+        '🚪': iconMap.logout
+    };
+    
+    navLinks.forEach(span => {
+        const emoji = span.textContent.trim();
+        if (iconMapping[emoji]) {
+            span.innerHTML = `<i class="${iconMapping[emoji]}"></i>`;
+        }
+    });
+    
+    // Update header icons
+    const headers = document.querySelectorAll('.header h1, .card-header h2');
+    headers.forEach(header => {
+        const text = header.textContent;
+        Object.keys(iconMapping).forEach(emoji => {
+            if (text.includes(emoji)) {
+                header.innerHTML = text.replace(emoji, `<i class="${iconMapping[emoji]}"></i>`);
+            }
+        });
+    });
+}
+
+// Call icon update on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    updateIconsToFontAwesome();
+});
+
+
+// Add ripple effect to buttons
+function createRipple(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    
+    ripple.style.width = ripple.style.height = `${diameter}px`;
+    ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    ripple.classList.add('ripple-effect');
+    
+    const existingRipple = button.getElementsByClassName('ripple-effect')[0];
+    if (existingRipple) {
+        existingRipple.remove();
+    }
+    
+    button.appendChild(ripple);
+}
+
+// Add ripple effect to all buttons
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn, .btn-primary, .btn-send, .tab-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', createRipple);
+    });
+});
+
+// Smooth scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Add scroll to top button
+function addScrollToTopButton() {
+    const scrollBtn = document.createElement('button');
+    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--gradient-1);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
+        transition: all 0.3s;
+    `;
+    
+    scrollBtn.addEventListener('click', scrollToTop);
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollBtn.style.display = 'flex';
+        } else {
+            scrollBtn.style.display = 'none';
+        }
+    });
+    
+    document.body.appendChild(scrollBtn);
+}
+
+// Initialize scroll to top button
+if (document.querySelector('.dashboard')) {
+    document.addEventListener('DOMContentLoaded', addScrollToTopButton);
+}
+
+// Add loading animation to images
+function addImageLoadingEffect() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.animation = 'fadeIn 0.5s ease-in';
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', addImageLoadingEffect);
+
+// Enhanced notification with icons
+function showNotificationEnhanced(message, type = 'info') {
+    const icons = {
+        success: 'fas fa-check-circle',
+        error: 'fas fa-exclamation-circle',
+        warning: 'fas fa-exclamation-triangle',
+        info: 'fas fa-info-circle'
+    };
+    
+    const notification = document.createElement('div');
+    notification.className = `message ${type} slide-in-up`;
+    notification.innerHTML = `
+        <i class="${icons[type]}" style="margin-right: 10px;"></i>
+        ${message}
+    `;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        min-width: 300px;
+        max-width: 500px;
+        box-shadow: var(--shadow-lg);
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideInDown 0.5s ease-out reverse';
+        setTimeout(() => notification.remove(), 500);
+    }, 5000);
+}
+
+// Add hover effect to cards
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
+
+// Add typing indicator for chatbot
+function addTypingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'message-bubble message-bot typing-indicator';
+    indicator.innerHTML = '<span></span><span></span><span></span>';
+    return indicator;
+}
+
+// Animate numbers counting up
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.textContent = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Animate stat cards on dashboard
+document.addEventListener('DOMContentLoaded', () => {
+    const statCards = document.querySelectorAll('.stat-card h3');
+    statCards.forEach(stat => {
+        const finalValue = parseInt(stat.textContent) || 0;
+        if (finalValue > 0) {
+            animateValue(stat, 0, finalValue, 1500);
+        }
+    });
+});
+
+// Add parallax effect to background
+function addParallaxEffect() {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.particles');
+        parallaxElements.forEach(element => {
+            element.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    });
+}
+
+if (document.querySelector('.particles')) {
+    addParallaxEffect();
+}
+
+// Preload images for better performance
+function preloadImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', preloadImages);

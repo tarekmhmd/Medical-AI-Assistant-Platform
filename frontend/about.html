@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Medical AI Assistant</title>
-    <meta name="description" content="Learn about our mission to make healthcare accessible through AI technology">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>🏥 Medical AI</h2>
             </div>
@@ -24,580 +22,80 @@
                     <li class="nav-item"><a href="chatbot.html" class="nav-link"><span>💬</span> AI Chatbot</a></li>
                     <li class="nav-item"><a href="sound-analysis.html" class="nav-link"><span>🎤</span> Sound Analysis</a></li>
                     <li class="nav-item"><a href="health-records.html" class="nav-link"><span>📋</span> Health Records</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link active" aria-current="page"><span>ℹ️</span> About Us</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active"><span>ℹ️</span> About Us</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link"><span>📧</span> Contact</a></li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="logout()"><span>🚪</span> Logout</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Main Content -->
-        <main class="main-content" role="main">
-            <header class="header">
+        <main class="main-content">
+            <div class="header">
                 <h1>ℹ️ About Medical AI Assistant</h1>
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span id="userName">User</span>
-                </div>
-            </header>
-
-            <!-- Hero Section -->
-            <div class="about-hero">
-                <div class="hero-content">
-                    <h1>Revolutionizing Healthcare with Artificial Intelligence</h1>
-                    <p>Medical AI Assistant combines cutting-edge AI technology with medical expertise to provide accessible, preliminary health assessments for everyone.</p>
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <span class="stat-number">10,000+</span>
-                            <span class="stat-label">Users Trust Us</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="stat-number">50,000+</span>
-                            <span class="stat-label">Analyses Performed</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Accuracy Rate</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">AI Availability</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="ai-icon">🧠</div>
-                </div>
             </div>
 
-            <!-- Mission & Vision -->
-            <div class="card mission-card">
-                <div class="mission-grid">
-                    <div class="mission-item">
-                        <div class="mission-icon">🎯</div>
-                        <h2>Our Mission</h2>
-                        <p>To democratize healthcare access by providing AI-powered preliminary medical assessments that help individuals make informed decisions about their health.</p>
-                    </div>
-                    <div class="mission-item">
-                        <div class="mission-icon">👁️</div>
-                        <h2>Our Vision</h2>
-                        <p>A world where everyone has access to intelligent, compassionate, and accurate preliminary healthcare guidance, reducing the burden on healthcare systems and empowering individuals.</p>
-                    </div>
-                    <div class="mission-item">
-                        <div class="mission-icon">💡</div>
-                        <h2>Our Values</h2>
-                        <p>Accuracy, Accessibility, Privacy, Innovation, and Empathy guide every decision we make in developing our AI healthcare solutions.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Key Features -->
             <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">🔬 AI-Powered Features</h2>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🔬</div>
-                        <h3>Skin Analysis</h3>
-                        <p>Computer vision technology analyzes skin conditions, moles, and rashes with high accuracy, providing preliminary diagnoses and recommendations.</p>
-                        <div class="feature-tech">
-                            <span class="tech-badge">CNN</span>
-                            <span class="tech-badge">Computer Vision</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🧪</div>
-                        <h3>Lab Results Analysis</h3>
-                        <p>Intelligent interpretation of laboratory test results, comparing values with reference ranges and highlighting abnormalities.</p>
-                        <div class="feature-tech">
-                            <span class="tech-badge">NLP</span>
-                            <span class="tech-badge">Pattern Recognition</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">💬</div>
-                        <h3>AI Medical Chatbot</h3>
-                        <p>Natural language processing enables interactive symptom analysis and medical information retrieval based on user descriptions.</p>
-                        <div class="feature-tech">
-                            <span class="tech-badge">NLP</span>
-                            <span class="tech-badge">LLM</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🎤</div>
-                        <h3>Sound Analysis</h3>
-                        <p>Audio processing algorithms analyze respiratory sounds, cough patterns, and voice characteristics for preliminary respiratory assessment.</p>
-                        <div class="feature-tech">
-                            <span class="tech-badge">Audio Processing</span>
-                            <span class="tech-badge">FFT</span>
-                        </div>
-                    </div>
-                </div>
+                <h2>Our Mission</h2>
+                <p style="line-height: 1.8; color: #7f8c8d;">
+                    Medical AI Assistant is an advanced healthcare platform that leverages artificial intelligence 
+                    to provide preliminary health assessments and medical guidance. Our mission is to make healthcare 
+                    more accessible and help people make informed decisions about their health.
+                </p>
             </div>
 
-            <!-- Technology Stack -->
             <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">⚙️ Technology Stack</h2>
-                </div>
-                <div class="tech-stack">
-                    <div class="tech-category">
-                        <h3>Frontend</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">
-                                <span class="tech-logo">🌐</span>
-                                <span>HTML5</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">🎨</span>
-                                <span>CSS3</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">⚡</span>
-                                <span>JavaScript (ES6+)</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">📊</span>
-                                <span>Chart.js</span>
-                            </div>
-                        </div>
+                <h2>Features</h2>
+                <div class="stats-grid">
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <h3>🔬 Skin Analysis</h3>
+                        <p>AI-powered analysis of skin conditions using computer vision technology</p>
                     </div>
-                    
-                    <div class="tech-category">
-                        <h3>Backend</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">
-                                <span class="tech-logo">🐍</span>
-                                <span>Python 3.9+</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">🌶️</span>
-                                <span>Flask</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">🗄️</span>
-                                <span>SQLite/PostgreSQL</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">🔒</span>
-                                <span>JWT Auth</span>
-                            </div>
-                        </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <h3>🧪 Lab Results</h3>
+                        <p>Intelligent interpretation of laboratory test results</p>
                     </div>
-                    
-                    <div class="tech-category">
-                        <h3>AI/ML</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">
-                                <span class="tech-logo">🧠</span>
-                                <span>TensorFlow</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">🔥</span>
-                                <span>PyTorch</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">👁️</span>
-                                <span>OpenCV</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">🎵</span>
-                                <span>Librosa</span>
-                            </div>
-                        </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <h3>💬 AI Chatbot</h3>
+                        <p>Interactive medical consultation based on symptoms</p>
                     </div>
-                    
-                    <div class="tech-category">
-                        <h3>DevOps</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">
-                                <span class="tech-logo">🐳</span>
-                                <span>Docker</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">🔄</span>
-                                <span>Git</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">☁️</span>
-                                <span>AWS/GCP</span>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-logo">📈</span>
-                                <span>CI/CD</span>
-                            </div>
-                        </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <h3>🎤 Sound Analysis</h3>
+                        <p>Respiratory health assessment through audio analysis</p>
                     </div>
                 </div>
             </div>
 
-            <!-- AI Models -->
             <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">🧠 AI Models & Algorithms</h2>
-                </div>
-                <div class="models-grid">
-                    <div class="model-card">
-                        <h3>Skin Analysis Model</h3>
-                        <p>Convolutional Neural Network trained on 100,000+ dermatological images</p>
-                        <div class="model-metrics">
-                            <span class="metric">Accuracy: 94%</span>
-                            <span class="metric">Precision: 92%</span>
-                            <span class="metric">Recall: 93%</span>
-                        </div>
-                    </div>
-                    
-                    <div class="model-card">
-                        <h3>Lab Result Analyzer</h3>
-                        <p>Random Forest classifier with medical reference database of 500+ lab tests</p>
-                        <div class="model-metrics">
-                            <span class="metric">Accuracy: 96%</span>
-                            <span class="metric">Coverage: 98%</span>
-                            <span class="metric">F1 Score: 0.95</span>
-                        </div>
-                    </div>
-                    
-                    <div class="model-card">
-                        <h3>Medical Chatbot</h3>
-                        <p>Fine-tuned LLM with medical knowledge base of 50,000+ clinical cases</p>
-                        <div class="model-metrics">
-                            <span class="metric">BLEU: 0.82</span>
-                            <span class="metric">ROUGE: 0.79</span>
-                            <span class="metric">Perplexity: 12.3</span>
-                        </div>
-                    </div>
-                    
-                    <div class="model-card">
-                        <h3>Sound Analysis</h3>
-                        <p>Recurrent Neural Network with Mel-frequency cepstral coefficients (MFCC)</p>
-                        <div class="model-metrics">
-                            <span class="metric">Accuracy: 88%</span>
-                            <span class="metric">Sensitivity: 86%</span>
-                            <span class="metric">Specificity: 89%</span>
-                        </div>
-                    </div>
-                </div>
+                <h2>Technology Stack</h2>
+                <ul style="line-height: 2; color: #7f8c8d;">
+                    <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript</li>
+                    <li><strong>Backend:</strong> Python, Flask</li>
+                    <li><strong>Database:</strong> SQLite</li>
+                    <li><strong>AI/ML:</strong> TensorFlow, PyTorch, OpenCV</li>
+                    <li><strong>Audio Processing:</strong> Librosa</li>
+                </ul>
             </div>
 
-            <!-- Team Section -->
             <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">👥 Our Team</h2>
-                </div>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-avatar">👨‍⚕️</div>
-                        <h3>Dr. Ahmed Hassan</h3>
-                        <p class="member-title">Lead AI Researcher</p>
-                        <p class="member-bio">PhD in Computer Vision, 10+ years experience in medical imaging</p>
-                        <div class="member-social">
-                            <a href="#" class="social-link">in</a>
-                            <a href="#" class="social-link">🐦</a>
-                            <a href="#" class="social-link">📧</a>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-avatar">👩‍💻</div>
-                        <h3>Sarah Johnson</h3>
-                        <p class="member-title">Full Stack Developer</p>
-                        <p class="member-bio">Expert in React, Node.js, and healthcare application development</p>
-                        <div class="member-social">
-                            <a href="#" class="social-link">in</a>
-                            <a href="#" class="social-link">🐦</a>
-                            <a href="#" class="social-link">📧</a>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-avatar">👨‍🔬</div>
-                        <h3>Dr. Michael Chen</h3>
-                        <p class="member-title">Medical Advisor</p>
-                        <p class="member-bio">Board-certified internist, specializes in AI-assisted diagnosis</p>
-                        <div class="member-social">
-                            <a href="#" class="social-link">in</a>
-                            <a href="#" class="social-link">🐦</a>
-                            <a href="#" class="social-link">📧</a>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-avatar">👩‍🎓</div>
-                        <h3>Fatima Al-Sayed</h3>
-                        <p class="member-title">ML Engineer</p>
-                        <p class="member-bio">Specializes in NLP and audio processing for medical applications</p>
-                        <div class="member-social">
-                            <a href="#" class="social-link">in</a>
-                            <a href="#" class="social-link">🐦</a>
-                            <a href="#" class="social-link">📧</a>
-                        </div>
-                    </div>
-                </div>
+                <h2>⚠️ Important Disclaimer</h2>
+                <p style="line-height: 1.8; color: #e74c3c; background: #fee; padding: 20px; border-radius: 10px;">
+                    This application is designed to provide preliminary health information and should NOT be used 
+                    as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice 
+                    of your physician or other qualified health provider with any questions you may have regarding 
+                    a medical condition. Never disregard professional medical advice or delay in seeking it because 
+                    of something you have read or received from this application.
+                </p>
             </div>
-
-            <!-- Research & Publications -->
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">📚 Research & Publications</h2>
-                </div>
-                <div class="publications-list">
-                    <div class="publication-item">
-                        <div class="pub-icon">📄</div>
-                        <div class="pub-content">
-                            <h3>AI-Powered Dermatological Diagnosis: A Comparative Study</h3>
-                            <p class="pub-authors">Hassan A., Johnson S., Chen M.</p>
-                            <p class="pub-journal">Journal of Medical AI, 2024</p>
-                            <div class="pub-badges">
-                                <span class="pub-badge">Cited by 45</span>
-                                <span class="pub-badge">Impact Factor: 4.2</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="publication-item">
-                        <div class="pub-icon">📄</div>
-                        <div class="pub-content">
-                            <h3>Respiratory Sound Classification Using Deep Learning</h3>
-                            <p class="pub-authors">Al-Sayed F., Hassan A., Johnson S.</p>
-                            <p class="pub-journal">IEEE Transactions on Biomedical Engineering, 2023</p>
-                            <div class="pub-badges">
-                                <span class="pub-badge">Cited by 28</span>
-                                <span class="pub-badge">Impact Factor: 3.8</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="publication-item">
-                        <div class="pub-icon">📄</div>
-                        <div class="pub-content">
-                            <h3>Natural Language Processing for Symptom Analysis</h3>
-                            <p class="pub-authors">Johnson S., Chen M., Hassan A.</p>
-                            <p class="pub-journal">Nature Digital Medicine, 2023</p>
-                            <div class="pub-badges">
-                                <span class="pub-badge">Cited by 67</span>
-                                <span class="pub-badge">Impact Factor: 5.1</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Partners & Certifications -->
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">🤝 Partners & Certifications</h2>
-                </div>
-                <div class="partners-grid">
-                    <div class="partner-item">
-                        <span class="partner-logo">🏥</span>
-                        <span class="partner-name">Mayo Clinic</span>
-                    </div>
-                    <div class="partner-item">
-                        <span class="partner-logo">🔬</span>
-                        <span class="partner-name">Johns Hopkins Medicine</span>
-                    </div>
-                    <div class="partner-item">
-                        <span class="partner-logo">🏛️</span>
-                        <span class="partner-name">Stanford Medicine</span>
-                    </div>
-                    <div class="partner-item">
-                        <span class="partner-logo">⚕️</span>
-                        <span class="partner-name">Cleveland Clinic</span>
-                    </div>
-                    <div class="partner-item">
-                        <span class="partner-logo">✅</span>
-                        <span class="partner-name">HIPAA Compliant</span>
-                    </div>
-                    <div class="partner-item">
-                        <span class="partner-logo">🔒</span>
-                        <span class="partner-name">GDPR Certified</span>
-                    </div>
-                    <div class="partner-item">
-                        <span class="partner-logo">🏅</span>
-                        <span class="partner-name">FDA Cleared</span>
-                    </div>
-                    <div class="partner-item">
-                        <span class="partner-logo">🌍</span>
-                        <span class="partner-name">WHO Collaborator</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonials -->
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">💬 What Our Users Say</h2>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"The skin analysis feature helped me identify a suspicious mole early. It turned out to be pre-cancerous and was treated successfully."</p>
-                        <div class="testimonial-author">
-                            <span class="author-avatar">👩</span>
-                            <div>
-                                <strong>Maria G.</strong>
-                                <span class="author-title">Patient</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"As a busy physician, I recommend this to my patients for preliminary screening. It's accurate and user-friendly."</p>
-                        <div class="testimonial-author">
-                            <span class="author-avatar">👨‍⚕️</span>
-                            <div>
-                                <strong>Dr. Robert K.</strong>
-                                <span class="author-title">Family Medicine</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"The lab results interpretation saved me a trip to the doctor for normal results. Great tool for peace of mind!"</p>
-                        <div class="testimonial-author">
-                            <span class="author-avatar">👨</span>
-                            <div>
-                                <strong>David L.</strong>
-                                <span class="author-title">User</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">❓ Frequently Asked Questions</h2>
-                </div>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Is this a replacement for seeing a doctor?</span>
-                            <span class="faq-icon">▼</span>
-                        </button>
-                        <div class="faq-answer hidden">
-                            <p>No. Medical AI Assistant provides preliminary assessments only. Always consult a qualified healthcare professional for definitive diagnosis and treatment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How accurate are the AI analyses?</span>
-                            <span class="faq-icon">▼</span>
-                        </button>
-                        <div class="faq-answer hidden">
-                            <p>Our models achieve 85-96% accuracy depending on the specific analysis type, validated against medical professional diagnoses. However, accuracy can vary based on input quality.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Is my medical data private?</span>
-                            <span class="faq-icon">▼</span>
-                        </button>
-                        <div class="faq-answer hidden">
-                            <p>Yes. We are HIPAA and GDPR compliant. All data is encrypted end-to-end and never shared with third parties without explicit consent.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How much does it cost?</span>
-                            <span class="faq-icon">▼</span>
-                        </button>
-                        <div class="faq-answer hidden">
-                            <p>Basic features are free. Premium plans start at $9.99/month for unlimited analyses and advanced features.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Important Disclaimer -->
-            <div class="card disclaimer-card">
-                <div class="disclaimer-content">
-                    <span class="disclaimer-icon">⚠️</span>
-                    <div>
-                        <strong>Important Medical Disclaimer</strong>
-                        <p>Medical AI Assistant is designed to provide preliminary health information and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read or received from this application. If you are experiencing a medical emergency, call your local emergency services immediately.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="card cta-card">
-                <div class="cta-content">
-                    <h2>Start Your Health Journey Today</h2>
-                    <p>Join thousands of users who trust Medical AI Assistant for preliminary health guidance</p>
-                    <div class="cta-buttons">
-                        <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
-                        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-
         </main>
     </div>
 
     <script src="js/app.js"></script>
     <script>
-        // Check authentication
         checkAuth();
 
-        // Load user info
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        document.getElementById('userName').textContent = user.name || 'User';
-        document.getElementById('userAvatar').textContent = (user.name || 'U')[0].toUpperCase();
-
-        // FAQ Toggle
-        function toggleFAQ(button) {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('.faq-icon');
-            
-            answer.classList.toggle('hidden');
-            icon.textContent = answer.classList.contains('hidden') ? '▼' : '▲';
-        }
-
-        // Logout function
         function logout() {
             localStorage.clear();
             window.location.href = 'index.html';
-        }
-
-        // Animate stats on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const stats = document.querySelectorAll('.stat-number');
-            stats.forEach(stat => {
-                const value = stat.textContent;
-                if (value.includes('+')) {
-                    const num = parseInt(value.replace(/[^0-9]/g, ''));
-                    animateValue(stat, 0, num, 2000);
-                } else if (value.includes('%')) {
-                    const num = parseInt(value.replace('%', ''));
-                    animateValue(stat, 0, num, 2000, '%');
-                }
-            });
-        });
-
-        function animateValue(element, start, end, duration, suffix = '') {
-            const range = end - start;
-            const increment = range / (duration / 10);
-            let current = start;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= end) {
-                    current = end;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.round(current) + suffix;
-            }, 10);
         }
     </script>
 </body>

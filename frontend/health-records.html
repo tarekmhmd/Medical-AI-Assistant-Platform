@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Records - Medical AI Assistant</title>
-    <meta name="description" content="View and manage your complete medical history">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>🏥 Medical AI</h2>
             </div>
@@ -23,7 +21,7 @@
                     <li class="nav-item"><a href="lab-analysis.html" class="nav-link"><span>🧪</span> Lab Results</a></li>
                     <li class="nav-item"><a href="chatbot.html" class="nav-link"><span>💬</span> AI Chatbot</a></li>
                     <li class="nav-item"><a href="sound-analysis.html" class="nav-link"><span>🎤</span> Sound Analysis</a></li>
-                    <li class="nav-item"><a href="health-records.html" class="nav-link active" aria-current="page"><span>📋</span> Health Records</a></li>
+                    <li class="nav-item"><a href="health-records.html" class="nav-link active"><span>📋</span> Health Records</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link"><span>ℹ️</span> About Us</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link"><span>📧</span> Contact</a></li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="logout()"><span>🚪</span> Logout</a></li>
@@ -31,123 +29,24 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
-        <main class="main-content" role="main">
-            <header class="header">
+        <main class="main-content">
+            <div class="header">
                 <h1>📋 Health Records</h1>
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span id="userName">User</span>
-                </div>
-            </header>
-
-            <!-- Records Summary Cards -->
-            <div class="records-summary">
-                <div class="summary-card" role="article">
-                    <div class="summary-icon">📊</div>
-                    <div class="summary-content">
-                        <span class="summary-label">Total Records</span>
-                        <span class="summary-value" id="totalRecords">0</span>
-                    </div>
-                </div>
-                <div class="summary-card" role="article">
-                    <div class="summary-icon" style="background: rgba(80, 200, 120, 0.1); color: var(--secondary);">🔬</div>
-                    <div class="summary-content">
-                        <span class="summary-label">Skin Analysis</span>
-                        <span class="summary-value" id="totalSkin">0</span>
-                    </div>
-                </div>
-                <div class="summary-card" role="article">
-                    <div class="summary-icon" style="background: rgba(243, 156, 18, 0.1); color: var(--warning);">🧪</div>
-                    <div class="summary-content">
-                        <span class="summary-label">Lab Results</span>
-                        <span class="summary-value" id="totalLab">0</span>
-                    </div>
-                </div>
-                <div class="summary-card" role="article">
-                    <div class="summary-icon" style="background: rgba(231, 76, 60, 0.1); color: var(--danger);">🎤</div>
-                    <div class="summary-content">
-                        <span class="summary-label">Sound Analysis</span>
-                        <span class="summary-value" id="totalSound">0</span>
-                    </div>
-                </div>
             </div>
 
-            <!-- Filters and Search -->
             <div class="card">
-                <div class="records-header">
-                    <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" id="searchInput" placeholder="Search records by diagnosis or treatment..." onkeyup="filterRecords()">
-                    </div>
-                    
-                    <div class="filter-group">
-                        <select id="filterType" onchange="filterRecords()" aria-label="Filter by record type">
-                            <option value="all">📋 All Records</option>
-                            <option value="skin">🔬 Skin Analysis</option>
-                            <option value="lab">🧪 Lab Results</option>
-                            <option value="sound">🎤 Sound Analysis</option>
-                        </select>
-
-                        <select id="filterSeverity" onchange="filterRecords()" aria-label="Filter by severity">
-                            <option value="all">⚠️ All Severities</option>
-                            <option value="none">✅ None</option>
-                            <option value="mild">🟢 Mild</option>
-                            <option value="moderate">🟡 Moderate</option>
-                            <option value="severe">🔴 Severe</option>
-                        </select>
-
-                        <select id="sortBy" onchange="filterRecords()" aria-label="Sort by">
-                            <option value="newest">🕐 Newest First</option>
-                            <option value="oldest">🕐 Oldest First</option>
-                            <option value="severity">⚠️ Severity</option>
-                        </select>
-                    </div>
+                <div class="card-header">
+                    <h2 class="card-title">Your Medical History</h2>
+                    <select id="filterType" onchange="filterRecords()" style="padding: 8px; border-radius: 5px; border: 2px solid var(--light-color);">
+                        <option value="all">All Records</option>
+                        <option value="skin">Skin Analysis</option>
+                        <option value="lab">Lab Results</option>
+                        <option value="sound">Sound Analysis</option>
+                    </select>
                 </div>
 
-                <!-- Timeline View Toggle -->
-                <div class="timeline-toggle">
-                    <button class="toggle-btn active" onclick="toggleView('grid')" id="gridViewBtn">
-                        <span>📱</span> Grid View
-                    </button>
-                    <button class="toggle-btn" onclick="toggleView('timeline')" id="timelineViewBtn">
-                        <span>📅</span> Timeline View
-                    </button>
-                </div>
-            </div>
-
-            <!-- Records Container (Grid View) -->
-            <div id="recordsContainer" class="records-grid">
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>Loading your medical records...</p>
-                </div>
-            </div>
-
-            <!-- Records Container (Timeline View - Hidden by default) -->
-            <div id="timelineContainer" class="timeline-container hidden">
-                <!-- Will be populated by JavaScript -->
-            </div>
-
-            <!-- Export Options -->
-            <div class="card export-card">
-                <div class="export-header">
-                    <h3>📤 Export Medical Records</h3>
-                    <p>Download your complete health history for your personal records or to share with healthcare providers</p>
-                </div>
-                <div class="export-options">
-                    <button class="btn btn-secondary" onclick="exportRecords('pdf')">
-                        <span>📄</span> Export as PDF
-                    </button>
-                    <button class="btn btn-secondary" onclick="exportRecords('csv')">
-                        <span>📊</span> Export as CSV
-                    </button>
-                    <button class="btn btn-secondary" onclick="exportRecords('json')">
-                        <span>📁</span> Export as JSON
-                    </button>
-                    <button class="btn btn-primary" onclick="printRecords()">
-                        <span>🖨️</span> Print Records
-                    </button>
+                <div id="recordsContainer">
+                    <p style="text-align: center; color: #7f8c8d;">Loading records...</p>
                 </div>
             </div>
         </main>
@@ -155,130 +54,33 @@
 
     <script src="js/app.js"></script>
     <script>
-        // Check authentication
         checkAuth();
 
-        // Load user info
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        document.getElementById('userName').textContent = user.name || 'User';
-        document.getElementById('userAvatar').textContent = (user.name || 'U')[0].toUpperCase();
-
-        // Global variables
         let allRecords = [];
-        let currentView = 'grid';
 
-        // Load records on page load
         loadRecords();
 
         async function loadRecords() {
-            const container = document.getElementById('recordsContainer');
-            
             try {
                 const records = await apiCall('/records');
                 allRecords = records;
-                
-                // Update summary cards
-                updateSummary(records);
-                
-                // Display records
                 displayRecords(records);
-                
-                // Initialize timeline
-                initTimeline(records);
-                
             } catch (error) {
-                container.innerHTML = `
-                    <div class="message error" role="alert">
-                        <strong>Error:</strong> Failed to load records. Please try again.
-                    </div>
+                document.getElementById('recordsContainer').innerHTML = `
+                    <div class="message error">Failed to load records</div>
                 `;
             }
         }
 
-        function updateSummary(records) {
-            const total = records.length;
-            const skin = records.filter(r => r.record_type === 'skin').length;
-            const lab = records.filter(r => r.record_type === 'lab').length;
-            const sound = records.filter(r => r.record_type === 'sound').length;
-            
-            animateNumber('totalRecords', total);
-            animateNumber('totalSkin', skin);
-            animateNumber('totalLab', lab);
-            animateNumber('totalSound', sound);
-        }
-
-        function animateNumber(elementId, finalNumber) {
-            const element = document.getElementById(elementId);
-            if (!element) return;
-            
-            const startNumber = parseInt(element.textContent) || 0;
-            const duration = 1000;
-            const steps = 60;
-            const increment = (finalNumber - startNumber) / steps;
-            let currentStep = 0;
-
-            const interval = setInterval(() => {
-                currentStep++;
-                const currentNumber = Math.round(startNumber + (increment * currentStep));
-                element.textContent = currentNumber;
-
-                if (currentStep >= steps) {
-                    element.textContent = finalNumber;
-                    clearInterval(interval);
-                }
-            }, duration / steps);
-        }
-
         function filterRecords() {
-            const typeFilter = document.getElementById('filterType').value;
-            const severityFilter = document.getElementById('filterSeverity').value;
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const sortBy = document.getElementById('sortBy').value;
-
-            let filtered = [...allRecords];
-
-            // Apply type filter
-            if (typeFilter !== 'all') {
-                filtered = filtered.filter(r => r.record_type === typeFilter);
-            }
-
-            // Apply severity filter
-            if (severityFilter !== 'all') {
-                filtered = filtered.filter(r => r.severity === severityFilter);
-            }
-
-            // Apply search
-            if (searchTerm) {
-                filtered = filtered.filter(r => 
-                    (r.diagnosis && r.diagnosis.toLowerCase().includes(searchTerm)) ||
-                    (r.treatment && r.treatment.toLowerCase().includes(searchTerm))
-                );
-            }
-
-            // Apply sorting
-            filtered.sort((a, b) => {
-                switch(sortBy) {
-                    case 'newest':
-                        return new Date(b.created_at) - new Date(a.created_at);
-                    case 'oldest':
-                        return new Date(a.created_at) - new Date(b.created_at);
-                    case 'severity':
-                        const severityWeight = { 'severe': 3, 'moderate': 2, 'mild': 1, 'none': 0 };
-                        return severityWeight[b.severity] - severityWeight[a.severity];
-                    default:
-                        return 0;
-                }
-            });
-
-            // Display in current view
-            if (currentView === 'grid') {
-                displayRecords(filtered);
+            const filterType = document.getElementById('filterType').value;
+            
+            if (filterType === 'all') {
+                displayRecords(allRecords);
             } else {
-                displayTimeline(filtered);
+                const filtered = allRecords.filter(r => r.record_type === filterType);
+                displayRecords(filtered);
             }
-
-            // Show notification
-            showNotification(`Found ${filtered.length} records`, 'info');
         }
 
         function displayRecords(records) {
@@ -286,170 +88,36 @@
             
             if (!records || records.length === 0) {
                 container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-icon">📋</div>
-                        <h3>No Records Found</h3>
-                        <p>Start by analyzing your health using our AI tools</p>
-                        <div class="empty-actions">
-                            <a href="skin-analysis.html" class="btn btn-primary">🔬 Analyze Skin</a>
-                            <a href="lab-analysis.html" class="btn btn-primary">🧪 Upload Lab Results</a>
-                            <a href="sound-analysis.html" class="btn btn-primary">🎤 Record Sound</a>
-                        </div>
-                    </div>
+                    <p style="text-align: center; color: #7f8c8d; padding: 40px;">
+                        No records found. Start by analyzing your health!
+                    </p>
                 `;
                 return;
             }
 
             container.innerHTML = records.map(record => `
-                <div class="record-card" data-id="${record.id}" onclick="viewRecordDetails('${record.id}')">
-                    <div class="record-card-header">
-                        <div class="record-type">
-                            ${getRecordIcon(record.record_type)} ${record.record_type.toUpperCase()}
+                <div class="result-box" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                        <div>
+                            <h3 style="margin-bottom: 5px;">
+                                ${getRecordIcon(record.record_type)} ${record.record_type.toUpperCase()} Analysis
+                            </h3>
+                            <small style="color: #95a5a6;">${formatDate(record.created_at)}</small>
                         </div>
-                        <span class="severity-badge severity-${record.severity}">${record.severity}</span>
+                        <span class="severity-badge severity-${record.severity}">${record.severity.toUpperCase()}</span>
                     </div>
                     
-                    <div class="record-card-body">
-                        <div class="record-date">
-                            🕐 ${formatDate(record.created_at)}
-                        </div>
-                        
-                        <div class="record-diagnosis">
-                            <strong>Diagnosis:</strong> ${record.diagnosis}
-                        </div>
-                        
-                        <div class="record-treatment">
-                            <strong>Treatment:</strong> ${record.treatment}
-                        </div>
-                        
-                        ${record.confidence ? `
-                        <div class="record-confidence">
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" style="width: ${record.confidence}%"></div>
-                            </div>
-                            <span>${record.confidence}% confidence</span>
-                        </div>
-                        ` : ''}
+                    <div class="result-item">
+                        <div class="result-label">Diagnosis</div>
+                        <div class="result-value">${record.diagnosis}</div>
                     </div>
                     
-                    <div class="record-card-footer">
-                        <button class="btn-view" onclick="event.stopPropagation(); viewRecordDetails('${record.id}')">
-                            View Details →
-                        </button>
+                    <div class="result-item">
+                        <div class="result-label">Treatment</div>
+                        <div class="result-value">${record.treatment}</div>
                     </div>
                 </div>
             `).join('');
-        }
-
-        function initTimeline(records) {
-            const timelineContainer = document.getElementById('timelineContainer');
-            
-            if (!records || records.length === 0) {
-                timelineContainer.innerHTML = `
-                    <div class="empty-state">
-                        <p>No records to display in timeline</p>
-                    </div>
-                `;
-                return;
-            }
-
-            // Group records by date
-            const grouped = records.reduce((groups, record) => {
-                const date = new Date(record.created_at).toLocaleDateString();
-                if (!groups[date]) groups[date] = [];
-                groups[date].push(record);
-                return groups;
-            }, {});
-
-            timelineContainer.innerHTML = Object.entries(grouped)
-                .sort((a, b) => new Date(b[0]) - new Date(a[0]))
-                .map(([date, dayRecords]) => `
-                    <div class="timeline-item">
-                        <div class="timeline-date">
-                            <span class="date-badge">${date}</span>
-                        </div>
-                        <div class="timeline-content">
-                            ${dayRecords.map(record => `
-                                <div class="timeline-record" onclick="viewRecordDetails('${record.id}')">
-                                    <div class="timeline-record-header">
-                                        <span class="record-type-badge">${getRecordIcon(record.record_type)} ${record.record_type}</span>
-                                        <span class="severity-badge severity-${record.severity}">${record.severity}</span>
-                                    </div>
-                                    <div class="timeline-record-body">
-                                        <p><strong>${record.diagnosis}</strong></p>
-                                        <p class="timeline-time">${new Date(record.created_at).toLocaleTimeString()}</p>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `).join('');
-        }
-
-        function displayTimeline(records) {
-            const timelineContainer = document.getElementById('timelineContainer');
-            
-            if (!records || records.length === 0) {
-                timelineContainer.innerHTML = `
-                    <div class="empty-state">
-                        <p>No records to display</p>
-                    </div>
-                `;
-                return;
-            }
-
-            // Group records by date
-            const grouped = records.reduce((groups, record) => {
-                const date = new Date(record.created_at).toLocaleDateString();
-                if (!groups[date]) groups[date] = [];
-                groups[date].push(record);
-                return groups;
-            }, {});
-
-            timelineContainer.innerHTML = Object.entries(grouped)
-                .sort((a, b) => new Date(b[0]) - new Date(a[0]))
-                .map(([date, dayRecords]) => `
-                    <div class="timeline-item">
-                        <div class="timeline-date">
-                            <span class="date-badge">${date}</span>
-                        </div>
-                        <div class="timeline-content">
-                            ${dayRecords.map(record => `
-                                <div class="timeline-record" onclick="viewRecordDetails('${record.id}')">
-                                    <div class="timeline-record-header">
-                                        <span class="record-type-badge">${getRecordIcon(record.record_type)} ${record.record_type}</span>
-                                        <span class="severity-badge severity-${record.severity}">${record.severity}</span>
-                                    </div>
-                                    <div class="timeline-record-body">
-                                        <p><strong>${record.diagnosis}</strong></p>
-                                        <p class="timeline-time">${new Date(record.created_at).toLocaleTimeString()}</p>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `).join('');
-        }
-
-        function toggleView(view) {
-            currentView = view;
-            
-            const gridBtn = document.getElementById('gridViewBtn');
-            const timelineBtn = document.getElementById('timelineViewBtn');
-            const gridContainer = document.getElementById('recordsContainer');
-            const timelineContainer = document.getElementById('timelineContainer');
-            
-            if (view === 'grid') {
-                gridBtn.classList.add('active');
-                timelineBtn.classList.remove('active');
-                gridContainer.classList.remove('hidden');
-                timelineContainer.classList.add('hidden');
-            } else {
-                timelineBtn.classList.add('active');
-                gridBtn.classList.remove('active');
-                timelineContainer.classList.remove('hidden');
-                gridContainer.classList.add('hidden');
-            }
         }
 
         function getRecordIcon(type) {
@@ -459,122 +127,6 @@
                 'sound': '🎤'
             };
             return icons[type] || '📋';
-        }
-
-        function viewRecordDetails(recordId) {
-            const record = allRecords.find(r => r.id == recordId);
-            if (!record) return;
-            
-            // Create modal
-            const modal = document.createElement('div');
-            modal.className = 'modal';
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>${getRecordIcon(record.record_type)} ${record.record_type.toUpperCase()} Analysis</h2>
-                        <button class="modal-close" onclick="this.closest('.modal').remove()">×</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="detail-item">
-                            <label>Date</label>
-                            <p>${formatDate(record.created_at)}</p>
-                        </div>
-                        <div class="detail-item">
-                            <label>Diagnosis</label>
-                            <p>${record.diagnosis}</p>
-                        </div>
-                        <div class="detail-item">
-                            <label>Severity</label>
-                            <span class="severity-badge severity-${record.severity}">${record.severity}</span>
-                        </div>
-                        <div class="detail-item">
-                            <label>Treatment</label>
-                            <p>${record.treatment}</p>
-                        </div>
-                        ${record.recommendations ? `
-                        <div class="detail-item">
-                            <label>Recommendations</label>
-                            <ul>
-                                ${record.recommendations.map(r => `<li>${r}</li>`).join('')}
-                            </ul>
-                        </div>
-                        ` : ''}
-                        ${record.confidence ? `
-                        <div class="detail-item">
-                            <label>Confidence</label>
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" style="width: ${record.confidence}%"></div>
-                            </div>
-                            <span>${record.confidence}%</span>
-                        </div>
-                        ` : ''}
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" onclick="this.closest('.modal').remove()">Close</button>
-                        <button class="btn btn-primary" onclick="printRecord('${record.id}')">Print</button>
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(modal);
-        }
-
-        function exportRecords(format) {
-            showNotification(`Preparing ${format.toUpperCase()} export...`, 'info');
-            
-            setTimeout(() => {
-                const data = JSON.stringify(allRecords, null, 2);
-                const blob = new Blob([data], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `medical-records.${format}`;
-                a.click();
-                
-                showNotification(`Records exported as ${format.toUpperCase()}`, 'success');
-            }, 1500);
-        }
-
-        function printRecords() {
-            window.print();
-        }
-
-        function printRecord(recordId) {
-            const record = allRecords.find(r => r.id == recordId);
-            if (!record) return;
-            
-            const printWindow = window.open('', '_blank');
-            printWindow.document.write(`
-                <html>
-                    <head>
-                        <title>Medical Record - ${record.diagnosis}</title>
-                        <style>
-                            body { font-family: Arial; padding: 40px; }
-                            .header { text-align: center; margin-bottom: 30px; }
-                            .label { font-weight: bold; color: #666; }
-                            .value { margin-bottom: 20px; }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="header">
-                            <h1>Medical AI Assistant</h1>
-                            <p>Health Record Details</p>
-                        </div>
-                        <div class="label">Date:</div>
-                        <div class="value">${formatDate(record.created_at)}</div>
-                        <div class="label">Type:</div>
-                        <div class="value">${record.record_type.toUpperCase()}</div>
-                        <div class="label">Diagnosis:</div>
-                        <div class="value">${record.diagnosis}</div>
-                        <div class="label">Severity:</div>
-                        <div class="value">${record.severity}</div>
-                        <div class="label">Treatment:</div>
-                        <div class="value">${record.treatment}</div>
-                    </body>
-                </html>
-            `);
-            printWindow.document.close();
-            printWindow.print();
         }
 
         function logout() {

@@ -1,0 +1,413 @@
+================================================================================
+MEDICAL AI ASSISTANT - FULL PROJECT PREVIEW
+Generated: 2026-03-01 17:48:54
+================================================================================
+
+================================================================================
+FRONTEND ANALYSIS
+================================================================================
+
+📁 Frontend Technology: Pure HTML/CSS/JavaScript (No Framework)
+   - HTML Files: 10
+   - CSS Files: 1
+   - JS Files: 1
+
+------------------------------------------------------------
+HTML Pages Detected
+------------------------------------------------------------
+   • about.html
+   • chatbot.html
+   • contact.html
+   • dashboard.html
+   • health-records.html
+   • index.html
+   • lab-analysis.html
+   • profile.html
+   • skin-analysis.html
+   • sound-analysis.html
+
+------------------------------------------------------------
+CSS Files
+------------------------------------------------------------
+   • styles.css
+
+------------------------------------------------------------
+JavaScript Files
+------------------------------------------------------------
+   • app.js
+
+================================================================================
+BACKEND ANALYSIS
+================================================================================
+
+📁 Backend Technology: Python Flask
+   - Framework: Flask
+   - Database: SQLite
+   - Auth: JWT Tokens
+   - CORS: Enabled
+
+------------------------------------------------------------
+API Endpoints Detected
+------------------------------------------------------------
+   POST   /api/register                  - User registration
+   POST   /api/login                     - User authentication
+   GET    /api/profile                   - Get user profile
+   PUT    /api/profile                   - Update profile
+   POST   /api/analyze/skin              - Skin image analysis
+   POST   /api/analyze/lab               - Lab report analysis
+   POST   /api/analyze/sound             - Sound/cough analysis
+   POST   /api/chatbot                   - Medical chatbot
+   GET    /api/records                   - Health records
+   GET    /api/dashboard/stats           - Dashboard statistics
+
+================================================================================
+TRAINED MODELS ANALYSIS
+================================================================================
+
+------------------------------------------------------------
+1. SKIN MODEL
+------------------------------------------------------------
+   Type: Full U-Net
+   Path: D:\project 2\checkpoints\skin_model_full.pth
+   Size: 88.95 MB
+   Parameters: 7,763,041
+   Epochs Trained: 12
+   Val Loss: 0.15380515127132335
+   Val IoU: 0.7942900812874237
+   Val Dice: 0.8808645196259022
+
+------------------------------------------------------------
+2. SOUND MODEL
+------------------------------------------------------------
+   Type: RespiratorySoundCNN
+   Path: D:\project 2\checkpoints\sound_model.pth
+   Size: 29.24 MB
+   Parameters: 2,552,386
+   Epochs Trained: 1
+   Val Accuracy: 100.00%
+
+------------------------------------------------------------
+3. LAB MODEL
+------------------------------------------------------------
+   Type: LabMLP
+   Path: D:\project 2\checkpoints\lab_model.pth
+   Size: 161.09 KB
+   Parameters: 12,002
+   Epochs Trained: 16
+   Val Accuracy: 69.83%
+
+------------------------------------------------------------
+4. CHATBOT MODEL
+------------------------------------------------------------
+   Type: MedicalChatbot (LSTM + Attention)
+   Path: D:\project 2\checkpoints\chatbot_model.pth
+   Size: 8274.22 KB
+   Parameters: 703,371
+   Epochs Trained: 5
+   Val Accuracy: 76.47%
+   Vocab Size: 72
+   Disease Classes: 10
+
+================================================================================
+MODEL INTEGRATION TEST
+================================================================================
+
+------------------------------------------------------------
+1. SKIN ANALYZER INTEGRATION
+------------------------------------------------------------
+   ✅ SkinAnalyzer loaded successfully
+   Mode: Rule-based + Database-driven analysis
+   Database: skin_disease_database.json
+   Conditions: 8 skin conditions supported
+
+------------------------------------------------------------
+2. SOUND ANALYZER INTEGRATION
+------------------------------------------------------------
+   ✅ SoundAnalyzer loaded successfully
+   Mode: Feature extraction + Rule-based analysis
+   Database: respiratory_database.json
+   Conditions: 6 respiratory conditions supported
+
+------------------------------------------------------------
+3. LAB ANALYZER INTEGRATION
+------------------------------------------------------------
+   ✅ LabAnalyzer loaded successfully
+   Mode: OCR + Database-driven analysis
+   Database: lab_test_database.json
+   Tests: 12+ lab tests supported
+
+------------------------------------------------------------
+4. CHATBOT INTEGRATION
+------------------------------------------------------------
+   ✅ MedicalChatbot loaded successfully
+   Mode: Symptom-based diagnosis + Database
+   Database: disease_database.json
+   Diseases: 10+ conditions supported
+   Test Response Preview: 🏥 MEDICAL ANALYSIS REPORT
+==================================================
+
+🔍 SYMPTOMS DETECTED: F...
+
+================================================================================
+DATA AVAILABILITY CHECK
+================================================================================
+
+------------------------------------------------------------
+Skin Data
+------------------------------------------------------------
+   Train images: 900
+   Test images: 379
+
+------------------------------------------------------------
+Sound Data
+------------------------------------------------------------
+   Train files: 736
+   Test files: 92
+
+------------------------------------------------------------
+Lab Data
+------------------------------------------------------------
+   Train files: 10
+   Test files: 6
+
+------------------------------------------------------------
+Chatbot/Knowledge Base
+------------------------------------------------------------
+   Disease database: 10 diseases
+
+================================================================================
+FRONTEND PAGES DETAILS
+================================================================================
+
+------------------------------------------------------------
+index.html - Login/Register Page
+------------------------------------------------------------
+   Features:
+      • Email/Password login
+      • Google OAuth button
+      • User registration form
+      • Remember me checkbox
+   API Calls:
+      • /api/login
+      • /api/register
+
+------------------------------------------------------------
+dashboard.html - Dashboard
+------------------------------------------------------------
+   Features:
+      • Statistics overview
+      • Recent analyses
+      • Quick actions
+      • Navigation sidebar
+   API Calls:
+      • /api/dashboard/stats
+
+------------------------------------------------------------
+skin-analysis.html - Skin Analysis
+------------------------------------------------------------
+   Features:
+      • Image upload
+      • Drag & drop
+      • Camera capture
+      • Analysis results display
+      • Severity indicator
+   API Calls:
+      • /api/analyze/skin
+
+------------------------------------------------------------
+sound-analysis.html - Sound Analysis
+------------------------------------------------------------
+   Features:
+      • Audio upload
+      • Recording capability
+      • Waveform visualization
+      • Diagnosis display
+   API Calls:
+      • /api/analyze/sound
+
+------------------------------------------------------------
+lab-analysis.html - Lab Analysis
+------------------------------------------------------------
+   Features:
+      • Report image upload
+      • OCR processing
+      • Value interpretation
+      • Recommendations
+   API Calls:
+      • /api/analyze/lab
+
+------------------------------------------------------------
+chatbot.html - Medical Chatbot
+------------------------------------------------------------
+   Features:
+      • Chat interface
+      • Real-time responses
+      • Symptom analysis
+      • Medical recommendations
+   API Calls:
+      • /api/chatbot
+
+------------------------------------------------------------
+health-records.html - Health Records
+------------------------------------------------------------
+   Features:
+      • History view
+      • Filter by type
+      • Export options
+      • Delete records
+   API Calls:
+      • /api/records
+
+------------------------------------------------------------
+profile.html - User Profile
+------------------------------------------------------------
+   Features:
+      • Profile editing
+      • Profile image
+      • Account settings
+      • Password change
+   API Calls:
+      • /api/profile
+
+------------------------------------------------------------
+about.html - About Page
+------------------------------------------------------------
+   Features:
+      • Project information
+      • Team details
+      • Technology stack
+
+------------------------------------------------------------
+contact.html - Contact Page
+------------------------------------------------------------
+   Features:
+      • Contact form
+      • Email integration
+      • FAQ section
+
+================================================================================
+HOW TO LAUNCH THE PROJECT
+================================================================================
+
+📌 PREREQUISITES:
+   1. Python 3.8+ installed
+   2. Virtual environment created (venv folder exists)
+   3. All dependencies installed
+
+📌 STEP-BY-STEP LAUNCH:
+
+   Step 1: Activate Virtual Environment
+   ----------------------------------------
+   Windows PowerShell:
+      cd "D:\project 2"
+      .\venv\Scripts\Activate.ps1
+   
+   Windows CMD:
+      cd "D:\project 2"
+      venv\Scripts\activate.bat
+
+   Step 2: Install Dependencies (if not already)
+   ----------------------------------------
+      pip install flask flask-cors pyjwt werkzeug opencv-python numpy pillow
+
+   Step 3: Start the Backend Server
+   ----------------------------------------
+      cd backend
+      python app.py
+   
+   Expected output:
+      ==================================================
+      Medical AI Assistant Server
+      ==================================================
+      Server running at: http://localhost:5000
+      Press Ctrl+C to stop
+      ==================================================
+
+   Step 4: Open Frontend in Browser
+   ----------------------------------------
+   Open your browser and navigate to:
+      http://localhost:5000
+   
+   Or open directly:
+      D:\project 2\frontend\index.html
+
+📌 DEFAULT LOGIN CREDENTIALS:
+   You need to register first! Click "Create Account" tab.
+
+📌 TESTING EACH FEATURE:
+   1. Dashboard: View statistics after login
+   2. Skin Analysis: Upload skin image → Get diagnosis
+   3. Sound Analysis: Upload audio → Get respiratory analysis
+   4. Lab Analysis: Upload lab report → Get value interpretation
+   5. Chatbot: Type symptoms → Get medical advice
+   6. Health Records: View all past analyses
+   7. Profile: Edit your account information
+
+
+================================================================================
+ISSUES AND WARNINGS
+================================================================================
+✅ Python version: 3.11.4
+
+📦 Checking Dependencies:
+   ✅ torch
+   ✅ flask
+   ✅ cv2
+   ✅ numpy
+   ✅ PIL
+
+🔍 Checking Tesseract OCR:
+   ✅ Tesseract OCR available
+
+🧠 Checking Model Files:
+   ✅ skin_model.pth (4.4 KB)
+   ✅ skin_model_full.pth (91086.1 KB)
+   ✅ sound_model.pth (29942.9 KB)
+   ✅ lab_model.pth (161.1 KB)
+   ✅ chatbot_model.pth (8274.2 KB)
+
+💾 Checking Database:
+   ✅ Database exists (92.0 KB)
+
+------------------------------------------------------------
+Summary
+------------------------------------------------------------
+✅ No issues found! Project is ready to run.
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+
+📊 PROJECT OVERVIEW:
+   Frontend: Pure HTML/CSS/JavaScript
+   Backend: Flask (Python)
+   Database: SQLite
+   AI Models: 4 (Skin, Sound, Lab, Chatbot)
+
+🧠 TRAINED MODELS:
+   Model        Type                             Parameters         Size
+   ------------------------------------------------------------------
+   skin         Full U-Net                        7,763,041      88.95 KB
+   sound        RespiratorySoundCNN               2,552,386      29.24 KB
+   lab          LabMLP                               12,002     161.09 KB
+   chatbot      MedicalChatbot (LSTM + Attention)      703,371    8274.22 MB
+
+🔗 INTEGRATION STATUS:
+   ✅ skin: OK
+   ✅ sound: OK
+   ✅ lab: OK
+   ✅ chatbot: OK
+
+📈 DATA STATUS:
+   • skin: {'train': 900, 'test': 379}
+   • sound: {'train': 736, 'test': 92}
+   • lab: {'train': 10, 'test': 6}
+   • chatbot: {'diseases': 10}
+
+================================================================================
+END OF REPORT
+================================================================================
+
+================================================================================
+Report saved to: D:\project 2\project_full_preview.txt
+================================================================================

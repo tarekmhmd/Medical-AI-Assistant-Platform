@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sound Analysis - Medical AI Assistant</title>
-    <meta name="description" content="AI-powered respiratory sound analysis - Analyze breathing, coughing, and lung sounds">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>🏥 Medical AI</h2>
             </div>
@@ -22,7 +20,7 @@
                     <li class="nav-item"><a href="skin-analysis.html" class="nav-link"><span>🔬</span> Skin Analysis</a></li>
                     <li class="nav-item"><a href="lab-analysis.html" class="nav-link"><span>🧪</span> Lab Results</a></li>
                     <li class="nav-item"><a href="chatbot.html" class="nav-link"><span>💬</span> AI Chatbot</a></li>
-                    <li class="nav-item"><a href="sound-analysis.html" class="nav-link active" aria-current="page"><span>🎤</span> Sound Analysis</a></li>
+                    <li class="nav-item"><a href="sound-analysis.html" class="nav-link active"><span>🎤</span> Sound Analysis</a></li>
                     <li class="nav-item"><a href="health-records.html" class="nav-link"><span>📋</span> Health Records</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link"><span>ℹ️</span> About Us</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link"><span>📧</span> Contact</a></li>
@@ -31,805 +29,103 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
-        <main class="main-content" role="main">
-            <header class="header">
+        <main class="main-content">
+            <div class="header">
                 <h1>🎤 Respiratory Sound Analysis</h1>
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span id="userName">User</span>
-                </div>
-            </header>
-
-            <!-- Sound Analysis Options -->
-            <div class="sound-options">
-                <button class="option-card active" onclick="selectSoundType('breathing')" id="opt-breathing">
-                    <span class="option-icon">🌬️</span>
-                    <span class="option-name">Breathing Sounds</span>
-                    <span class="option-desc">Analyze breath patterns, wheezing, crackles</span>
-                </button>
-                <button class="option-card" onclick="selectSoundType('cough')" id="opt-cough">
-                    <span class="option-icon">🤧</span>
-                    <span class="option-name">Cough Analysis</span>
-                    <span class="option-desc">Identify cough type: dry, wet, croup</span>
-                </button>
-                <button class="option-card" onclick="selectSoundType('voice')" id="opt-voice">
-                    <span class="option-icon">🗣️</span>
-                    <span class="option-name">Voice Analysis</span>
-                    <span class="option-desc">Hoarseness, vocal cord assessment</span>
-                </button>
             </div>
 
-            <!-- Main Analysis Card -->
-            <div class="card">
-                <div class="sound-tabs">
-                    <button class="sound-tab active" onclick="switchSoundTab('record')" id="tab-record">
-                        <span>🎙️</span> Record Sound
-                    </button>
-                    <button class="sound-tab" onclick="switchSoundTab('upload')" id="tab-upload">
-                        <span>📤</span> Upload Audio
-                    </button>
-                    <button class="sound-tab" onclick="switchSoundTab('history')" id="tab-history">
-                        <span>📋</span> History
-                    </button>
-                </div>
-
-                <!-- Record Tab -->
-                <div id="recordTab" class="sound-tab-content active">
-                    <div class="step-header">
-                        <h2>Record Respiratory Sound</h2>
-                        <p>Click record and breathe normally or cough into your microphone</p>
-                    </div>
-
-                    <div class="recording-interface">
-                        <!-- Microphone Visualization -->
-                        <div class="microphone-visualization">
-                            <div class="microphone-icon" id="microphoneIcon">
-                                <span>🎙️</span>
-                            </div>
-                            <div class="sound-wave" id="soundWave">
-                                <div class="wave-bar"></div>
-                                <div class="wave-bar"></div>
-                                <div class="wave-bar"></div>
-                                <div class="wave-bar"></div>
-                                <div class="wave-bar"></div>
-                                <div class="wave-bar"></div>
-                                <div class="wave-bar"></div>
-                                <div class="wave-bar"></div>
-                            </div>
-                        </div>
-
-                        <!-- Recording Controls -->
-                        <div class="recording-controls">
-                            <button class="btn-record" id="recordBtn" onclick="toggleRecording()">
-                                <span class="record-icon">⏺️</span>
-                                <span class="record-text" id="recordText">Start Recording</span>
-                            </button>
-                            
-                            <div class="recording-timer" id="recordingTimer">
-                                00:00
-                            </div>
-                            
-                            <div class="recording-status" id="recordingStatus">
-                                Ready to record
-                            </div>
-                        </div>
-
-                        <!-- Recording Tips -->
-                        <div class="recording-tips">
-                            <div class="tip-item">
-                                <span class="tip-icon">🔇</span>
-                                <span>Find a quiet environment</span>
-                            </div>
-                            <div class="tip-item">
-                                <span class="tip-icon">📏</span>
-                                <span>Hold phone 6-8 inches from mouth</span>
-                            </div>
-                            <div class="tip-item">
-                                <span class="tip-icon">⏱️</span>
-                                <span>Record for 5-10 seconds</span>
-                            </div>
-                            <div class="tip-item">
-                                <span class="tip-icon">🌬️</span>
-                                <span>Take normal breaths</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Upload Tab -->
-                <div id="uploadTab" class="sound-tab-content">
-                    <div class="step-header">
-                        <h2>Upload Audio File</h2>
-                        <p>Upload a recording of your breathing, coughing, or voice</p>
-                    </div>
-
-                    <div class="upload-area-enhanced" id="uploadArea" onclick="document.getElementById('audioInput').click()">
-                        <div class="upload-icon">🎵</div>
-                        <h3>Click or Drag to Upload</h3>
-                        <p>Supported formats: MP3, WAV, M4A, OGG</p>
-                        
-                        <div class="upload-requirements">
-                            <div class="requirement-item">
-                                <span class="requirement-icon">🔊</span>
-                                <span>Clear audio</span>
-                            </div>
-                            <div class="requirement-item">
-                                <span class="requirement-icon">📏</span>
-                                <span>5-30 seconds</span>
-                            </div>
-                            <div class="requirement-item">
-                                <span class="requirement-icon">🔇</span>
-                                <span>No background noise</span>
-                            </div>
-                        </div>
-
-                        <button class="btn btn-primary browse-btn" onclick="event.stopPropagation(); document.getElementById('audioInput').click()">
-                            <span>📁</span> Browse Files
-                        </button>
-                    </div>
-
-                    <input type="file" id="audioInput" class="file-input" accept="audio/*" onchange="handleAudioSelect(event)">
-
-                    <div id="audioPreview" class="audio-preview-container hidden">
-                        <div class="audio-player">
-                            <audio id="audioPlayer" controls>
-                                <source src="" type="audio/mpeg">
-                            </audio>
-                        </div>
-                        
-                        <div class="audio-info">
-                            <div class="info-row">
-                                <span class="info-label">Filename:</span>
-                                <span class="info-value" id="fileName">-</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Duration:</span>
-                                <span class="info-value" id="fileDuration">-</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Size:</span>
-                                <span class="info-value" id="fileSize">-</span>
-                            </div>
-                        </div>
-
-                        <button class="btn-change-file" onclick="clearAudioFile()">
-                            <span>🔄</span> Change File
-                        </button>
-                    </div>
-
-                    <button id="analyzeAudioBtn" class="btn btn-primary analyze-btn hidden" onclick="analyzeSound()">
-                        <span>🔬</span> Analyze Sound
-                    </button>
-                </div>
-
-                <!-- History Tab -->
-                <div id="historyTab" class="sound-tab-content">
-                    <div class="step-header">
-                        <h2>Previous Sound Analyses</h2>
-                        <p>Track your respiratory health over time</p>
-                    </div>
-
-                    <div class="history-timeline" id="soundHistory">
-                        <!-- Will be populated by JavaScript -->
-                        <div class="loading-spinner">
-                            <div class="spinner"></div>
-                            <p>Loading your sound analysis history...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Real-time Analysis Results -->
-            <div id="soundResultsSection" class="card hidden">
-                <div class="results-header">
-                    <h2>📊 Sound Analysis Results</h2>
-                    <div class="results-actions">
-                        <button class="btn-icon" onclick="playbackSound()" title="Play recording">
-                            <span>▶️</span>
-                        </button>
-                        <button class="btn-icon" onclick="downloadAudio()" title="Download">
-                            <span>📥</span>
-                        </button>
-                        <button class="btn-icon" onclick="shareResults()" title="Share">
-                            <span>📤</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="soundResults" class="sound-results-container">
-                    <!-- Results will be injected here -->
-                </div>
-            </div>
-
-            <!-- Sound Type Guide -->
             <div class="card">
                 <div class="card-header">
-                    <h2 class="card-title">🔍 Understanding Respiratory Sounds</h2>
-                    <button class="btn-toggle" onclick="toggleSoundGuide()">Show Guide</button>
+                    <h2 class="card-title">Upload Audio Recording</h2>
                 </div>
-                
-                <div id="soundGuide" class="sound-guide hidden">
-                    <div class="sound-types-grid">
-                        <div class="sound-type-card">
-                            <div class="sound-icon">🌬️</div>
-                            <h3>Normal Breath Sounds</h3>
-                            <p>Soft, rustling sounds during inhalation and exhalation</p>
-                            <div class="sound-characteristics">
-                                <span class="char-badge">Clear</span>
-                                <span class="char-badge">Rhythmic</span>
-                            </div>
-                        </div>
-                        
-                        <div class="sound-type-card">
-                            <div class="sound-icon">🎵</div>
-                            <h3>Wheezing</h3>
-                            <p>High-pitched whistling sound, often during exhalation</p>
-                            <div class="sound-characteristics">
-                                <span class="char-badge warning">High-pitched</span>
-                                <span class="char-badge warning">Musical</span>
-                            </div>
-                        </div>
-                        
-                        <div class="sound-type-card">
-                            <div class="sound-icon">💥</div>
-                            <h3>Crackles (Rales)</h3>
-                            <p>Popping or bubbling sounds during inhalation</p>
-                            <div class="sound-characteristics">
-                                <span class="char-badge warning">Discontinuous</span>
-                                <span class="char-badge warning">Bubbling</span>
-                            </div>
-                        </div>
-                        
-                        <div class="sound-type-card">
-                            <div class="sound-icon">🔊</div>
-                            <h3>Rhonchi</h3>
-                            <p>Low-pitched snoring or rattling sounds</p>
-                            <div class="sound-characteristics">
-                                <span class="char-badge warning">Low-pitched</span>
-                                <span class="char-badge warning">Continuous</span>
-                            </div>
-                        </div>
-                        
-                        <div class="sound-type-card">
-                            <div class="sound-icon">🤧</div>
-                            <h3>Cough Types</h3>
-                            <p>Dry, productive, croup, or whooping cough</p>
-                            <div class="sound-characteristics">
-                                <span class="char-badge">Dry/Wet</span>
-                                <span class="char-badge">Barking</span>
-                            </div>
-                        </div>
-                        
-                        <div class="sound-type-card">
-                            <div class="sound-icon">🗣️</div>
-                            <h3>Voice Changes</h3>
-                            <p>Hoarseness, breathiness, or vocal fatigue</p>
-                            <div class="sound-characteristics">
-                                <span class="char-badge warning">Hoarse</span>
-                                <span class="char-badge warning">Strained</span>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-icon">🎙️</div>
+                    <h3>Click or Drag to Upload</h3>
+                    <p>Upload a recording of your breathing or coughing</p>
+                    <p style="color: #95a5a6; font-size: 0.9rem;">Supported formats: WAV, MP3, M4A</p>
                 </div>
+
+                <input type="file" id="fileInput" class="file-input" accept="audio/*">
+
+                <div id="audioPreview" class="hidden" style="text-align: center; margin: 20px 0;">
+                    <audio id="previewAudio" controls style="width: 100%; max-width: 500px;"></audio>
+                </div>
+
+                <button id="analyzeBtn" class="btn btn-primary hidden" onclick="analyzeSound()">
+                    Analyze Sound
+                </button>
+
+                <div id="results"></div>
             </div>
 
-            <!-- Recording Tips Card -->
-            <div class="card tips-card">
-                <div class="tips-header">
-                    <span class="tips-icon">🎤</span>
-                    <h3>Tips for Best Results</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">ℹ️ Recording Tips</h2>
                 </div>
-                <ul class="tips-list">
-                    <li>🎙️ Use a good quality microphone if possible</li>
-                    <li>🔇 Record in a quiet room with minimal background noise</li>
-                    <li>🌬️ Take deep, normal breaths during recording</li>
-                    <li>📏 Hold the device 6-8 inches from your mouth</li>
-                    <li>⏱️ Record for at least 5-10 seconds for accurate analysis</li>
-                    <li>🔄 Try different positions: sitting, standing, lying down</li>
+                <ul style="line-height: 2;">
+                    <li>Record in a quiet environment</li>
+                    <li>Hold the microphone close to your mouth</li>
+                    <li>Record for at least 5-10 seconds</li>
+                    <li>Include several breaths or coughs</li>
+                    <li>Avoid background noise</li>
+                    <li>Use a good quality microphone if possible</li>
                 </ul>
-            </div>
-
-            <!-- Medical Disclaimer -->
-            <div class="card disclaimer-card">
-                <div class="disclaimer-content">
-                    <span class="disclaimer-icon">⚠️</span>
-                    <div>
-                        <strong>Important Medical Disclaimer:</strong>
-                        <p>This AI sound analysis is for preliminary screening only. Respiratory symptoms should always be evaluated by a healthcare professional, especially if accompanied by chest pain, shortness of breath, or fever.</p>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
 
     <script src="js/app.js"></script>
     <script>
-        // Check authentication
         checkAuth();
 
-        // Load user info
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        document.getElementById('userName').textContent = user.name || 'User';
-        document.getElementById('userAvatar').textContent = (user.name || 'U')[0].toUpperCase();
+        let selectedFile = null;
 
-        // Global variables
-        let selectedAudioFile = null;
-        let isRecording = false;
-        let recordingTimer = null;
-        let recordingSeconds = 0;
-        let currentSoundType = 'breathing';
-        let mediaRecorder = null;
-        let audioChunks = [];
-        let currentAnalysisResult = null;
+        document.getElementById('fileInput').addEventListener('change', (e) => {
+            handleFileSelection(e.target.files[0]);
+        });
 
-        // Setup drag and drop for upload tab
         const uploadArea = document.getElementById('uploadArea');
-        if (uploadArea) {
-            setupDragAndDrop(uploadArea, handleAudioFile);
-        }
+        setupDragAndDrop(uploadArea, handleFileSelection);
 
-        function selectSoundType(type) {
-            currentSoundType = type;
-            
-            // Update active state
-            ['breathing', 'cough', 'voice'].forEach(t => {
-                const element = document.getElementById(`opt-${t}`);
-                if (t === type) {
-                    element.classList.add('active');
-                } else {
-                    element.classList.remove('active');
-                }
-            });
-
-            // Update recording prompt based on type
-            updateRecordingPrompt(type);
-        }
-
-        function updateRecordingPrompt(type) {
-            const statusEl = document.getElementById('recordingStatus');
-            if (!statusEl) return;
-
-            const prompts = {
-                'breathing': 'Take normal breaths in and out',
-                'cough': 'Cough naturally 2-3 times',
-                'voice': 'Say "ahh" or speak normally'
-            };
-            statusEl.textContent = prompts[type] || 'Ready to record';
-        }
-
-        function switchSoundTab(tab) {
-            // Update tab buttons
-            ['record', 'upload', 'history'].forEach(t => {
-                const btn = document.getElementById(`tab-${t}`);
-                const content = document.getElementById(`${t}Tab`);
-                
-                if (t === tab) {
-                    btn.classList.add('active');
-                    content.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                    content.classList.remove('active');
-                }
-            });
-
-            // Load history if switching to history tab
-            if (tab === 'history') {
-                loadSoundHistory();
-            }
-        }
-
-        // Recording Functions
-        async function toggleRecording() {
-            if (!isRecording) {
-                await startRecording();
-            } else {
-                stopRecording();
-            }
-        }
-
-        async function startRecording() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                
-                mediaRecorder = new MediaRecorder(stream);
-                audioChunks = [];
-                
-                mediaRecorder.ondataavailable = event => {
-                    audioChunks.push(event.data);
-                };
-                
-                mediaRecorder.onstop = () => {
-                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    handleRecordedAudio(audioBlob);
-                    
-                    // Stop all tracks
-                    stream.getTracks().forEach(track => track.stop());
-                };
-                
-                mediaRecorder.start();
-                
-                // Update UI
-                isRecording = true;
-                document.getElementById('recordBtn').classList.add('recording');
-                document.getElementById('recordText').textContent = 'Stop Recording';
-                document.getElementById('microphoneIcon').style.animation = 'pulse 1s infinite';
-                
-                // Start timer
-                recordingSeconds = 0;
-                recordingTimer = setInterval(updateRecordingTimer, 1000);
-                
-                // Activate wave animation
-                document.querySelector('.sound-wave').classList.add('active');
-                
-                showNotification('Recording started...', 'info');
-                
-            } catch (error) {
-                showNotification('Microphone access denied. Please check permissions.', 'error');
-                console.error('Recording error:', error);
-            }
-        }
-
-        function stopRecording() {
-            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-                mediaRecorder.stop();
-                
-                // Update UI
-                isRecording = false;
-                document.getElementById('recordBtn').classList.remove('recording');
-                document.getElementById('recordText').textContent = 'Start Recording';
-                document.getElementById('microphoneIcon').style.animation = 'none';
-                
-                // Stop timer
-                clearInterval(recordingTimer);
-                
-                // Deactivate wave animation
-                document.querySelector('.sound-wave').classList.remove('active');
-                
-                showNotification('Recording finished. Analyzing...', 'success');
-            }
-        }
-
-        function updateRecordingTimer() {
-            recordingSeconds++;
-            const minutes = Math.floor(recordingSeconds / 60);
-            const seconds = recordingSeconds % 60;
-            document.getElementById('recordingTimer').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-
-        function handleRecordedAudio(audioBlob) {
-            // Create file from blob
-            const file = new File([audioBlob], 'recording.wav', { type: 'audio/wav' });
-            selectedAudioFile = file;
-            
-            // Show preview
-            const audioUrl = URL.createObjectURL(audioBlob);
-            document.getElementById('audioPlayer').src = audioUrl;
-            document.getElementById('audioPreview').classList.remove('hidden');
-            document.getElementById('analyzeAudioBtn').classList.remove('hidden');
-            
-            // Update file info
-            document.getElementById('fileName').textContent = 'recording.wav';
-            document.getElementById('fileDuration').textContent = formatDuration(recordingSeconds);
-            document.getElementById('fileSize').textContent = formatFileSize(audioBlob.size);
-            
-            // Automatically analyze after short delay
-            setTimeout(() => {
-                analyzeSound();
-            }, 500);
-        }
-
-        function handleAudioSelect(event) {
-            const file = event.target.files[0];
-            handleAudioFile(file);
-        }
-
-        function handleAudioFile(file) {
+        function handleFileSelection(file) {
             if (!file || !file.type.startsWith('audio/')) {
                 showNotification('Please select a valid audio file', 'error');
                 return;
             }
 
-            selectedAudioFile = file;
+            selectedFile = file;
 
-            // Show preview
-            const audioUrl = URL.createObjectURL(file);
-            document.getElementById('audioPlayer').src = audioUrl;
-            document.getElementById('audioPreview').classList.remove('hidden');
-            document.getElementById('analyzeAudioBtn').classList.remove('hidden');
-            
-            // Update file info
-            document.getElementById('fileName').textContent = file.name;
-            document.getElementById('fileDuration').textContent = 'Calculating...';
-            document.getElementById('fileSize').textContent = formatFileSize(file.size);
-            
-            // Get audio duration
-            const audio = new Audio(audioUrl);
-            audio.addEventListener('loadedmetadata', () => {
-                document.getElementById('fileDuration').textContent = formatDuration(audio.duration);
-            });
-        }
-
-        function clearAudioFile() {
-            selectedAudioFile = null;
-            document.getElementById('audioInput').value = '';
-            document.getElementById('audioPreview').classList.add('hidden');
-            document.getElementById('analyzeAudioBtn').classList.add('hidden');
-            document.getElementById('audioPlayer').src = '';
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                document.getElementById('previewAudio').src = e.target.result;
+                document.getElementById('audioPreview').classList.remove('hidden');
+                document.getElementById('analyzeBtn').classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
         }
 
         async function analyzeSound() {
-            if (!selectedAudioFile) {
-                showNotification('Please select or record an audio file first', 'error');
+            if (!selectedFile) {
+                showNotification('Please select an audio file first', 'error');
                 return;
             }
 
-            const resultsDiv = document.getElementById('soundResults');
-            const resultsSection = document.getElementById('soundResultsSection');
-            
-            // Show loading
-            resultsDiv.innerHTML = `
-                <div class="analysis-loading">
-                    <div class="spinner"></div>
-                    <p>AI is analyzing your respiratory sounds...</p>
-                    <div class="loading-steps">
-                        <div class="loading-step">🎵 Processing audio signal</div>
-                        <div class="loading-step">🔍 Detecting sound patterns</div>
-                        <div class="loading-step">📊 Comparing with medical database</div>
-                        <div class="loading-step">🧠 Generating diagnosis</div>
-                    </div>
-                </div>
-            `;
-            
-            resultsSection.classList.remove('hidden');
+            const resultsDiv = document.getElementById('results');
+            showLoading(resultsDiv);
 
-            // Simulate analysis (replace with actual API call)
-            setTimeout(() => {
-                const mockResult = generateMockSoundResult();
-                currentAnalysisResult = mockResult;
-                displaySoundResults(resultsDiv, mockResult);
+            try {
+                const result = await uploadFile('/analyze/sound', selectedFile, 'audio');
+                displayResult(resultsDiv, result);
                 showNotification('Analysis completed successfully!', 'success');
-            }, 3000);
-        }
-
-        function generateMockSoundResult() {
-            const results = {
-                'breathing': {
-                    diagnosis: 'Mild wheezing detected',
-                    severity: 'mild',
-                    confidence: 87,
-                    soundType: 'Wheezing',
-                    characteristics: ['High-pitched', 'Musical quality', 'Expiratory'],
-                    treatment: 'Consider using a bronchodilator. Monitor for asthma symptoms.',
-                    recommendations: [
-                        'Use peak flow meter to monitor breathing',
-                        'Avoid known triggers (allergens, smoke)',
-                        'Practice pursed-lip breathing',
-                        'Consult pulmonologist if wheezing persists'
-                    ]
-                },
-                'cough': {
-                    diagnosis: 'Productive cough with mucus',
-                    severity: 'moderate',
-                    confidence: 92,
-                    soundType: 'Wet cough',
-                    characteristics: ['Moist', 'Rattling', 'Phlegm present'],
-                    treatment: 'Stay hydrated. Consider over-the-counter expectorants.',
-                    recommendations: [
-                        'Drink warm fluids with honey',
-                        'Use humidifier at night',
-                        'Avoid dairy if it thickens mucus',
-                        'See doctor if cough persists >2 weeks'
-                    ]
-                },
-                'voice': {
-                    diagnosis: 'Vocal hoarseness detected',
-                    severity: 'mild',
-                    confidence: 79,
-                    soundType: 'Hoarse voice',
-                    characteristics: ['Rough', 'Strained', 'Breathy'],
-                    treatment: 'Rest your voice. Avoid whispering which strains vocal cords.',
-                    recommendations: [
-                        'Stay hydrated - drink plenty of water',
-                        'Avoid caffeine and alcohol',
-                        'Use a humidifier',
-                        'Consult ENT if hoarseness persists >2 weeks'
-                    ]
-                }
-            };
-
-            return results[currentSoundType] || {
-                diagnosis: 'Normal respiratory sounds',
-                severity: 'none',
-                confidence: 95,
-                soundType: 'Clear breath sounds',
-                characteristics: ['Clear', 'Rhythmic', 'Normal intensity'],
-                treatment: 'No treatment needed. Continue monitoring.',
-                recommendations: [
-                    'Maintain healthy lifestyle',
-                    'Regular exercise for lung health',
-                    'Avoid smoking and pollutants',
-                    'Annual check-up recommended'
-                ]
-            };
-        }
-
-        function displaySoundResults(container, result) {
-            const severityColors = {
-                'none': '#50C878',
-                'mild': '#F39C12',
-                'moderate': '#E74C3C',
-                'severe': '#C0392B'
-            };
-
-            container.innerHTML = `
-                <div class="result-card">
-                    <div class="result-header" style="border-left-color: ${severityColors[result.severity]}">
-                        <div>
-                            <span class="result-badge">${result.soundType || 'Sound Analysis'}</span>
-                            <h3>${result.diagnosis}</h3>
-                        </div>
-                        <span class="severity-badge severity-${result.severity}">${result.severity.toUpperCase()}</span>
-                    </div>
-
-                    <div class="result-body">
-                        <div class="result-section">
-                            <div class="section-label">Analysis Confidence</div>
-                            <div class="confidence-meter">
-                                <div class="confidence-fill" style="width: ${result.confidence}%"></div>
-                                <span class="confidence-value">${result.confidence}%</span>
-                            </div>
-                        </div>
-
-                        <div class="result-section">
-                            <div class="section-label">Sound Characteristics</div>
-                            <div class="characteristics-list">
-                                ${result.characteristics.map(char => `
-                                    <span class="char-badge">${char}</span>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <div class="result-section">
-                            <div class="section-label">Spectral Analysis</div>
-                            <div class="spectrogram-placeholder">
-                                <div class="spectrogram-bars">
-                                    ${Array(20).fill(0).map((_, i) => {
-                                        const height = 30 + Math.random() * 60;
-                                        return `<div class="spec-bar" style="height: ${height}%"></div>`;
-                                    }).join('')}
-                                </div>
-                                <div class="spectrogram-labels">
-                                    <span>Low</span>
-                                    <span>Frequency</span>
-                                    <span>High</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="result-section">
-                            <div class="section-label">Treatment Recommendations</div>
-                            <div class="treatment-text">${result.treatment}</div>
-                        </div>
-
-                        <div class="result-section">
-                            <div class="section-label">Recommendations</div>
-                            <ul class="recommendations-list">
-                                ${result.recommendations.map(rec => `<li>${rec}</li>`).join('')}
-                            </ul>
-                        </div>
-
-                        <div class="result-section">
-                            <div class="section-label">When to Seek Emergency Care</div>
-                            <div class="emergency-warning">
-                                <span class="warning-icon">🚨</span>
-                                <span>Seek immediate medical attention if you experience:</span>
-                                <ul>
-                                    <li>Chest pain or tightness</li>
-                                    <li>Severe shortness of breath</li>
-                                    <li>Blue lips or fingernails</li>
-                                    <li>Sudden onset of symptoms</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="result-footer">
-                        <p class="analysis-date">Analysis completed: ${new Date().toLocaleString()}</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        function loadSoundHistory() {
-            const historyEl = document.getElementById('soundHistory');
-            
-            // Simulate loading history
-            setTimeout(() => {
-                historyEl.innerHTML = `
-                    <div class="history-item">
-                        <div class="history-date">Today, 10:30 AM</div>
-                        <div class="history-results">
-                            <div class="history-result" onclick="viewSoundHistory('breathing-001')">
-                                <span class="history-type">🌬️ Breathing Analysis</span>
-                                <span class="history-status normal">Normal</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="history-item">
-                        <div class="history-date">Yesterday, 8:15 PM</div>
-                        <div class="history-results">
-                            <div class="history-result" onclick="viewSoundHistory('cough-001')">
-                                <span class="history-type">🤧 Cough Analysis</span>
-                                <span class="history-status warning">Mild wheezing</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="history-item">
-                        <div class="history-date">March 10, 2024</div>
-                        <div class="history-results">
-                            <div class="history-result" onclick="viewSoundHistory('voice-001')">
-                                <span class="history-type">🗣️ Voice Analysis</span>
-                                <span class="history-status normal">Normal</span>
-                            </div>
-                        </div>
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="message error">
+                        <strong>Error:</strong> ${error.message}
                     </div>
                 `;
-            }, 1000);
-        }
-
-        function viewSoundHistory(id) {
-            showNotification('Loading historical analysis...', 'info');
-        }
-
-        function playbackSound() {
-            const audio = document.getElementById('audioPlayer');
-            if (audio) {
-                audio.play();
-                showNotification('Playing recording...', 'info');
+                showNotification('Analysis failed. Please try again.', 'error');
             }
-        }
-
-        function downloadAudio() {
-            if (!selectedAudioFile) {
-                showNotification('No audio file to download', 'error');
-                return;
-            }
-
-            const url = URL.createObjectURL(selectedAudioFile);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = selectedAudioFile.name || 'recording.wav';
-            a.click();
-            
-            showNotification('Audio downloaded', 'success');
-        }
-
-        function shareResults() {
-            showNotification('Share feature coming soon!', 'info');
-        }
-
-        function toggleSoundGuide() {
-            const guide = document.getElementById('soundGuide');
-            const button = event.currentTarget;
-            
-            guide.classList.toggle('hidden');
-            button.textContent = guide.classList.contains('hidden') ? 'Show Guide' : 'Hide Guide';
-        }
-
-        function formatDuration(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        function formatFileSize(bytes) {
-            if (bytes < 1024) return bytes + ' B';
-            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
         }
 
         function logout() {
