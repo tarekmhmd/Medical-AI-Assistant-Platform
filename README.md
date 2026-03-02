@@ -2,6 +2,7 @@
 
 A comprehensive AI-powered medical assistant platform providing preliminary healthcare diagnosis through multiple analysis modalities including skin disease detection, lab report interpretation, respiratory sound analysis, and medical chatbot consultation.
 
+
 ---
 
 ## Table of Contents
