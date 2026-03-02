@@ -7,21 +7,16 @@ __pycache__/
 venv/
 env/
 ENV/
+.venv/
 
-# Database
+# Database (local only)
 *.db
 *.sqlite3
-
-# Models and Data
-models_pretrained/
-data/
-uploads/
 
 # Environment
 .env
 
 # IDE
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -43,7 +38,7 @@ build/
 dist/
 *.egg-info/
 
-# Large binary files (use Git LFS if needed)
+# Large binary files
 *.exe
 *.dll
 *.zip
@@ -51,6 +46,65 @@ dist/
 *.rar
 *.7z
 
-# Tesseract (too large for direct Git)
+# ============================================
+# DATASETS - DO NOT INCLUDE IN REPOSITORY
+# ============================================
+data/
+processed_data/
+train/
+test/
+val/
+datasets_raw/
+archive/
+archive (1)/
+archive (2)/
+archive (3)/
+chatbot/
+chatbot_training_combined/
+diseases/
+drugs-datasets-master/
+drugs-datasets-processed/
+ISIC2016_Task1/
+ISIC2018/
+ISIC2019/
+lab/
+lab_results/
+respiratory_sounds/
+skin/
+skin_images/
+sound/
+
+# ============================================
+# MODELS - DO NOT INCLUDE (use checkpoints/)
+# ============================================
+models_pretrained/
+
+# ============================================
+# UPLOADS - User uploaded files (runtime)
+# ============================================
+backend/uploads/
+uploads/
+
+# ============================================
+# TESSERACT - Too large for Git
+# ============================================
 tessdata/
 tesseract/
+
+# ============================================
+# MODELS FOLDER - Root level only (not backend/models)
+# ============================================
+/models/
+
+# ============================================
+# NOTEBOOKS - Development only
+# ============================================
+notebooks/
+
+# ============================================
+# MISC - Temporary/generated files
+# ============================================
+models_summary/
+doc/
+*.html
+!frontend/*.html
